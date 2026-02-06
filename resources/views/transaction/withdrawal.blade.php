@@ -1,53 +1,69 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="form-card" style="max-width: 900px; padding: 0; overflow: hidden; animation: slideUp 0.6s ease-out;">
+<div class="form-card" style="max-width: 1200px; padding: 0; margin: 0 auto; animation: slideUp 0.6s ease-out; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
     
-    <!-- Account Info Header (Red Theme) -->
-    <div style="background: var(--bg-gradient); padding: 30px; border-bottom: 1px solid rgba(0,0,0,0.05);">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-            <div style="display: flex; align-items: center; gap: 20px;">
-                <div style="width: 60px; height: 60px; background: white; border-radius: 15px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-soft);">
-                    <i class="fa-solid fa-hand-holding-dollar" style="font-size: 1.8rem; color: #ef4444;"></i>
+    <!-- Account Info Header (Compact) -->
+    <div style="background: white; padding: 12px 25px; border-bottom: 1px solid #e2e8f0;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 15px;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="width: 45px; height: 45px; background: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-soft);">
+                    <i class="fa-solid fa-hand-holding-dollar" style="font-size: 1.4rem; color: #ef4444;"></i>
                 </div>
                 <div>
-                    <h5 style="margin: 0; color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase;">Tarik Tunai Dari Rekening</h5>
-                    <h2 style="margin: 5px 0 0; color: var(--primary-navy);">{{ $data['nama'] }}</h2>
-                    <p style="margin: 0; font-family: monospace; font-size: 1.1rem; color: var(--text-primary);">{{ $data['no_rek'] }}</p>
+                    <h5 style="margin: 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">Tarik Tunai Dari Rekening</h5>
+                    <h4 style="margin: 2px 0 0; color: var(--primary-navy); font-size: 1.1rem; font-weight: 700;">{{ $data['nama'] }}</h4>
+                    <p style="margin: 0; font-family: monospace; font-size: 0.9rem; color: var(--text-primary);">{{ $data['no_rek'] }}</p>
                 </div>
             </div>
             
-            <div style="text-align: right; background: rgba(239, 68, 68, 0.1); padding: 10px 20px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
-                <span style="font-size: 0.85rem; color: #ef4444; font-weight: 600;">SALDO SAAT INI</span>
-                <div style="font-size: 1.2rem; font-weight: 700; color: var(--primary-navy);">
-                    Rp {{ number_format($data['saldo'], 0, ',', '.') }}
+            <div style="text-align: right; background: rgba(239, 68, 68, 0.1); padding: 8px 15px; border-radius: 8px; border: 1px solid rgba(239, 68, 68, 0.2); white-space: nowrap;">
+                <span style="font-size: 0.7rem; color: #ef4444; font-weight: 600; display: block;">SALDO SAAT INI</span>
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                     <span id="balance_display" data-value="Rp {{ number_format($data['saldo'], 0, ',', '.') }}" style="font-size: 1rem; font-weight: 700; color: var(--primary-navy); letter-spacing: 1px;">
+                        ••••••••
+                    </span>
+                    <button type="button" onclick="toggleBalance()" style="background: none; border: none; cursor: pointer; color: #ef4444; padding: 0;">
+                        <i class="fa-solid fa-eye" id="eye_icon"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <form action="{{ route('transaction.withdrawal.store') }}" method="POST" style="padding: 40px;">
+    <!-- Error Alert -->
+    @if ($errors->any())
+        <div style="background: #fef2f2; color: #ef4444; padding: 15px 25px; border-bottom: 1px solid #fecaca; font-size: 0.95rem;">
+            <ul style="margin: 0; padding-left: 20px;">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form action="{{ route('transaction.withdrawal.store') }}" method="POST" style="padding: 15px 20px;" hx-boost="false">
         @csrf
         <input type="hidden" name="nama" value="{{ $data['nama'] }}">
         <input type="hidden" name="no_rek" value="{{ $data['no_rek'] }}">
         <input type="hidden" name="tgl" value="{{ date('Y-m-d') }}">
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
             
             <!-- Nominal Section -->
             <div>
-                <h4 style="color: var(--primary-navy); border-bottom: 2px solid #ef4444; padding-bottom: 10px; margin-bottom: 20px; display: inline-block;">
+                <h6 style="color: var(--primary-navy); border-bottom: 2px solid #ef4444; padding-bottom: 5px; margin-bottom: 15px; font-weight: 700;">
                     Detail Penarikan
-                </h4>
+                </h6>
 
-                <div class="form-group">
-                    <label class="form-label">Nominal Penarikan (Rp)</label>
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label class="form-label" style="font-size: 0.85rem; margin-bottom: 4px;">Nominal Penarikan (Rp)</label>
                     <div style="position: relative;">
-                        <span style="position: absolute; left: 20px; top: 15px; font-weight: 600; color: var(--text-muted);">Rp</span>
+                        <span style="position: absolute; left: 15px; top: 10px; font-weight: 600; color: var(--text-muted); font-size: 0.9rem;">Rp</span>
                         <input type="text" 
                                name="nominal_display" 
                                class="form-control focus-withdrawal" 
-                               style="padding-left: 50px; font-size: 1.5rem; font-weight: 700; color: #ef4444;" 
+                               style="padding-left: 40px; font-size: 1.2rem; font-weight: 700; color: #ef4444; height: 45px;" 
                                placeholder="0" 
                                required 
                                onkeyup="formatRupiah(this); updateTerbilang(this.value);">
@@ -55,54 +71,69 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Terbilang</label>
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label class="form-label" style="font-size: 0.85rem; margin-bottom: 4px;">Terbilang</label>
                     <textarea name="terbilang" 
                               id="terbilang" 
                               class="form-control" 
-                              rows="3" 
+                              rows="2" 
                               readonly 
-                              style="background: #f8fafc; color: var(--text-muted); font-style: italic; resize: none; border-color: transparent;">Nol Rupiah</textarea>
+                              style="background: #f8fafc; color: var(--text-muted); font-style: italic; resize: none; border-color: transparent; font-size: 0.85rem; line-height: 1.2;">Nol Rupiah</textarea>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Tujuan Transaksi</label>
-                    <input type="text" name="tujuan" class="form-control" placeholder="Contoh: Belanja Bulanan" required>
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label class="form-label" style="font-size: 0.85rem; margin-bottom: 4px;">Tujuan Transaksi</label>
+                    <input type="text" name="tujuan" class="form-control form-control-sm" placeholder="Contoh: Belanja Bulanan" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label class="form-label" style="font-size: 0.85rem; margin-bottom: 8px; display: block;">Sumber Dana Penarikan</label>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.9rem;">
+                            <input type="radio" name="jenis_rekening" value="Tabungan" required checked> Tabungan
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.9rem;">
+                            <input type="radio" name="jenis_rekening" value="Kredit"> Kredit
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.9rem;">
+                            <input type="radio" name="jenis_rekening" value="Lainnya"> Lainnya
+                        </label>
+                    </div>
                 </div>
             </div>
             
             <!-- Penarik Section -->
             <div>
-                <h4 style="color: var(--primary-navy); border-bottom: 2px solid #64748b; padding-bottom: 10px; margin-bottom: 20px; display: inline-block;">
+                <h6 style="color: var(--primary-navy); border-bottom: 2px solid #64748b; padding-bottom: 5px; margin-bottom: 15px; font-weight: 700;">
                     Data Penarik
-                </h4>
+                </h6>
 
-                <div class="form-group">
-                    <label class="form-label">Nama Penarik</label>
-                    <input type="text" name="nama_penarik" class="form-control" required value="{{ $data['nama'] }}">
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label class="form-label" style="font-size: 0.85rem; margin-bottom: 4px;">Nama Penarik</label>
+                    <input type="text" name="nama_penarik" class="form-control form-control-sm" required value="{{ $data['nama'] }}" readonly style="background-color: #e9ecef; cursor: not-allowed;">
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">No HP Penarik</label>
-                    <input type="tel" name="hp_penarik" class="form-control" required value="{{ $data['hp'] ?? '' }}">
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label class="form-label" style="font-size: 0.85rem; margin-bottom: 4px;">No HP Penarik</label>
+                    <input type="tel" name="hp_penarik" class="form-control form-control-sm" required value="{{ $data['hp'] ?? '-' }}" readonly style="background-color: #e9ecef; cursor: not-allowed;">
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">No Identitas (KTP/SIM)</label>
-                    <input type="text" name="noid_penarik" class="form-control" value="{{ $data['noid'] ?? '' }}">
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label class="form-label" style="font-size: 0.85rem; margin-bottom: 4px;">No Identitas (KTP/SIM)</label>
+                    <input type="text" name="noid_penarik" class="form-control form-control-sm" value="{{ $data['noid'] ?? '-' }}" readonly style="background-color: #e9ecef; cursor: not-allowed;">
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Alamat Penarik</label>
-                    <textarea name="alamat_penarik" class="form-control" rows="2">{{ $data['alamat'] ?? '' }}</textarea>
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label class="form-label" style="font-size: 0.85rem; margin-bottom: 4px;">Alamat Penarik</label>
+                    <textarea name="alamat_penarik" class="form-control form-control-sm" rows="1" style="resize: none; height: 38px; background-color: #e9ecef; cursor: not-allowed;" readonly>{{ $data['alamat'] ?? '-' }}</textarea>
                 </div>
             </div>
         </div>
 
-        <div style="margin-top: 40px; text-align: right; display: flex; justify-content: space-between; align-items: center;">
-            <a href="{{ url('/') }}" class="btn-back" style="margin: 0;">&larr; Batal</a>
-            <button type="submit" class="btn-submit accent-withdrawal" style="width: auto; padding-left: 50px; padding-right: 50px;">
-                Proses Penarikan <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+        <div style="margin-top: 20px; text-align: right; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 15px;">
+            <a href="{{ url('/') }}" class="btn-back" style="margin: 0; font-size: 0.9rem;">&larr; Batal</a>
+            <button type="submit" class="btn-submit accent-withdrawal" style="width: auto; padding: 10px 40px; font-size: 0.95rem;">
+                Proses Penarikan <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
             </button>
         </div>
     </form>
@@ -135,6 +166,21 @@
         document.getElementById('terbilang').value = terbilang(nominal) + ' Rupiah';
     }
 
+    // Client-side Validation
+    document.querySelector('form').addEventListener('submit', function(e) {
+        let nominal = document.getElementById('nominal').value;
+        if(parseInt(nominal) < 10000) {
+            e.preventDefault();
+            Swal.fire({
+                icon: 'error',
+                title: 'Nominal Kurang',
+                text: 'Mohon Maaf, Minimal Penarikan adalah Rp 10.000',
+                confirmButtonColor: '#ef4444',
+                confirmButtonText: 'Tutup'
+            });
+        }
+    });
+
     function terbilang(a){
         var bilangan = ['','Satu','Dua','Tiga','Empat','Lima','Enam','Tujuh','Delapan','Sembilan','Sepuluh','Sebelas'];
         var kalimat = "";
@@ -149,6 +195,22 @@
         else if(a < 1000000000) kalimat = terbilang(Math.floor(a / 1000000)) + " Juta " + terbilang(a % 1000000);
         
         return kalimat;
+    }
+
+    function toggleBalance() {
+        const display = document.getElementById('balance_display');
+        const icon = document.getElementById('eye_icon');
+        const realValue = display.getAttribute('data-value');
+        
+        if (display.textContent.trim() === '••••••••') {
+            display.textContent = realValue;
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        } else {
+            display.textContent = '••••••••';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        }
     }
 </script>
 

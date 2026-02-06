@@ -37,14 +37,18 @@ class QueueController extends Controller
         $token = $prefix . Carbon::now()->format('ymdHis');
 
         // 2. Simpan ke Database
-        $queue = Queue::create([
-            'tgl_antri' => $today,
-            'nama_antrian' => $type . ' Queue', // Nama default jika tidak ada input spesifik
-            'type' => $type,
-            'antrian' => $queueNumber,
-            'kode' => $token,
-            'st_antrian' => '0' // Status awal 0 (Belum dipanggil)
-        ]);
+        try {
+            $queue = Queue::create([
+                'tgl_antri' => $today,
+                'nama_antrian' => $type . ' Queue', // Nama default jika tidak ada input spesifik
+                'type' => $type,
+                'antrian' => $queueNumber,
+                'kode' => $token,
+                'st_antrian' => '0' // Status awal 0 (Belum dipanggil)
+            ]);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
 
         // Arahkan ke halaman cetak tiket
         return redirect()->route('queue.show', ['token' => $token]);

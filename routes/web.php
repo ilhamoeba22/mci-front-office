@@ -6,6 +6,8 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DisplayController;
 
+use App\Http\Controllers\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes (Rute Web)
@@ -18,9 +20,64 @@ use App\Http\Controllers\DisplayController;
 */
 
 // Halaman Utama (Dashboard Menu)
+
+// Temprorary Migration Route
+Route::get('/migrate-db', function() {
+    try {
+        Artisan::call('migrate', ['--force' => true]);
+        return 'Migration Success: ' . Artisan::output();
+    } catch (\Exception $e) {
+        return 'Migration Failed: ' . $e->getMessage();
+    }
+});
+
+
+
 Route::get('/', function () {
     return view('home');
 });
+
+// Emergency Schema Fix
+Route::get('/fix-schema', function() {
+    try {
+        $output = "Checking schema...\n";
+        
+        if (!\Illuminate\Support\Facades\Schema::hasColumn('tbl_antrian', 'nama')) {
+            \Illuminate\Support\Facades\Schema::table('tbl_antrian', function (Illuminate\Database\Schema\Blueprint $table) {
+                $table->string('nama', 100)->nullable()->after('nama_antrian');
+            });
+            $output .= "Added column 'nama'.\n";
+        } else {
+            $output .= "Column 'nama' already exists.\n";
+        }
+
+        if (!\Illuminate\Support\Facades\Schema::hasColumn('tbl_antrian', 'no_kontak')) {
+            \Illuminate\Support\Facades\Schema::table('tbl_antrian', function (Illuminate\Database\Schema\Blueprint $table) {
+                $table->string('no_kontak', 20)->nullable()->after('nama');
+            });
+            $output .= "Added column 'no_kontak'.\n";
+        } else {
+            $output .= "Column 'no_kontak' already exists.\n";
+        }
+        if (!\Illuminate\Support\Facades\Schema::hasColumn('tbl_antrian', 'updated_at')) {
+            \Illuminate\Support\Facades\Schema::table('tbl_antrian', function (Illuminate\Database\Schema\Blueprint $table) {
+                $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
+            });
+            $output .= "Added column 'updated_at'.\n";
+        } else {
+            $output .= "Column 'updated_at' already exists.\n";
+        }
+
+        return "Schema Fix Result:\n<pre>$output</pre>";
+    } catch (\Exception $e) {
+        return "Schema Fix Failed: " . $e->getMessage();
+    }
+});
+
+// Authentication Routes
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rute Antrian (Public)
 Route::post('/queue', [QueueController::class, 'store'])->name('queue.store');
@@ -33,54 +90,88 @@ Route::post('/transaction/deposit/store', [TransactionController::class, 'storeD
 Route::get('/transaction/withdrawal', [TransactionController::class, 'createWithdrawal'])->name('transaction.withdrawal.create');
 Route::post('/transaction/withdrawal/store', [TransactionController::class, 'storeWithdrawal'])->name('transaction.withdrawal.store');
 Route::get('/transaction/transfer', [TransactionController::class, 'createTransfer'])->name('transaction.transfer.create');
+Route::get('/transaction/transfer/form', [TransactionController::class, 'showTransferForm'])->name('transaction.transfer.form');
 Route::post('/transaction/transfer/store', [TransactionController::class, 'storeTransfer'])->name('transaction.transfer.store');
 
-// Rute Admin (Back Office)
-Route::prefix('admin')->name('admin.')->group(function () {
+// Rute Admin (Back Office) - Protected
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     // Dashboard Utama
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
     
     // Manajemen Antrian (Call/Done)
     Route::get('/queue', [AdminController::class, 'queueList'])->name('queue.list');
+    Route::get('/queue-v2', [AdminController::class, 'queueListV2'])->name('queue.list.v2');
     Route::post('/queue/call/{id}', [AdminController::class, 'callQueue'])->name('queue.call');
     Route::post('/queue/finish/{id}', [AdminController::class, 'finishQueue'])->name('queue.finish');
+    Route::post('/queue/skip/{id}', [AdminController::class, 'skipQueue'])->name('queue.skip');
+    Route::get('/queue/detail/{id}', [AdminController::class, 'getQueueDetail'])->name('queue.detail');
+    Route::get('/queue-history', [AdminController::class, 'queueHistory']);
+    Route::get('/queue-history/export', [AdminController::class, 'exportHistory']);
+    
     
     // Settings (Media)
     Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
     Route::post('/settings/media', [AdminController::class, 'updateMedia'])->name('settings.media.update');
+
+    // SPA Catch-all (MUST BE LAST in this group)
+    // Allows Vue Router to handle sub-paths like /admin/queue/CS on refresh
+    Route::get('/{any}', [AdminController::class, 'index'])->where('any', '.*')->name('spa.fallback');
 });
 
 // Rute TV Display
 Route::get('/display', [DisplayController::class, 'index'])->name('display.index');
 Route::get('/api/queue-data', [DisplayController::class, 'getQueueData'])->name('api.queue.data');
 
-// DEBUG API ROUTE (Temporary)
-Route::get('/debug-api', function(App\Services\CoreBankingService $service) {
-    try {
-        echo "<h1>API DEBUGGER</h1>";
-        echo "<pre>";
-        
-        echo "1. TEST CONFIG\n";
-        echo "Base URL: " . config('services.core_bank.base_url') . "\n";
-        echo "Client ID: " . config('services.core_bank.client_id') . "\n";
-        
-        echo "\n2. REQUESTING TOKEN...\n";
-        $tokenData = $service->getToken();
-        
-        if ($tokenData) {
-            echo "SUCCESS! Token received.\n";
-            print_r($tokenData);
-            
-            echo "\n3. CHECKING BALANCE (Test Account: 0011223344)...\n";
-            $balance = $service->getBalance('0011223344');
-            print_r($balance);
-        } else {
-            echo "FAILED to get Token.\n";
-            echo "Check laravel.log for details.\n";
+Route::get('/debug-queue/{antrian?}', function($antrian = null) {
+    if ($antrian) {
+        $queue = \App\Models\Queue::where('antrian', $antrian)
+                    ->whereDate('tgl_antri', \Carbon\Carbon::now())
+                    ->orderBy('id_antrian', 'desc')
+                    ->first();
+    } else {
+        $queue = \App\Models\Queue::orderBy('id_antrian', 'desc')->first();
+    }
+
+    if (!$queue) return 'No Queue Found for: ' . ($antrian ?? 'Latest');
+    
+    $transaction = null;
+    $log = "Queue Code: " . $queue->kode . "\n";
+    
+    if ($queue->kode) {
+        if (str_starts_with($queue->kode, 'ST-')) {
+            $transaction = \App\Models\Transaction::where('token', $queue->kode)->first();
+            $log .= "Type: ST (Setor Tunai)\n";
+        } elseif (str_starts_with($queue->kode, 'TT-')) {
+            $transaction = \App\Models\Withdrawal::where('token', $queue->kode)->first();
+            $log .= "Type: TT (Tarik Tunai)\n";
+        } elseif (str_starts_with($queue->kode, 'ON-')) {
+            $transaction = \App\Models\Transfer::where('token', $queue->kode)->first();
+            $log .= "Type: ON (Transfer Online)\n";
         }
+    }
+    
+    return [
+        'queue' => $queue,
+        'transaction' => $transaction,
+        'log' => $log
+    ];
+});
+// Debug Route for Data Inspection
+Route::get('/debug-data/{id}', function ($id) {
+    try {
+        $queue = \App\Models\Queue::find($id);
+        if (!$queue) return response()->json(['error' => 'Queue not found']);
         
-        echo "</pre>";
+        // Test the Accessor
+        $transaction = $queue->transaction;
+        
+        return response()->json([
+            'status' => 'ok',
+            'queue' => $queue,
+            'computed_transaction' => $transaction,
+            'raw_kode' => $queue->kode
+        ]);
     } catch (\Exception $e) {
-        echo "EXCEPTION: " . $e->getMessage();
+        return response()->json(['error' => $e->getMessage()], 500);
     }
 });

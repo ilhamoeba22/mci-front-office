@@ -16,7 +16,8 @@ class Transfer extends Model
     use HasFactory;
 
     protected $table = 'tbl_transfer';
-    protected $primaryKey = 'id_transfer';
+    // protected $primaryKey = 'id_transfer'; // Error: Unknown
+    protected $primaryKey = 'id_trf'; // FOUND VIA SCHEMA DUMP
 
     protected $fillable = [
         'token',
@@ -28,12 +29,13 @@ class Transfer extends Model
         'tujuan',
         'nama_penyetor',  // Penyetor (bisa sama dengan pengirim)
         'hp_penyetor',
-        'alamat_',        // Alamat Penyetor
+        'alamat_penyetor', // Standardized from alamat_
         
         // Penerima
         'nama_tujuan',
         'no_rek_tujuan',
         'bank_tujuan',
+        'kode_bank',
         'berita_tujuan',
         'alamat_tujuan',
         'kota_tujuan',

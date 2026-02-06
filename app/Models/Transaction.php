@@ -30,6 +30,7 @@ class Transaction extends Model
         'tgl',              // Tanggal transaksi
         'nominal',          // Jumlah nominal (angka)
         'terbilang',        // Jumlah nominal (teks)
+        'jenis_rekening',   // Tabungan, Deposito, dll
         'berita',           // Keterangan tambahan
         'tujuan',           // Tujuan transaksi
         'nama_penyetor',    // Nama penyetor

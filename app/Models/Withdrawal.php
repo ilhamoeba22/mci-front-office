@@ -25,6 +25,7 @@ class Withdrawal extends Model
         'tgl',
         'nominal',
         'terbilang',
+        'jenis_rekening',
         'tujuan',
         'nama_penarik',
         'hp_penarik',

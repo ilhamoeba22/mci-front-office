@@ -17,6 +17,9 @@ class Queue extends Model
 
     protected $table = 'tbl_antrian';
     protected $primaryKey = 'id_antrian';
+    
+    // Ensure transaction details are sent to JSON
+    protected $appends = ['transaction', 'tx_type'];
 
     /**
      * Atribut yang dapat diisi secara massal (Mass Assignable).
@@ -32,6 +35,9 @@ class Queue extends Model
         'st_antrian',   // Status antrian (0=Menunggu, 1=Dipanggil, dst)
         'tujuan_datang',
         'solusi',
+        'nama',
+        'no_kontak',
+        'waktu_panggil',
     ];
 
     /**
@@ -39,6 +45,64 @@ class Queue extends Model
      * Menggunakan 'created' sebagai pengganti created_at default jika diperlukan.
      */
     const CREATED_AT = 'created';
-    const UPDATED_AT = null; // Disable updated_at
-    public $timestamps = false; // Disable auto timestamps completely to be safe with legacy schema
+    const UPDATED_AT = 'updated_at'; 
+
+    /**
+     * Relationship: Setor Tunai (Transaction)
+     */
+    public function setor()
+    {
+        return $this->hasOne(\App\Models\Transaction::class, 'token', 'kode');
+    }
+
+    /**
+     * Relationship: Tarik Tunai (Withdrawal)
+     */
+    public function tarik()
+    {
+        return $this->hasOne(\App\Models\Withdrawal::class, 'token', 'kode');
+    }
+
+    /**
+     * Relationship: Transfer Only (Online)
+     */
+    public function transfer()
+    {
+        return $this->hasOne(\App\Models\Transfer::class, 'token', 'kode');
+    }
+
+    /**
+     * Accessor untuk mendapatkan data transaksi terkait.
+     * Menggunakan logika prefix pada kolom 'kode'.
+     * 
+     * Usage: $queue->transaction
+     */
+    public function getTransactionAttribute()
+    {
+        if (!$this->kode) return null;
+
+        if (str_starts_with($this->kode, 'ST-')) {
+            return \App\Models\Transaction::where('token', $this->kode)->first();
+        } elseif (str_starts_with($this->kode, 'TT-')) {
+            return \App\Models\Withdrawal::where('token', $this->kode)->first();
+        } elseif (str_starts_with($this->kode, 'ON-')) {
+            return \App\Models\Transfer::where('token', $this->kode)->first();
+        }
+
+        return null;
+    }
+
+    /**
+     * Accessor untuk mendapatkan jenis transaksi dalam teks.
+     */
+    public function getTxTypeAttribute()
+    {
+        if (!$this->kode) return 'General';
+
+        if (str_starts_with($this->kode, 'ST-')) return 'Setor Tunai';
+        if (str_starts_with($this->kode, 'TT-')) return 'Tarik Tunai';
+        if (str_starts_with($this->kode, 'ON-')) return 'Transfer';
+
+        return 'Layanan CS';
+    }
 }

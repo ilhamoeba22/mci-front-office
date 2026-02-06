@@ -98,7 +98,7 @@ S9Pkm+qgWGP/S1ycCiJBNg==
         // 3. Request Curl Native (Copy-Paste Legacy Logic)
         $curl = \curl_init();
         \curl_setopt_array($curl, array(
-            CURLOPT_URL => $this->baseUrl . '/api/v1/token',
+            CURLOPT_URL => $this->baseUrl . '/mci-api/api/v1/token',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -113,7 +113,8 @@ S9Pkm+qgWGP/S1ycCiJBNg==
               'X-SIGNATURE: '.$signature,
               'X-TIMESTAMP: '.$timestamp,
               'X-CLIENT-KEY: '.$this->clientId,
-              'Content-Type: text/plain'
+              'Content-Type: text/plain',
+              'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
             ),
             CURLOPT_SSL_VERIFYPEER => false, // Disable SSL for local dev
             CURLOPT_SSL_VERIFYHOST => false
@@ -187,7 +188,8 @@ S9Pkm+qgWGP/S1ycCiJBNg==
             'X-PARTNER-ID: '.$this->partnerId,
             'X-EXTERNAL-ID: '.$uuid,
             'Authorization: Bearer '.$token,
-            'Content-Type: application/json'
+            'Content-Type: application/json',
+            'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
           ),
           CURLOPT_SSL_VERIFYPEER => false,
           CURLOPT_SSL_VERIFYHOST => false
@@ -195,13 +197,20 @@ S9Pkm+qgWGP/S1ycCiJBNg==
 
         $response = \curl_exec($curl);
         $err = \curl_error($curl);
+        $httpCode = \curl_getinfo($curl, CURLINFO_HTTP_CODE);
         \curl_close($curl);
 
         if ($err) {
              Log::error('CoreBankingService: Curl Balance Error: ' . $err);
              return ['status' => 'error', 'message' => 'Kesalahan koneksi'];
         }
+
+        $data = \json_decode($response, true);
+        if (!$data) {
+            Log::error('CoreBankingService: Balance Parse Error (Not JSON)', ['code' => $httpCode, 'response' => $response]);
+            return ['status' => 'error', 'message' => 'Respon API tidak valid'];
+        }
         
-        return \json_decode($response, true);
+        return $data;
     }
 }

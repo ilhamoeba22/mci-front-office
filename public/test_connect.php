@@ -1,6 +1,4 @@
 <?php
-// Standalone Test Script for MCI API Connection
-
 $baseUrl = 'https://bprs-mci.mitrasoft.com';
 $clientId = 'C724DE98-99FA-501F-A928-0CFFD158E498';
 // Private Key from coba_sign.php

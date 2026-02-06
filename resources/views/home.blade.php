@@ -32,18 +32,6 @@
         </button>
     </form>
 
-    <!-- 2. Antrian Teller -->
-    <form action="{{ route('queue.store') }}" method="POST" style="display: contents;">
-        @csrf
-        <input type="hidden" name="jenis" value="Teller">
-        <button type="submit" class="luxury-card accent-teller">
-            <div class="icon-wrapper">
-                <i class="fa-solid fa-money-bill-wave card-icon"></i>
-            </div>
-            <div class="card-title">Teller</div>
-            <div class="card-desc">Setor Tunai, Tarik Tunai & Pembayaran</div>
-        </button>
-    </form>
 
     <!-- 3. Setor Tunai -->
     <a href="{{ route('transaction.deposit.create') }}" class="luxury-card accent-deposit">

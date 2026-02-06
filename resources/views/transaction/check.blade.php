@@ -28,7 +28,7 @@
         <p style="color: var(--text-muted);">Masukkan nomor rekening nasabah</p>
     </div>
 
-    <form action="{{ route('transaction.check') }}" method="POST">
+    <form action="{{ route('transaction.check') }}" method="POST" hx-boost="false">
         @csrf
         @if($errors->any())
         <div style="background: #fee2e2; border: 1px solid #fecaca; color: #ef4444; padding: 15px; border-radius: 12px; margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
