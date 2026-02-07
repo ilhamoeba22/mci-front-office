@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tbl_antrian', function (Blueprint $table) {
-            $table->timestamp('waktu_panggil')->nullable();
+            if (!Schema::hasColumn('tbl_antrian', 'updated_at')) {
+                $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
+            }
         });
     }
 
@@ -22,7 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('tbl_antrian', function (Blueprint $table) {
-            $table->dropColumn('waktu_panggil');
+            $table->dropColumn('updated_at');
         });
     }
 };

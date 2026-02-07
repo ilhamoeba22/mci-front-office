@@ -1,61 +1,60 @@
 <template>
     <div>
         <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
-            <h2 class="text-2xl font-bold text-white">
-                Riwayat Antrian <span class="text-blue-400">{{ type }}</span>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white transition-colors">
+                Riwayat Antrian <span class="text-blue-600 dark:text-blue-400">{{ type }}</span>
             </h2>
             <div class="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
-                 <select v-if="type === 'Teller'" v-model="filters.tx_type" class="bg-slate-700 text-white px-4 py-2 rounded-lg border border-slate-600 focus:outline-none focus:border-blue-500 text-sm">
+                 <select v-if="type === 'Teller'" v-model="filters.tx_type" class="bg-white dark:bg-slate-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 focus:outline-none focus:border-blue-500 text-sm transition-colors">
                     <option value="">Semua Transaksi</option>
                     <option value="Setor Tunai">Setor Tunai</option>
                     <option value="Tarik Tunai">Tarik Tunai</option>
                     <option value="Transfer">Transfer</option>
                  </select>
-                 <input v-model="filters.date" type="date" class="bg-slate-700 text-white px-4 py-2 rounded-lg border border-slate-600 focus:outline-none focus:border-blue-500 text-sm">
-                 <input v-model="filters.search" type="text" placeholder="Cari nama/antrian..." class="bg-slate-700 text-white px-4 py-2 rounded-lg border border-slate-600 focus:outline-none focus:border-blue-500 text-sm">
-                <!-- Auto-filter active, button removed -->
+                 <input v-model="filters.date" type="date" class="bg-white dark:bg-slate-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 focus:outline-none focus:border-blue-500 text-sm transition-colors">
+                 <input v-model="filters.search" type="text" placeholder="Cari nama/antrian..." class="bg-white dark:bg-slate-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 focus:outline-none focus:border-blue-500 text-sm transition-colors">
             </div>
         </div>
 
         <!-- Summary Cards (Compact) -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center justify-between shadow-lg">
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 flex items-center justify-between shadow-sm dark:shadow-lg transition-colors">
                 <div>
-                    <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Total Antrian</span>
-                    <p class="text-2xl font-black text-white">{{ pagination.total || 0 }}</p>
+                    <span class="text-gray-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">Total Antrian</span>
+                    <p class="text-2xl font-black text-gray-800 dark:text-white transition-colors">{{ pagination.total || 0 }}</p>
                 </div>
-                <div class="bg-blue-500/10 p-2.5 rounded-lg text-blue-400"><i class="fa-solid fa-list-ol text-lg"></i></div>
+                <div class="bg-blue-500/10 p-2.5 rounded-lg text-blue-500 dark:text-blue-400"><i class="fa-solid fa-list-ol text-lg"></i></div>
             </div>
-             <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center justify-between shadow-lg">
+             <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 flex items-center justify-between shadow-sm dark:shadow-lg transition-colors">
                 <div>
-                    <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Selesai</span>
-                    <p class="text-2xl font-black text-emerald-400">{{ stats.completed }}</p>
+                    <span class="text-gray-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">Selesai</span>
+                    <p class="text-2xl font-black text-emerald-600 dark:text-emerald-400 transition-colors">{{ stats.completed }}</p>
                 </div>
-                <div class="bg-emerald-500/10 p-2.5 rounded-lg text-emerald-400"><i class="fa-solid fa-check-circle text-lg"></i></div>
+                <div class="bg-emerald-500/10 p-2.5 rounded-lg text-emerald-600 dark:text-emerald-400"><i class="fa-solid fa-check-circle text-lg"></i></div>
             </div>
-             <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center justify-between shadow-lg">
+             <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 flex items-center justify-between shadow-sm dark:shadow-lg transition-colors">
                 <div>
-                    <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Dilewati</span>
-                    <p class="text-2xl font-black text-rose-400">{{ stats.skipped }}</p>
+                    <span class="text-gray-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">Dilewati</span>
+                    <p class="text-2xl font-black text-rose-600 dark:text-rose-400 transition-colors">{{ stats.skipped }}</p>
                 </div>
-                <div class="bg-rose-500/10 p-2.5 rounded-lg text-rose-400"><i class="fa-solid fa-ban text-lg"></i></div>
+                <div class="bg-rose-500/10 p-2.5 rounded-lg text-rose-600 dark:text-rose-400"><i class="fa-solid fa-ban text-lg"></i></div>
             </div>
-            <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center justify-between shadow-lg">
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 flex items-center justify-between shadow-sm dark:shadow-lg transition-colors">
                 <div>
-                    <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Export</span>
-                    <button @click="downloadExcel" class="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1.5 rounded mt-1 transition-colors border border-slate-600">
+                    <span class="text-gray-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">Export</span>
+                    <button @click="downloadExcel" class="text-xs bg-gray-100 hover:bg-gray-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-gray-700 dark:text-white px-3 py-1.5 rounded mt-1 transition-colors border border-gray-300 dark:border-slate-600">
                          <i class="fa-solid fa-file-excel mr-1"></i> Excel
                     </button>
                 </div>
-                <div class="bg-slate-700/50 p-2.5 rounded-lg text-slate-400"><i class="fa-solid fa-download text-lg"></i></div>
+                <div class="bg-slate-100 dark:bg-slate-700/50 p-2.5 rounded-lg text-gray-500 dark:text-slate-400"><i class="fa-solid fa-download text-lg"></i></div>
             </div>
         </div>
 
         <!-- Modern Table -->
-        <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow-2xl relative">
+        <div class="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm dark:shadow-2xl relative transition-colors">
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm text-slate-400">
-                    <thead class="bg-slate-900/80 text-slate-300 uppercase text-[10px] font-bold tracking-wider backdrop-blur-sm sticky top-0 z-10">
+                <table class="w-full text-left text-sm text-gray-600 dark:text-slate-400">
+                    <thead class="bg-gray-50 dark:bg-slate-900/80 text-gray-500 dark:text-slate-300 uppercase text-[10px] font-bold tracking-wider backdrop-blur-sm sticky top-0 z-10 border-b border-gray-200 dark:border-slate-700">
                         <tr>
                             <th class="px-6 py-4">No. Antrian</th>
                             <th class="px-6 py-4">Waktu</th>
@@ -66,39 +65,38 @@
                             <th class="px-6 py-4 text-center">Aksi</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-700/50 text-xs sm:text-sm">
+                    <tbody class="divide-y divide-gray-200 dark:divide-slate-700/50 text-xs sm:text-sm">
                         <tr v-if="loading">
                             <td colspan="7" class="px-6 py-12 text-center">
                                 <i class="fa-solid fa-circle-notch fa-spin text-3xl text-blue-500 mb-3"></i>
-                                <p class="text-slate-500 animate-pulse">Memuat data...</p>
+                                <p class="text-gray-500 dark:text-slate-500 animate-pulse">Memuat data...</p>
                             </td>
                         </tr>
                         <tr v-else-if="queues.length === 0">
-                            <td colspan="7" class="px-6 py-12 text-center italic text-slate-500">
+                            <td colspan="7" class="px-6 py-12 text-center italic text-gray-500 dark:text-slate-500">
                                 <i class="fa-regular fa-folder-open text-4xl mb-2 opacity-50"></i>
                                 <p>Tidak ada data antrian ditemukan.</p>
                             </td>
                         </tr>
-                        <tr v-else v-for="q in queues" :key="q.id_antrian" class="hover:bg-slate-700/30 transition-all duration-150 group">
+                        <tr v-else v-for="q in queues" :key="q.id_antrian" class="hover:bg-gray-50 dark:hover:bg-slate-700/30 transition-all duration-150 group">
                             <!-- No Antrian -->
                             <td class="px-6 py-4">
-                                <span class="font-black text-white text-lg tracking-tight group-hover:text-blue-400 transition-colors">{{ q.antrian }}</span>
+                                <span class="font-black text-gray-800 dark:text-white text-lg tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{{ q.antrian }}</span>
                             </td>
                             
                             <!-- Waktu -->
                             <td class="px-6 py-4">
                                 <div class="flex flex-col">
-                                    <span class="text-slate-300 font-medium">{{ formatDate(q.tgl_antri) }}</span>
-                                    <span class="text-[10px] text-slate-500 font-mono">{{ formatTime(q.updated_at) }}</span>
+                                    <span class="text-gray-700 dark:text-slate-300 font-medium">{{ formatDate(q.tgl_antri) }}</span>
+                                    <span class="text-[10px] text-gray-500 dark:text-slate-500 font-mono">{{ formatTime(q.updated_at) }}</span>
                                 </div>
                             </td>
                             
                             <!-- Nasabah -->
                             <td class="px-6 py-4">
                                 <div class="flex flex-col max-w-[150px]">
-                                    <!-- FIX: Fallback to transaction name if queue.nama is empty -->
-                                    <span class="text-white font-bold truncate">{{ q.nama || (q.transaction ? q.transaction.nama : '-') }}</span>
-                                    <span class="text-[10px] text-slate-500 font-mono truncate">{{ q.no_kontak || '' }}</span>
+                                    <span class="text-gray-800 dark:text-white font-bold truncate">{{ q.nama || (q.transaction ? q.transaction.nama : '-') }}</span>
+                                    <span class="text-[10px] text-gray-500 dark:text-slate-500 font-mono truncate">{{ q.no_kontak || '' }}</span>
                                 </div>
                             </td>
                             
@@ -119,25 +117,25 @@
                                             'fa-headset': q.tx_type === 'Layanan CS'
                                         }"></i>
                                     </div>
-                                    <span class="text-slate-300 font-medium text-xs">{{ q.tx_type }}</span>
+                                    <span class="text-gray-700 dark:text-slate-300 font-medium text-xs">{{ q.tx_type }}</span>
                                 </div>
-                                <span v-else class="text-slate-500 italic">-</span>
+                                <span v-else class="text-gray-500 dark:text-slate-500 italic">-</span>
                             </td>
                             
                             <!-- Nominal (Right Aligned) -->
                             <td class="px-6 py-4 text-right">
-                                <span v-if="q.transaction?.nominal" class="font-mono font-bold text-slate-200">
+                                <span v-if="q.transaction?.nominal" class="font-mono font-bold text-gray-700 dark:text-slate-200">
                                     Rp {{ Number(q.transaction.nominal).toLocaleString('id-ID') }}
                                 </span>
-                                <span v-else class="text-slate-600 text-xs">-</span>
+                                <span v-else class="text-gray-500 dark:text-slate-600 text-xs">-</span>
                             </td>
                             
                             <!-- Status -->
                             <td class="px-6 py-4 text-center">
-                                <span v-if="q.st_antrian == 3" class="inline-flex items-center gap-1.5 text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full text-[10px] font-bold border border-emerald-500/20 uppercase tracking-wide">
+                                <span v-if="q.st_antrian == 3" class="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-500/10 px-2.5 py-1 rounded-full text-[10px] font-bold border border-emerald-200 dark:border-emerald-500/20 uppercase tracking-wide">
                                     <i class="fa-solid fa-check"></i> Selesai
                                 </span>
-                                <span v-else class="inline-flex items-center gap-1.5 text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded-full text-[10px] font-bold border border-rose-500/20 uppercase tracking-wide">
+                                <span v-else class="inline-flex items-center gap-1.5 text-rose-600 dark:text-rose-400 bg-rose-100 dark:bg-rose-500/10 px-2.5 py-1 rounded-full text-[10px] font-bold border border-rose-200 dark:border-rose-500/20 uppercase tracking-wide">
                                      <i class="fa-solid fa-forward"></i> Dilewati
                                 </span>
                             </td>
@@ -148,7 +146,7 @@
                                     <button @click="detailQueue(q)" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg shadow-blue-500/20 transition-all flex items-center gap-1.5 transform hover:scale-105">
                                         Detail
                                     </button>
-                                    <button @click="printReceipt(q)" class="bg-slate-700 hover:bg-slate-600 text-slate-200 hover:text-white px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-600/50 transition-all flex items-center gap-1.5">
+                                    <button @click="printReceipt(q)" class="bg-gray-100 hover:bg-gray-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-gray-600 dark:text-slate-200 hover:text-gray-900 dark:hover:text-white px-3 py-1.5 rounded-lg text-xs font-bold border border-gray-300 dark:border-slate-600/50 transition-all flex items-center gap-1.5">
                                         <i class="fa-solid fa-print"></i>
                                     </button>
                                 </div>
@@ -159,21 +157,21 @@
             </div>
 
             <!-- Pagination Controls -->
-            <div class="px-6 py-4 bg-slate-900/50 border-t border-slate-700 flex justify-between items-center" v-if="pagination.total > 0">
-                <span class="text-xs text-slate-500 font-mono">
+            <div class="px-6 py-4 bg-gray-50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-slate-700 flex justify-between items-center" v-if="pagination.total > 0">
+                <span class="text-xs text-gray-500 dark:text-slate-500 font-mono">
                     Show <b>{{ pagination.from }}-{{ pagination.to }}</b> of <b>{{ pagination.total }}</b>
                 </span>
                 <div class="flex gap-2">
                     <button 
                         @click="changePage(pagination.current_page - 1)" 
                         :disabled="!pagination.prev_page_url"
-                        class="px-4 py-1.5 text-xs font-bold rounded-lg bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700 hover:text-white hover:border-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all">
+                        class="px-4 py-1.5 text-xs font-bold rounded-lg bg-white dark:bg-slate-800 text-gray-700 dark:text-slate-300 border border-gray-300 dark:border-slate-700 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white hover:border-gray-400 dark:hover:border-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all">
                         <i class="fa-solid fa-chevron-left mr-1"></i> Prev
                     </button>
                      <button 
                         @click="changePage(pagination.current_page + 1)" 
                         :disabled="!pagination.next_page_url"
-                        class="px-4 py-1.5 text-xs font-bold rounded-lg bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700 hover:text-white hover:border-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all">
+                        class="px-4 py-1.5 text-xs font-bold rounded-lg bg-white dark:bg-slate-800 text-gray-700 dark:text-slate-300 border border-gray-300 dark:border-slate-700 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white hover:border-gray-400 dark:hover:border-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all">
                         Next <i class="fa-solid fa-chevron-right ml-1"></i> 
                     </button>
                 </div>

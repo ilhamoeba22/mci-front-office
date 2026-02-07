@@ -31,6 +31,7 @@ class Withdrawal extends Model
         'hp_penarik',
         'noid_penarik',
         'alamat_penarik',
+        'created',
     ];
 
     const CREATED_AT = 'created';

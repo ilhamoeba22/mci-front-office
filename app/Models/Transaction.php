@@ -24,19 +24,20 @@ class Transaction extends Model
      * @var array
      */
     protected $fillable = [
-        'token',            // Token unik transaksi
-        'nama',             // Nama pemilik rekening
-        'no_rek',           // Nomor rekening tujuan
-        'tgl',              // Tanggal transaksi
-        'nominal',          // Jumlah nominal (angka)
-        'terbilang',        // Jumlah nominal (teks)
-        'jenis_rekening',   // Tabungan, Deposito, dll
-        'berita',           // Keterangan tambahan
-        'tujuan',           // Tujuan transaksi
-        'nama_penyetor',    // Nama penyetor
-        'hp_penyetor',      // Nomor HP penyetor
-        'noid_penyetor',    // Nomor identitas penyetor (KTP)
-        'alamat_penyetor',  // Alamat penyetor
+        'token', // Token unik transaksi
+        'nama', // Nama pemilik rekening
+        'no_rek', // Nomor rekening tujuan
+        'tgl', // Tanggal transaksi
+        'nominal', // Jumlah nominal (angka)
+        'terbilang', // Jumlah nominal (teks)
+        'jenis_rekening', // Tabungan, Deposito, dll
+        'berita', // Keterangan tambahan
+        'tujuan', // Tujuan transaksi
+        'nama_penyetor', // Nama penyetor
+        'hp_penyetor', // Nomor HP penyetor
+        'noid_penyetor', // Nomor identitas penyetor (KTP)
+        'alamat_penyetor', // Alamat penyetor
+        'created', // Timestamp creation
     ];
 
     const CREATED_AT = 'created';

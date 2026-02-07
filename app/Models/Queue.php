@@ -17,7 +17,7 @@ class Queue extends Model
 
     protected $table = 'tbl_antrian';
     protected $primaryKey = 'id_antrian';
-    
+
     // Ensure transaction details are sent to JSON
     protected $appends = ['transaction', 'tx_type'];
 
@@ -29,10 +29,10 @@ class Queue extends Model
     protected $fillable = [
         'tgl_antri',
         'nama_antrian',
-        'type',         // Tipe antrian: 'CS' atau 'Teller'
-        'antrian',      // Nomor antrian string (Contoh: CS-01)
-        'kode',         // Token unik
-        'st_antrian',   // Status antrian (0=Menunggu, 1=Dipanggil, dst)
+        'type', // Tipe antrian: 'CS' atau 'Teller'
+        'antrian', // Nomor antrian string (Contoh: CS-01)
+        'kode', // Token unik
+        'st_antrian', // Status antrian (0=Menunggu, 1=Dipanggil, dst)
         'tujuan_datang',
         'solusi',
         'nama',
@@ -45,14 +45,14 @@ class Queue extends Model
      * Menggunakan 'created' sebagai pengganti created_at default jika diperlukan.
      */
     const CREATED_AT = 'created';
-    const UPDATED_AT = 'updated_at'; 
+    const UPDATED_AT = 'updated_at';
 
     /**
      * Relationship: Setor Tunai (Transaction)
      */
     public function setor()
     {
-        return $this->hasOne(\App\Models\Transaction::class, 'token', 'kode');
+        return $this->hasOne(\App\Models\Transaction::class , 'token', 'kode');
     }
 
     /**
@@ -60,7 +60,7 @@ class Queue extends Model
      */
     public function tarik()
     {
-        return $this->hasOne(\App\Models\Withdrawal::class, 'token', 'kode');
+        return $this->hasOne(\App\Models\Withdrawal::class , 'token', 'kode');
     }
 
     /**
@@ -68,7 +68,7 @@ class Queue extends Model
      */
     public function transfer()
     {
-        return $this->hasOne(\App\Models\Transfer::class, 'token', 'kode');
+        return $this->hasOne(\App\Models\Transfer::class , 'token', 'kode');
     }
 
     /**
@@ -79,13 +79,16 @@ class Queue extends Model
      */
     public function getTransactionAttribute()
     {
-        if (!$this->kode) return null;
+        if (!$this->kode)
+            return null;
 
         if (str_starts_with($this->kode, 'ST-')) {
             return \App\Models\Transaction::where('token', $this->kode)->first();
-        } elseif (str_starts_with($this->kode, 'TT-')) {
+        }
+        elseif (str_starts_with($this->kode, 'TT-')) {
             return \App\Models\Withdrawal::where('token', $this->kode)->first();
-        } elseif (str_starts_with($this->kode, 'ON-')) {
+        }
+        elseif (str_starts_with($this->kode, 'ON-')) {
             return \App\Models\Transfer::where('token', $this->kode)->first();
         }
 
@@ -97,11 +100,15 @@ class Queue extends Model
      */
     public function getTxTypeAttribute()
     {
-        if (!$this->kode) return 'General';
+        if (!$this->kode)
+            return 'General';
 
-        if (str_starts_with($this->kode, 'ST-')) return 'Setor Tunai';
-        if (str_starts_with($this->kode, 'TT-')) return 'Tarik Tunai';
-        if (str_starts_with($this->kode, 'ON-')) return 'Transfer';
+        if (str_starts_with($this->kode, 'ST-'))
+            return 'Setor Tunai';
+        if (str_starts_with($this->kode, 'TT-'))
+            return 'Tarik Tunai';
+        if (str_starts_with($this->kode, 'ON-'))
+            return 'Transfer';
 
         return 'Layanan CS';
     }

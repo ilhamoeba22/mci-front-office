@@ -20,6 +20,10 @@ class Setting extends Model
 
     protected $fillable = [
         'jenis_set', // 'Video', 'Text'
-        'value',     // Filename atau Isi Teks
+        'nama_set',
+        'value', // Filename atau Isi Teks
+        'st_set',
     ];
+
+    public $timestamps = false;
 }

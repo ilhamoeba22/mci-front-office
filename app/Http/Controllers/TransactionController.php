@@ -37,7 +37,7 @@ class TransactionController extends Controller
     {
         return view('transaction.check', ['type' => 'deposit']);
     }
-    
+
     /**
      * Menampilkan halaman awal form Tarik Tunai.
      */
@@ -62,7 +62,7 @@ class TransactionController extends Controller
     {
         $request->validate([
             'no_rek' => 'required|numeric',
-            'type'   => 'required|in:deposit,withdrawal,transfer'
+            'type' => 'required|in:deposit,withdrawal,transfer'
         ], [
             'no_rek.required' => 'Nomor rekening wajib diisi.',
             'no_rek.numeric' => 'Nomor rekening harus berupa angka.',
@@ -72,7 +72,7 @@ class TransactionController extends Controller
 
         $noRek = $request->no_rek;
         $type = $request->type;
-        
+
         // Panggil API Core Banking untuk cek saldo dan nama
         $response = $this->coreBank->getBalance($noRek);
 
@@ -83,25 +83,28 @@ class TransactionController extends Controller
                 'nama' => $response['name'],
                 'saldo' => $response['accountInfo'][0]['availableBalance']['value'] ?? 0,
                 'minimum' => $response['accountInfo'][0]['minimalAmount']['value'] ?? 0,
-                'alamat'  => isset($response['detailAccount']) ? 
-                    ($response['detailAccount']['address'] . ', ' . 
-                     $response['detailAccount']['subdistrict'] . ', ' . 
-                     $response['detailAccount']['district'] . ', ' . 
-                     $response['detailAccount']['city']) : '-',
+                'alamat' => isset($response['detailAccount']) ? 
+                ($response['detailAccount']['address'] . ', ' .
+                $response['detailAccount']['subdistrict'] . ', ' .
+                $response['detailAccount']['district'] . ', ' .
+                $response['detailAccount']['city']) : '-',
                 'hp' => $response['detailAccount']['phoneNo'] ?? '-',
                 'noid' => $response['detailAccount']['governmentIdNo'] ?? '-',
             ];
 
             if ($type == 'deposit') {
                 return view('transaction.deposit', compact('data'));
-            } elseif ($type == 'withdrawal') {
+            }
+            elseif ($type == 'withdrawal') {
                 return view('transaction.withdrawal', compact('data'));
-            } elseif ($type == 'transfer') {
+            }
+            elseif ($type == 'transfer') {
                 // PRG Pattern: Store data in session and redirect to GET route
                 session(['transfer_data' => $data]);
                 return redirect()->route('transaction.transfer.form');
             }
-        } else {
+        }
+        else {
             // Jika Gagal
             $msg = $response['message'] ?? 'Rekening tidak ditemukan atau terjadi kesalahan API.';
             return back()->withErrors(['no_rek' => $msg])->withInput();
@@ -150,7 +153,7 @@ class TransactionController extends Controller
         try {
             // Generate Token ONCE to ensure consistency between DB and Redirect
             $today = Carbon::now()->format('Y-m-d');
-            $token = "ST-" . Carbon::now()->format('ymdHis');
+            $token = "ST-" . Carbon::now()->format('ymdHis') . rand(100, 999);
 
             DB::transaction(function () use ($request, $token, $today) {
                 // 1. Simpan Transaksi Setoran
@@ -163,7 +166,7 @@ class TransactionController extends Controller
                     'nominal' => $request->nominal,
                     'terbilang' => $request->terbilang ?? '-',
                     'jenis_rekening' => $request->jenis_rekening, // Save Category
-                    'berita' => $request->tujuan ?? '-', 
+                    'berita' => $request->tujuan ?? '-',
                     'tujuan' => $request->tujuan ?? '-',
                     'nama_penyetor' => $request->nama_penyetor,
                     'hp_penyetor' => $request->hp_penyetor,
@@ -177,7 +180,8 @@ class TransactionController extends Controller
 
             return redirect()->route('queue.show', ['token' => $token])->with('success', 'Setoran berhasil diproses.');
 
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e) {
             Log::error('Kesalahan Setor Tunai: ' . $e->getMessage());
             return back()->withErrors(['msg' => 'Terjadi kesalahan saat memproses transaksi.']);
         }
@@ -188,7 +192,7 @@ class TransactionController extends Controller
      */
     public function storeWithdrawal(Request $request)
     {
-         $request->validate([
+        $request->validate([
             'nama' => 'required',
             'no_rek' => 'required',
             'nominal' => 'required|numeric|min:10000',
@@ -203,11 +207,11 @@ class TransactionController extends Controller
         ]);
 
         try {
-             // Generate Token ONCE
-             $today = Carbon::now()->format('Y-m-d');
-             $token = "TT-" . Carbon::now()->format('ymdHis');
+            // Generate Token ONCE
+            $today = Carbon::now()->format('Y-m-d');
+            $token = "TT-" . Carbon::now()->format('ymdHis') . rand(100, 999);
 
-             DB::transaction(function () use ($request, $token, $today) {
+            DB::transaction(function () use ($request, $token, $today) {
                 // 1. Simpan Transaksi Penarikan
                 Withdrawal::create([
                     'token' => $token,
@@ -217,20 +221,21 @@ class TransactionController extends Controller
                     'nominal' => $request->nominal,
                     'terbilang' => $request->terbilang ?? '-',
                     'jenis_rekening' => $request->jenis_rekening,
-                    'tujuan' => $request->tujuan,
+                    'tujuan' => $request->tujuan ?? '-',
                     'nama_penarik' => $request->nama_penarik,
                     'hp_penarik' => $request->hp_penarik,
                     'noid_penarik' => $request->noid_penarik,
                     'alamat_penarik' => $request->alamat_penarik,
                 ]);
 
-                 // 2. Generate Antrian Teller
-                 $this->createTellerQueue($request->nama, $token, $today);
-             });
+                // 2. Generate Antrian Teller
+                $this->createTellerQueue($request->nama, $token, $today);
+            });
 
-             return redirect()->route('queue.show', ['token' => $token])->with('success', 'Penarikan berhasil diproses.');
+            return redirect()->route('queue.show', ['token' => $token])->with('success', 'Penarikan berhasil diproses.');
 
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e) {
             Log::error('Kesalahan Tarik Tunai: ' . $e->getMessage());
             return back()->withErrors(['msg' => 'Terjadi kesalahan saat memproses transaksi.']);
         }
@@ -265,9 +270,9 @@ class TransactionController extends Controller
         try {
             // Generate Token ONCE
             $today = Carbon::now()->format('Y-m-d');
-            $token = "ON-" . Carbon::now()->format('ymdHis');
+            $token = "ON-" . Carbon::now()->format('ymdHis') . rand(100, 999);
 
-             DB::transaction(function () use ($request, $token, $today) {
+            DB::transaction(function () use ($request, $token, $today) {
                 // Explode Bank Tujuan (Nama/Biaya)
                 $bankParts = explode('/', $request->bank_tujuan);
                 $bankName = $bankParts[0] ?? '-';
@@ -281,11 +286,11 @@ class TransactionController extends Controller
                     'tgl' => $request->input('tgl', $today),
                     'nominal' => $request->nominal,
                     'terbilang' => $request->terbilang ?? '-',
-                    'tujuan' => $request->tujuan,
-                    'nama_penyetor' => $request->nama_penyetor, 
+                    'tujuan' => $request->tujuan ?? '-',
+                    'nama_penyetor' => $request->nama_penyetor,
                     'hp_penyetor' => $request->hp_penyetor,
                     'alamat_penyetor' => $request->alamat_penyetor, // Standardized
-                    
+
                     'nama_tujuan' => $request->nama_tujuan,
                     'no_rek_tujuan' => $request->no_rek_tujuan,
                     'bank_tujuan' => $bankName,
@@ -295,17 +300,18 @@ class TransactionController extends Controller
                     'negara_tujuan' => $request->negara_tujuan ?? 'Indonesia', // NEW
                     'jenis_trf' => 'ONLINE',
                     'hp_penerima' => $request->hp_penerima ?? '0',
-                    'alamat_tujuan' => '-', 
-                    'kota_tujuan' => '-', 
+                    'alamat_tujuan' => '-',
+                    'kota_tujuan' => '-',
                 ]);
 
-                 // 2. Generate Antrian Teller
-                 $this->createTellerQueue($request->nama, $token, $today);
-             });
+                // 2. Generate Antrian Teller
+                $this->createTellerQueue($request->nama, $token, $today);
+            });
 
-             return redirect()->route('queue.show', ['token' => $token])->with('success', 'Transfer berhasil diproses.');
+            return redirect()->route('queue.show', ['token' => $token])->with('success', 'Transfer berhasil diproses.');
 
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e) {
             Log::error('Kesalahan Transfer: ' . $e->getMessage());
             return back()->withErrors(['msg' => 'Terjadi kesalahan saat memproses transaksi.']);
         }
@@ -317,8 +323,8 @@ class TransactionController extends Controller
     private function createTellerQueue($nama, $token, $today)
     {
         $count = Queue::where('type', 'Teller')
-                ->where('tgl_antri', $today)
-                ->count();
+            ->where('tgl_antri', $today)
+            ->count();
 
         $next = $count + 1;
         $queueNumber = "TL-" . str_pad($next, 2, '0', STR_PAD_LEFT);

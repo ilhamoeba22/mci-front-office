@@ -30,7 +30,7 @@ class CoreBankingService
         $this->partnerId = config('services.core_bank.partner_id') ?: 'F14353F6-2B07-5D4E-8D98-424801756DA1';
         $this->clientId = config('services.core_bank.client_id') ?: 'C724DE98-99FA-501F-A928-0CFFD158E498';
         $this->secret = config('services.core_bank.secret') ?: 'D3B806E4-2A67-5A2A-94D1-95773756025E';
-        
+
         $pkConfig = config('services.core_bank.private_key');
         if (empty($pkConfig)) {
             // Legacy Private Key (Hardcoded from coba_sign.php)
@@ -62,7 +62,8 @@ VRih6kYPPdMWJ7XDwOZPkFNksrVs+oGCpUxEea6IpJ0g0ItFpUI0kntIOwnL/LtY
 emXqJ1IY33acvcmi52W9V/B5jMM5sUxExAVdVWOAyF2UA5KUyWxZlinfT9QRWYEn
 S9Pkm+qgWGP/S1ycCiJBNg==
 -----END PRIVATE KEY-----";
-        } else {
+        }
+        else {
             $this->privateKey = str_replace('\n', "\n", $pkConfig);
         }
     }
@@ -80,7 +81,7 @@ S9Pkm+qgWGP/S1ycCiJBNg==
         // 1. Format Timestamp (Legacy Style: 12-hour 'h' with explicit Timezone)
         // PENTING: Set timezone ke Jakarta agar cocok dengan hardcoded +07:00
         date_default_timezone_set('Asia/Jakarta');
-        $timestamp = \date("Y-m-d").'T'.\date("h:i:s")."+07:00";
+        $timestamp = \date("Y-m-d") . 'T' . \date("h:i:s") . "+07:00";
         $stringToSign = $this->clientId . "|" . $timestamp;
 
         // 2. Tanda Tangan
@@ -88,10 +89,10 @@ S9Pkm+qgWGP/S1ycCiJBNg==
         // Legacy tidak melakukan regex replace, hanya menggunakan string apa adanya.
         // Kita hanya trim spasi ujung.
         $cleanKey = trim($this->privateKey);
-        
+
         if (!\openssl_sign($stringToSign, $binarySignature, $cleanKey, OPENSSL_ALGO_SHA256)) {
-             Log::error('CoreBankingService: OpenSSL Sign Failed');
-             return null;
+            Log::error('CoreBankingService: OpenSSL Sign Failed');
+            return null;
         }
         $signature = \base64_encode($binarySignature);
 
@@ -106,15 +107,15 @@ S9Pkm+qgWGP/S1ycCiJBNg==
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS =>'{
+            CURLOPT_POSTFIELDS => '{
           "grantType": "client_credentials"
         }',
             CURLOPT_HTTPHEADER => array(
-              'X-SIGNATURE: '.$signature,
-              'X-TIMESTAMP: '.$timestamp,
-              'X-CLIENT-KEY: '.$this->clientId,
-              'Content-Type: text/plain',
-              'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+                'X-SIGNATURE: ' . $signature,
+                'X-TIMESTAMP: ' . $timestamp,
+                'X-CLIENT-KEY: ' . $this->clientId,
+                'Content-Type: text/plain',
+                'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
             ),
             CURLOPT_SSL_VERIFYPEER => false, // Disable SSL for local dev
             CURLOPT_SSL_VERIFYHOST => false
@@ -131,11 +132,11 @@ S9Pkm+qgWGP/S1ycCiJBNg==
         }
 
         if ($httpCode >= 200 && $httpCode < 300) {
-             $data = \json_decode($response, TRUE);
-             return [
-                 'accessToken' => $data['accessToken'] ?? null,
-                 'timestamp' => $timestamp
-             ];
+            $data = \json_decode($response, TRUE);
+            return [
+                'accessToken' => $data['accessToken'] ?? null,
+                'timestamp' => $timestamp
+            ];
         }
 
         Log::error('CoreBankingService: Token Failed', ['code' => $httpCode, 'response' => $response]);
@@ -144,6 +145,33 @@ S9Pkm+qgWGP/S1ycCiJBNg==
 
     public function getBalance($accountNo)
     {
+        // --- DUMMY DATA FOR TESTING (Offline/Weekend Mode) ---
+        if ($accountNo === '1180100251') {
+            return [
+                'responseCode' => '00',
+                'responseMessage' => 'Success',
+                'accountNo' => '1180100251',
+                'name' => 'DUMMY USER',
+                'accountInfo' => [
+                    [
+                        'balanceType' => 'Balance',
+                        'availableBalance' => ['value' => 5000000.00, 'currency' => 'IDR'],
+                        'ledgerBalance' => ['value' => 5000000.00, 'currency' => 'IDR'],
+                        'minimalAmount' => ['value' => 50000.00, 'currency' => 'IDR'],
+                    ]
+                ],
+                'detailAccount' => [
+                    'address' => 'Jl. Uji Coba No. 123',
+                    'subdistrict' => 'Kecamatan Test',
+                    'district' => 'Kabupaten Test',
+                    'city' => 'Kota Test',
+                    'phoneNo' => '08123456789',
+                    'governmentIdNo' => '3500000000000001'
+                ]
+            ];
+        }
+        // -----------------------------------------------------
+
         // 1. Dapatkan Token
         $tokenData = $this->getToken();
         if (!$tokenData || empty($tokenData['accessToken'])) {
@@ -155,15 +183,15 @@ S9Pkm+qgWGP/S1ycCiJBNg==
         $uuid = Str::uuid()->toString();
         // Legacy: match timestamp format exact
         date_default_timezone_set('Asia/Jakarta');
-        $timestamp = \date("Y-m-d").'T'.\date("h:i:s")."+07:00";
-        
+        $timestamp = \date("Y-m-d") . 'T' . \date("h:i:s") . "+07:00";
+
         $body = '{
-    "partnerReferenceNo" : "rrn_'.$uuid.'",
-    "accountNo" : "'.$accountNo.'",
+    "partnerReferenceNo" : "rrn_' . $uuid . '",
+    "accountNo" : "' . $accountNo . '",
     "balanceTypes" : ["Balance"],
     "detail": true
 }';
-        
+
         $hexBody = \hash('sha256', $body);
         $relativeUrl = '/mci-api/open-api/v1/account/balance-inquiry';
         // HMAC Sign
@@ -173,26 +201,26 @@ S9Pkm+qgWGP/S1ycCiJBNg==
         // 3. Request Curl Native
         $curl = \curl_init();
         \curl_setopt_array($curl, array(
-          CURLOPT_URL => $this->baseUrl . $relativeUrl,
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => '',
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 30,
-          CURLOPT_FOLLOWLOCATION => true,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => 'POST',
-          CURLOPT_POSTFIELDS => $body,
-          CURLOPT_HTTPHEADER => array(
-            'X-TIMESTAMP: '.$timestamp,
-            'X-SIGNATURE: '.$signature,
-            'X-PARTNER-ID: '.$this->partnerId,
-            'X-EXTERNAL-ID: '.$uuid,
-            'Authorization: Bearer '.$token,
-            'Content-Type: application/json',
-            'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
-          ),
-          CURLOPT_SSL_VERIFYPEER => false,
-          CURLOPT_SSL_VERIFYHOST => false
+            CURLOPT_URL => $this->baseUrl . $relativeUrl,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => $body,
+            CURLOPT_HTTPHEADER => array(
+                'X-TIMESTAMP: ' . $timestamp,
+                'X-SIGNATURE: ' . $signature,
+                'X-PARTNER-ID: ' . $this->partnerId,
+                'X-EXTERNAL-ID: ' . $uuid,
+                'Authorization: Bearer ' . $token,
+                'Content-Type: application/json',
+                'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+            ),
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false
         ));
 
         $response = \curl_exec($curl);
@@ -201,8 +229,8 @@ S9Pkm+qgWGP/S1ycCiJBNg==
         \curl_close($curl);
 
         if ($err) {
-             Log::error('CoreBankingService: Curl Balance Error: ' . $err);
-             return ['status' => 'error', 'message' => 'Kesalahan koneksi'];
+            Log::error('CoreBankingService: Curl Balance Error: ' . $err);
+            return ['status' => 'error', 'message' => 'Kesalahan koneksi'];
         }
 
         $data = \json_decode($response, true);
@@ -210,7 +238,7 @@ S9Pkm+qgWGP/S1ycCiJBNg==
             Log::error('CoreBankingService: Balance Parse Error (Not JSON)', ['code' => $httpCode, 'response' => $response]);
             return ['status' => 'error', 'message' => 'Respon API tidak valid'];
         }
-        
+
         return $data;
     }
 }

@@ -21,16 +21,16 @@ class Transfer extends Model
 
     protected $fillable = [
         'token',
-        'nama',           // Pengirim
-        'no_rek',         // Pengirim
+        'nama', // Pengirim
+        'no_rek', // Pengirim
         'tgl',
         'nominal',
         'terbilang',
         'tujuan',
-        'nama_penyetor',  // Penyetor (bisa sama dengan pengirim)
+        'nama_penyetor', // Penyetor (bisa sama dengan pengirim)
         'hp_penyetor',
         'alamat_penyetor', // Standardized from alamat_
-        
+
         // Penerima
         'nama_tujuan',
         'no_rek_tujuan',
@@ -40,8 +40,9 @@ class Transfer extends Model
         'alamat_tujuan',
         'kota_tujuan',
         'biaya_trf',
-        'jenis_trf',     // ONLINE, SKN, RTGS
+        'jenis_trf', // ONLINE, SKN, RTGS
         'hp_penerima',
+        'created',
     ];
 
     const CREATED_AT = 'created';

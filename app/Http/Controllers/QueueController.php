@@ -25,14 +25,14 @@ class QueueController extends Controller
         // Logika meniru sistem lama (cskeun.php):
         // 1. Hitung jumlah antrian hari ini berdasarkan tipe
         $count = Queue::where('type', $type)
-                      ->where('tgl_antri', $today)
-                      ->count();
-        
+            ->where('tgl_antri', $today)
+            ->count();
+
         $next = $count + 1;
         // Prefix kodifikasi: CS-XX atau TL-XX
         $prefix = ($type == 'CS') ? 'CS-' : 'TL-';
         $queueNumber = $prefix . str_pad($next, 2, '0', STR_PAD_LEFT);
-        
+
         // Generate Token Unik untuk URL
         $token = $prefix . Carbon::now()->format('ymdHis');
 
@@ -46,8 +46,10 @@ class QueueController extends Controller
                 'kode' => $token,
                 'st_antrian' => '0' // Status awal 0 (Belum dipanggil)
             ]);
-        } catch (\Exception $e) {
-            dd($e->getMessage());
+        }
+        catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Queue Store Error: ' . $e->getMessage());
+            return response()->json(['error' => 'Gagal menyimpan antrian'], 500);
         }
 
         // Arahkan ke halaman cetak tiket
