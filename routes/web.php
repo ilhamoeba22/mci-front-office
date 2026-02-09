@@ -5,7 +5,7 @@ use App\Http\Controllers\QueueController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DisplayController;
-
+use App\Http\Controllers\PrintController;
 use App\Http\Controllers\AuthController;
 
 /* |-------------------------------------------------------------------------- | Web Routes (Rute Web) |-------------------------------------------------------------------------- | | Di sini Anda dapat mendaftarkan rute web untuk aplikasi Anda. | Rute-rute ini dimuat oleh RouteServiceProvider dan ditugaskan ke grup  | middleware "web". | */
@@ -113,6 +113,13 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/chart-data', [AdminController::class , 'getChartData'])->name('dashboard.chart'); // NEW
     Route::post('/settings/media', [AdminController::class , 'updateMedia'])->name('settings.media.update');
     Route::post('/settings/text', [AdminController::class , 'updateText'])->name('settings.text.update');
+
+    // High Precision Print Routes (Native Laravel)
+    Route::get('/print/transfer/{token}', [PrintController::class, 'printTransfer'])->name('print.transfer');
+    Route::get('/print/tarik/{token}', [PrintController::class, 'printTarik'])->name('print.tarik');
+    Route::get('/print/setor/{token}', [PrintController::class, 'printSetor'])->name('print.setor');
+    Route::post('/queue/update-transfer/{token}', [AdminController::class, 'updateTransfer'])->name('queue.update-transfer');
+    Route::post('/queue/update-withdrawal/{token}', [AdminController::class, 'updateWithdrawal'])->name('queue.update-withdrawal');
 
     // SPA Catch-all (MUST BE LAST in this group)
     // Allows Vue Router to handle sub-paths like /admin/queue/CS on refresh

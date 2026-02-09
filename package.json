@@ -17,6 +17,8 @@
     "dependencies": {
         "@vitejs/plugin-vue": "^6.0.4",
         "apexcharts": "^5.3.6",
+        "html2canvas": "^1.4.1",
+        "jspdf": "^4.1.0",
         "scichart": "^5.0.178",
         "sweetalert2": "^11.26.18",
         "vue": "^3.5.27",

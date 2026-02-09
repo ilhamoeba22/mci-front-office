@@ -1,0 +1,107 @@
+[11-Jun-2025 13:53:06 Asia/Jakarta] PHP Notice:  Undefined index: token in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 13
+[11-Jun-2025 13:53:06 Asia/Jakarta] PHP Notice:  Undefined index: token in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 29
+[11-Jun-2025 14:54:14 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 99
+[11-Jun-2025 14:54:14 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 100
+[11-Jun-2025 14:54:14 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 101
+[11-Jun-2025 15:05:56 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 70
+[11-Jun-2025 15:05:56 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 71
+[11-Jun-2025 15:05:56 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 72
+[11-Jun-2025 15:05:58 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 70
+[11-Jun-2025 15:05:58 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 71
+[11-Jun-2025 15:05:58 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 72
+[11-Jun-2025 15:28:45 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 98
+[11-Jun-2025 15:28:45 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 99
+[11-Jun-2025 15:28:45 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 100
+[11-Jun-2025 15:28:48 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 98
+[11-Jun-2025 15:28:48 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 99
+[11-Jun-2025 15:28:48 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 100
+[11-Jun-2025 15:28:49 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 98
+[11-Jun-2025 15:28:49 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 99
+[11-Jun-2025 15:28:49 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 100
+[11-Jun-2025 15:30:56 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 69
+[11-Jun-2025 15:30:56 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 70
+[11-Jun-2025 15:30:56 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 71
+[11-Jun-2025 15:30:57 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 69
+[11-Jun-2025 15:30:57 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 70
+[11-Jun-2025 15:30:57 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 71
+[12-Jun-2025 16:18:33 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 99
+[12-Jun-2025 16:18:33 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 100
+[12-Jun-2025 16:18:33 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 101
+[12-Jun-2025 16:18:47 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 99
+[12-Jun-2025 16:18:47 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 100
+[12-Jun-2025 16:18:47 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 101
+[12-Jun-2025 16:25:05 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 70
+[12-Jun-2025 16:25:05 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 71
+[12-Jun-2025 16:25:05 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 72
+[12-Jun-2025 16:25:09 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 70
+[12-Jun-2025 16:25:09 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 71
+[12-Jun-2025 16:25:09 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 72
+[12-Jun-2025 16:25:12 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 70
+[12-Jun-2025 16:25:12 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 71
+[12-Jun-2025 16:25:12 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 72
+[12-Jun-2025 16:26:05 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 98
+[12-Jun-2025 16:26:05 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 99
+[12-Jun-2025 16:26:05 Asia/Jakarta] PHP Notice:  Undefined index: X-CLIENT-KEY in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 100
+[13-Jun-2025 10:23:30 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 99
+[13-Jun-2025 10:23:30 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 100
+[13-Jun-2025 10:24:36 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 99
+[13-Jun-2025 10:24:36 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 100
+[13-Jun-2025 10:24:36 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 108
+[13-Jun-2025 10:27:12 Asia/Jakarta] PHP Notice:  Undefined index: X-SIGNATURE in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 99
+[13-Jun-2025 10:27:12 Asia/Jakarta] PHP Notice:  Undefined index: X-TIMESTAMP in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 100
+[13-Jun-2025 10:27:52 Asia/Jakarta] PHP Notice:  Undefined variable: sign in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 103
+[13-Jun-2025 10:58:32 Asia/Jakarta] PHP Warning:  openssl_sign(): supplied key param cannot be coerced into a private key in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 48
+[13-Jun-2025 10:58:34 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 89
+[13-Jun-2025 11:00:49 Asia/Jakarta] PHP Notice:  Undefined index: data in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 37
+[13-Jun-2025 11:00:49 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 37
+[13-Jun-2025 11:00:49 Asia/Jakarta] PHP Notice:  Undefined index: data in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 38
+[13-Jun-2025 11:00:49 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 38
+[13-Jun-2025 11:00:49 Asia/Jakarta] PHP Notice:  Undefined index: data in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 39
+[13-Jun-2025 11:00:49 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 39
+[13-Jun-2025 11:00:49 Asia/Jakarta] PHP Notice:  Undefined index: data in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 40
+[13-Jun-2025 11:00:49 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 40
+[13-Jun-2025 11:01:11 Asia/Jakarta] PHP Notice:  Undefined variable: no_ktp in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 42
+[13-Jun-2025 11:01:11 Asia/Jakarta] PHP Notice:  Undefined variable: nama in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 43
+[13-Jun-2025 11:01:11 Asia/Jakarta] PHP Notice:  Undefined variable: address in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 44
+[13-Jun-2025 11:01:11 Asia/Jakarta] PHP Notice:  Undefined variable: phone in /home/bprsmcic/public_html/mci_paperless/api/coba_getcif.php on line 45
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Undefined index: name in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 39
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Undefined index: accountInfo in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Undefined index: accountInfo in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Undefined index: accountInfo in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[16-Jun-2025 09:18:39 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Undefined index: name in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 39
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Undefined index: accountInfo in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Undefined index: accountInfo in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Undefined index: accountInfo in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[16-Jun-2025 09:18:57 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Undefined index: name in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 39
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Undefined index: accountInfo in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 40
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Undefined index: accountInfo in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 41
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Undefined index: accountInfo in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[18-Jun-2025 15:01:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 42
+[18-Jun-2025 15:14:31 Asia/Jakarta] PHP Notice:  Undefined variable: secret in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 36
+[18-Jun-2025 15:14:31 Asia/Jakarta] PHP Notice:  Undefined variable: patnerid in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 37

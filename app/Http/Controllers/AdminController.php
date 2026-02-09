@@ -654,4 +654,89 @@ class AdminController extends Controller
 
         return response()->stream($callback, 200, $headers);
     }
+
+    /**
+     * Update Transfer Details (Nominal & Fee) before print
+     */
+    public function updateTransfer(Request $request, $token)
+    {
+        $request->validate([
+            'nominal' => 'required|numeric|min:0',
+            'biaya_trf' => 'required|numeric|min:0',
+        ]);
+
+        $transfer = \App\Models\Transfer::where('token', $token)->firstOrFail();
+        
+        $transfer->nominal = $request->nominal;
+        $transfer->biaya_trf = $request->biaya_trf;
+        
+        // Auto-generate Terbilang
+        $transfer->terbilang = $this->terbilangIndo($request->nominal) . " Rupiah";
+        
+        $transfer->save();
+
+        return response()->json([
+            'message' => 'Data transfer berhasil diperbarui',
+            'data' => $transfer
+        ]);
+    }
+
+    /**
+     * Update Withdrawal Details (Nama, No ID, HP Penarik) before print
+     */
+    public function updateWithdrawal(Request $request, $token)
+    {
+        $request->validate([
+            'nama_penarik' => 'required|string|max:255',
+            'noid_penarik' => 'required|string|max:255',
+            'hp_penarik' => 'required|string|max:20',
+        ]);
+
+        $withdrawal = \App\Models\Withdrawal::where('token', $token)->firstOrFail();
+        
+        $withdrawal->nama_penarik = $request->nama_penarik;
+        $withdrawal->noid_penarik = $request->noid_penarik;
+        $withdrawal->hp_penarik = $request->hp_penarik;
+        
+        $withdrawal->save();
+
+        return response()->json([
+            'message' => 'Data penarikan berhasil diperbarui',
+            'data' => $withdrawal
+        ]);
+    }
+
+    /**
+     * Helper: Konversi Angka ke Terbilang Bahasa Indonesia
+     */
+    private function terbilangIndo($angka)
+    {
+        $angka = abs($angka);
+        $baca = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", "Sebelas");
+        $terbilang = "";
+
+        if ($angka < 12) {
+            $terbilang = " " . $baca[$angka];
+        } else if ($angka < 20) {
+            $terbilang = $this->terbilangIndo($angka - 10) . " Belas";
+        } else if ($angka < 100) {
+            $terbilang = $this->terbilangIndo(floor($angka / 10)) . " Puluh" . $this->terbilangIndo($angka % 10);
+        } else if ($angka < 200) {
+            $terbilang = " Seratus" . $this->terbilangIndo($angka - 100);
+        } else if ($angka < 1000) {
+            $terbilang = $this->terbilangIndo(floor($angka / 100)) . " Ratus" . $this->terbilangIndo($angka % 100);
+        } else if ($angka < 2000) {
+            $terbilang = " Seribu" . $this->terbilangIndo($angka - 1000);
+        } else if ($angka < 1000000) {
+            $terbilang = $this->terbilangIndo(floor($angka / 1000)) . " Ribu" . $this->terbilangIndo($angka % 1000);
+        } else if ($angka < 1000000000) {
+            $terbilang = $this->terbilangIndo(floor($angka / 1000000)) . " Juta" . $this->terbilangIndo($angka % 1000000);
+        } else if ($angka < 1000000000000) {
+            $terbilang = $this->terbilangIndo(floor($angka / 1000000000)) . " Miliar" . $this->terbilangIndo(fmod($angka, 1000000000));
+        } else if ($angka < 1000000000000000) {
+            $terbilang = $this->terbilangIndo(floor($angka / 1000000000000)) . " Triliun" . $this->terbilangIndo(fmod($angka, 1000000000000));
+        }
+
+        return trim($terbilang);
+    }
 }

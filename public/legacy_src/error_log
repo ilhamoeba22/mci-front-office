@@ -1,0 +1,1425 @@
+[18-Jun-2025 08:43:44 UTC] PHP Notice:  Undefined variable: db1 in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[18-Jun-2025 08:43:45 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[18-Jun-2025 08:48:40 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[18-Jun-2025 08:53:20 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[18-Jun-2025 08:53:20 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[18-Jun-2025 08:53:57 UTC] PHP Warning:  require(api/get_balance.php): failed to open stream: No such file or directory in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 3
+[18-Jun-2025 08:53:57 UTC] PHP Warning:  require(api/get_balance.php): failed to open stream: No such file or directory in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 3
+[18-Jun-2025 08:53:57 UTC] PHP Fatal error:  require(): Failed opening required 'api/get_balance.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 3
+[18-Jun-2025 08:55:08 UTC] PHP Warning:  include_once(api/get_balance.php): failed to open stream: No such file or directory in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 3
+[18-Jun-2025 08:55:08 UTC] PHP Warning:  include_once(): Failed opening 'api/get_balance.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 3
+[18-Jun-2025 08:55:08 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[18-Jun-2025 08:55:08 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[18-Jun-2025 08:55:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_nama() in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 7
+[18-Jun-2025 08:57:27 UTC] PHP Warning:  include_once(api/get_balance.php): failed to open stream: No such file or directory in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 3
+[18-Jun-2025 08:57:27 UTC] PHP Warning:  include_once(): Failed opening 'api/get_balance.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 3
+[18-Jun-2025 08:57:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_nama() in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 7
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Undefined variable: secret in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 35
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Undefined variable: patnerid in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 36
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 8
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 10
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[18-Jun-2025 15:59:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 8
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 10
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[18-Jun-2025 16:00:37 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:18) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 32
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 8
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 10
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 16
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[18-Jun-2025 16:01:16 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:16) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 32
+[18-Jun-2025 09:02:06 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[18-Jun-2025 09:02:06 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 9
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[18-Jun-2025 16:02:07 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 9
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[18-Jun-2025 16:02:24 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:19) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 33
+[18-Jun-2025 09:03:32 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[18-Jun-2025 09:03:32 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[18-Jun-2025 16:03:32 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Jun-2025 16:03:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Jun-2025 16:53:34 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Jun-2025 16:53:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Jun-2025 16:58:48 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[18-Jun-2025 17:01:16 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 02:42:14 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/bprsmcic/public_html/mci_paperless/online.php on line 235
+[19-Jun-2025 09:42:18 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 02:42:18 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/bprsmcic/public_html/mci_paperless/online.php on line 235
+[19-Jun-2025 09:42:23 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 09:42:37 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 09:42:42 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 09:42:54 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 02:42:58 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/bprsmcic/public_html/mci_paperless/online.php on line 235
+[19-Jun-2025 09:44:34 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 09:44:47 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 02:45:00 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/bprsmcic/public_html/mci_paperless/online.php on line 235
+[19-Jun-2025 09:45:02 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 09:45:09 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 02:45:14 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/bprsmcic/public_html/mci_paperless/online.php on line 235
+[19-Jun-2025 02:46:00 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/bprsmcic/public_html/mci_paperless/online.php on line 235
+[19-Jun-2025 02:46:26 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/bprsmcic/public_html/mci_paperless/online.php on line 235
+[19-Jun-2025 09:46:41 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 02:47:39 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/bprsmcic/public_html/mci_paperless/online.php on line 235
+[19-Jun-2025 02:47:49 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/bprsmcic/public_html/mci_paperless/online.php on line 235
+[19-Jun-2025 09:48:07 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:48:07 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 09:48:11 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:48:11 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 09:48:16 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:48:31 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:48:31 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 21
+[19-Jun-2025 09:48:46 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:48:58 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:51:40 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:53:40 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:53:58 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:54:09 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:54:24 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:56:04 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:57:50 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:58:56 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 09:59:04 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 10:05:00 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 10:06:34 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[19-Jun-2025 10:06:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[19-Jun-2025 10:06:56 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[19-Jun-2025 10:06:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[19-Jun-2025 10:10:03 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 03:12:19 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ';' or ',' in /home/bprsmcic/public_html/mci_paperless/list_tarik.php on line 103
+[19-Jun-2025 03:12:52 UTC] PHP Notice:  Undefined index: nama_penyetor in /home/bprsmcic/public_html/mci_paperless/list_tarik.php on line 103
+[19-Jun-2025 03:18:12 UTC] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/list_done.php on line 38
+[19-Jun-2025 10:34:31 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 10:52:05 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 10:52:06 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[19-Jun-2025 15:07:04 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[20-Jun-2025 09:22:46 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[20-Jun-2025 09:35:51 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[23-Jun-2025 08:59:05 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[23-Jun-2025 09:07:49 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[23-Jun-2025 10:35:59 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[23-Jun-2025 12:13:00 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[23-Jun-2025 12:13:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Jun-2025 09:31:06 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[24-Jun-2025 14:22:31 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Jun-2025 14:22:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[25-Jun-2025 08:46:59 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[25-Jun-2025 08:55:26 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[25-Jun-2025 10:44:46 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[25-Jun-2025 10:44:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[25-Jun-2025 10:44:57 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[25-Jun-2025 10:44:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Jun-2025 08:58:07 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[26-Jun-2025 10:39:54 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[30-Jun-2025 13:50:06 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[02-Jul-2025 09:43:33 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[02-Jul-2025 09:45:07 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[03-Jul-2025 08:17:26 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[03-Jul-2025 09:01:40 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[03-Jul-2025 09:14:01 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[04-Jul-2025 10:20:42 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[07-Jul-2025 08:52:52 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[07-Jul-2025 10:02:01 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[07-Jul-2025 10:02:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[07-Jul-2025 11:01:55 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[07-Jul-2025 13:32:07 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[09-Jul-2025 14:22:55 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[09-Jul-2025 14:22:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[09-Jul-2025 14:23:09 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[09-Jul-2025 14:23:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[09-Jul-2025 14:23:42 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[09-Jul-2025 14:23:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[09-Jul-2025 14:23:59 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[09-Jul-2025 14:23:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[10-Jul-2025 09:32:50 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[11-Jul-2025 02:11:53 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[14-Jul-2025 08:34:49 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[17-Jul-2025 09:46:07 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[17-Jul-2025 09:46:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[17-Jul-2025 09:46:15 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[17-Jul-2025 09:46:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[17-Jul-2025 09:46:35 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[17-Jul-2025 09:46:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[17-Jul-2025 09:47:20 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[17-Jul-2025 09:47:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Jul-2025 08:43:46 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[18-Jul-2025 14:56:50 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Jul-2025 14:56:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[23-Jul-2025 21:07:36 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[24-Jul-2025 14:24:06 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Jul-2025 14:24:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Jul-2025 08:11:23 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Jul-2025 08:11:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Jul-2025 08:12:12 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Jul-2025 08:12:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Jul-2025 08:37:27 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Jul-2025 08:37:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[29-Jul-2025 09:03:14 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[29-Jul-2025 09:03:35 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[29-Jul-2025 09:03:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[29-Jul-2025 09:03:50 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[29-Jul-2025 09:03:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[30-Jul-2025 09:22:55 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[30-Jul-2025 09:22:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[31-Jul-2025 09:01:47 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[31-Jul-2025 15:49:01 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[31-Jul-2025 15:49:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Aug-2025 14:10:51 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Aug-2025 14:10:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[11-Aug-2025 08:31:00 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[11-Aug-2025 09:11:08 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[12-Aug-2025 14:57:36 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[12-Aug-2025 14:57:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[13-Aug-2025 14:30:54 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[14-Aug-2025 08:16:24 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[15-Aug-2025 13:02:48 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Aug-2025 13:02:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Aug-2025 13:03:12 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Aug-2025 13:03:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Aug-2025 13:03:33 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Aug-2025 13:03:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Aug-2025 13:04:08 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Aug-2025 13:04:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[20-Aug-2025 14:50:46 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[20-Aug-2025 14:50:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[21-Aug-2025 13:50:51 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[26-Aug-2025 08:25:00 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 08:25:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 08:25:24 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 08:25:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 08:25:33 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 08:25:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 08:25:47 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 08:25:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 08:26:11 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 08:26:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 13:02:49 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 13:02:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 13:03:33 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Aug-2025 13:03:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:08:52 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:08:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:09:27 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:09:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:09:53 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:09:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:23:35 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:23:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:23:53 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:23:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:24:00 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:24:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:24:11 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:24:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:24:30 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:24:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:25:26 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Aug-2025 14:25:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[29-Aug-2025 10:01:18 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[29-Aug-2025 10:01:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[03-Sep-2025 07:30:28 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[03-Sep-2025 07:30:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[04-Sep-2025 10:51:06 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[04-Sep-2025 10:51:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[10-Sep-2025 11:26:33 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[10-Sep-2025 11:26:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[10-Sep-2025 11:26:44 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[10-Sep-2025 11:26:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[10-Sep-2025 19:13:59 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[11-Sep-2025 09:39:13 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[11-Sep-2025 09:39:13 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[11-Sep-2025 09:39:51 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[11-Sep-2025 09:39:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[11-Sep-2025 09:40:09 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[11-Sep-2025 09:40:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[11-Sep-2025 04:34:18 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[11-Sep-2025 04:34:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bprsmcic/public_html/mci_paperless/r_nas.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 9
+[15-Sep-2025 09:32:04 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Sep-2025 09:32:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Sep-2025 09:32:19 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Sep-2025 09:32:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Sep-2025 13:19:14 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Sep-2025 13:19:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Sep-2025 13:19:22 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Sep-2025 13:19:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[19-Sep-2025 10:23:13 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[19-Sep-2025 10:23:13 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[19-Sep-2025 13:31:33 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[19-Sep-2025 13:31:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[19-Sep-2025 13:31:44 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[19-Sep-2025 13:31:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[22-Sep-2025 01:57:18 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[22-Sep-2025 01:57:18 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[22-Sep-2025 08:57:20 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[22-Sep-2025 08:57:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[22-Sep-2025 23:17:59 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[22-Sep-2025 23:17:59 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[23-Sep-2025 06:18:00 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[23-Sep-2025 06:18:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[23-Sep-2025 15:28:14 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[23-Sep-2025 15:28:14 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[23-Sep-2025 22:28:16 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[23-Sep-2025 22:28:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[23-Sep-2025 17:04:43 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[23-Sep-2025 17:04:43 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[24-Sep-2025 00:04:45 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Sep-2025 00:04:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Sep-2025 09:54:01 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[24-Sep-2025 09:54:01 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[24-Sep-2025 16:54:02 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Sep-2025 16:54:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[25-Sep-2025 05:48:44 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[25-Sep-2025 05:48:44 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[25-Sep-2025 12:48:45 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[25-Sep-2025 12:48:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[26-Sep-2025 08:30:21 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[01-Oct-2025 08:27:58 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[01-Oct-2025 08:27:58 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[01-Oct-2025 15:27:59 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[01-Oct-2025 15:27:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[02-Oct-2025 00:58:56 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[01-Oct-2025 18:49:54 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[01-Oct-2025 18:49:54 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[02-Oct-2025 01:49:56 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[02-Oct-2025 01:49:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[01-Oct-2025 21:06:25 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[01-Oct-2025 21:06:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bprsmcic/public_html/mci_paperless/r_nas.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 9
+[06-Oct-2025 10:33:53 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[06-Oct-2025 10:33:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[06-Oct-2025 10:34:52 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[06-Oct-2025 10:34:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[07-Oct-2025 14:59:11 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[07-Oct-2025 14:59:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[08-Oct-2025 10:43:43 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 9
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 10:45:13 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:18) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 41
+[08-Oct-2025 10:45:33 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 9
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 10:47:03 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:18) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 41
+[08-Oct-2025 10:50:26 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 9
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 10:51:56 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:18) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 35
+[08-Oct-2025 11:22:18 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 11:24:22 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 11:24:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 11:24:40 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 9
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 11:25:52 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:18) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 41
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 9
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 11:26:01 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:18) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 41
+[08-Oct-2025 11:29:00 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 9
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 11:30:30 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:18) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 35
+[08-Oct-2025 04:34:12 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[08-Oct-2025 04:34:12 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[08-Oct-2025 11:35:43 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 11:41:23 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 9
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 11:42:53 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:18) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 35
+[08-Oct-2025 11:44:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 86
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 9
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 11
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 12
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 13
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 14
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 15
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 17
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 18
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 19
+[08-Oct-2025 11:45:31 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/cek_nama.php:18) in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 35
+[08-Oct-2025 07:35:04 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[08-Oct-2025 07:35:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bprsmcic/public_html/mci_paperless/r_nas.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 9
+[09-Oct-2025 09:59:44 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[12-Oct-2025 15:09:59 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[12-Oct-2025 15:09:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bprsmcic/public_html/mci_paperless/r_nas.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 9
+[15-Oct-2025 00:26:36 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Oct-2025 00:26:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Oct-2025 00:27:00 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Oct-2025 00:27:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Oct-2025 00:27:11 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Oct-2025 00:27:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Oct-2025 09:48:03 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Oct-2025 09:48:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[17-Oct-2025 02:08:39 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[17-Oct-2025 10:14:44 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[17-Oct-2025 10:14:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[20-Oct-2025 11:35:51 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[20-Oct-2025 11:36:03 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[22-Oct-2025 11:07:41 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[22-Oct-2025 11:07:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[23-Oct-2025 08:21:25 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[23-Oct-2025 08:21:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Oct-2025 09:13:43 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[24-Oct-2025 04:26:24 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[24-Oct-2025 04:26:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bprsmcic/public_html/mci_paperless/r_nas.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 9
+[30-Oct-2025 09:48:32 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[30-Oct-2025 09:48:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[02-Nov-2025 12:44:42 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[05-Nov-2025 11:49:05 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[05-Nov-2025 11:49:20 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[05-Nov-2025 13:28:39 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Nov-2025 13:28:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[10-Nov-2025 13:50:48 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[10-Nov-2025 13:53:08 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[10-Nov-2025 13:53:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[10-Nov-2025 15:19:17 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[10-Nov-2025 15:19:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[12-Nov-2025 03:47:54 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[12-Nov-2025 03:47:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bprsmcic/public_html/mci_paperless/r_nas.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 9
+[12-Nov-2025 13:07:09 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[12-Nov-2025 13:07:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[13-Nov-2025 20:19:16 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[13-Nov-2025 20:19:16 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[14-Nov-2025 03:19:19 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[14-Nov-2025 03:19:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[14-Nov-2025 13:52:39 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[14-Nov-2025 13:52:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Nov-2025 08:42:05 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[20-Nov-2025 02:03:45 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[21-Nov-2025 12:00:30 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[21-Nov-2025 12:00:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[21-Nov-2025 12:00:35 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[21-Nov-2025 12:00:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[21-Nov-2025 12:00:41 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[21-Nov-2025 12:00:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[21-Nov-2025 12:00:44 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[21-Nov-2025 12:00:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Nov-2025 10:34:24 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Nov-2025 10:34:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[27-Nov-2025 15:02:32 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[27-Nov-2025 15:02:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[27-Nov-2025 15:02:44 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[27-Nov-2025 15:02:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[27-Nov-2025 15:03:00 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[27-Nov-2025 15:03:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[27-Nov-2025 15:05:14 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[27-Nov-2025 15:05:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[28-Nov-2025 08:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[02-Dec-2025 13:41:23 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[02-Dec-2025 13:41:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[02-Dec-2025 13:42:31 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[02-Dec-2025 13:42:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[02-Dec-2025 13:42:39 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[02-Dec-2025 13:42:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Dec-2025 08:28:50 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Dec-2025 08:28:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Dec-2025 08:29:03 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Dec-2025 08:29:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Dec-2025 09:01:09 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Dec-2025 09:01:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Dec-2025 09:01:22 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Dec-2025 09:01:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[11-Dec-2025 13:56:35 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[12-Dec-2025 14:01:21 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/bprsmcic/public_html/mci_paperless/cskeun.php on line 18
+[15-Dec-2025 09:22:06 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[15-Dec-2025 09:22:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Dec-2025 09:58:06 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Dec-2025 09:58:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Dec-2025 10:40:58 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[18-Dec-2025 10:40:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[22-Dec-2025 03:08:26 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/output.php on line 36
+[22-Dec-2025 03:08:26 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/output.php on line 51
+[22-Dec-2025 03:08:26 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/output.php on line 62
+[22-Dec-2025 11:36:06 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[22-Dec-2025 11:36:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Dec-2025 09:44:50 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Dec-2025 09:44:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Dec-2025 09:45:32 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Dec-2025 09:45:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Dec-2025 09:45:40 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Dec-2025 09:45:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Dec-2025 09:46:28 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Dec-2025 09:46:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Dec-2025 09:47:04 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[24-Dec-2025 09:47:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[29-Dec-2025 02:12:31 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[29-Dec-2025 02:12:40 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[29-Dec-2025 02:12:52 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[29-Dec-2025 02:14:21 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[29-Dec-2025 02:14:32 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[29-Dec-2025 02:14:42 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[29-Dec-2025 03:08:41 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[29-Dec-2025 03:08:47 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[29-Dec-2025 03:16:32 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[29-Dec-2025 03:16:38 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[29-Dec-2025 04:00:47 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[30-Dec-2025 01:00:25 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'bprsmcic_admin'@'localhost' to database 'bprsmcic_db_lessv2' in /home/bprsmcic/public_html/mci_paperless/connection.php on line 14
+[30-Dec-2025 02:33:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ST' in 'WHERE' in /home/bprsmcic/public_html/mci_paperless/r_nas.php:8
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/r_nas.php(8): mysqli->query('select * from t...')
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 8
+[30-Dec-2025 02:33:59 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ST' in 'WHERE' in /home/bprsmcic/public_html/mci_paperless/r_nas.php:8
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/r_nas.php(8): mysqli->query('select * from t...')
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 8
+[30-Dec-2025 02:34:03 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ST' in 'WHERE' in /home/bprsmcic/public_html/mci_paperless/r_nas.php:8
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/r_nas.php(8): mysqli->query('select * from t...')
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 8
+[30-Dec-2025 02:34:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ST' in 'WHERE' in /home/bprsmcic/public_html/mci_paperless/r_nas.php:8
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/r_nas.php(8): mysqli->query('select * from t...')
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 8
+[30-Dec-2025 02:34:36 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ST' in 'WHERE' in /home/bprsmcic/public_html/mci_paperless/r_nas.php:8
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/r_nas.php(8): mysqli->query('select * from t...')
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 8
+[30-Dec-2025 02:37:17 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ST' in 'WHERE' in /home/bprsmcic/public_html/mci_paperless/r_nas.php:8
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/r_nas.php(8): mysqli->query('select * from t...')
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 8
+[30-Dec-2025 02:41:24 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'CS' in 'WHERE' in /home/bprsmcic/public_html/mci_paperless/r_nas.php:8
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/r_nas.php(8): mysqli->query('select * from t...')
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 8
+[30-Dec-2025 02:41:26 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ST' in 'WHERE' in /home/bprsmcic/public_html/mci_paperless/r_nas.php:8
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/r_nas.php(8): mysqli->query('select * from t...')
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 8
+[30-Dec-2025 14:14:01 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[30-Dec-2025 14:14:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Jan-2026 13:12:40 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[05-Jan-2026 13:12:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[06-Jan-2026 15:37:26 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[06-Jan-2026 15:37:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 47
+[09-Jan-2026 14:54:01 Asia/Jakarta] PHP Notice:  session_start(): A session had already been started - ignoring in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 28
+[09-Jan-2026 14:54:55 Asia/Jakarta] PHP Notice:  session_start(): A session had already been started - ignoring in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 28
+[09-Jan-2026 14:55:02 Asia/Jakarta] PHP Notice:  session_start(): A session had already been started - ignoring in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 28
+[09-Jan-2026 14:56:01 Asia/Jakarta] PHP Notice:  session_start(): A session had already been started - ignoring in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 28
+[09-Jan-2026 07:56:38 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:38 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function print_f() in /home/bprsmcic/public_html/mci_paperless/setor.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/setor.php on line 128
+[09-Jan-2026 07:56:42 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:42 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function print_f() in /home/bprsmcic/public_html/mci_paperless/setor.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/setor.php on line 128
+[09-Jan-2026 07:56:43 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function print_f() in /home/bprsmcic/public_html/mci_paperless/setor.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/setor.php on line 128
+[09-Jan-2026 07:56:43 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function print_f() in /home/bprsmcic/public_html/mci_paperless/setor.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/setor.php on line 128
+[09-Jan-2026 07:56:44 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:44 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function print_f() in /home/bprsmcic/public_html/mci_paperless/setor.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/setor.php on line 128
+[09-Jan-2026 07:56:46 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:46 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 127
+[09-Jan-2026 07:56:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function print_f() in /home/bprsmcic/public_html/mci_paperless/setor.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/setor.php on line 128
+[09-Jan-2026 14:57:50 Asia/Jakarta] PHP Notice:  session_start(): A session had already been started - ignoring in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 28
+[09-Jan-2026 14:58:48 Asia/Jakarta] PHP Notice:  session_start(): A session had already been started - ignoring in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 28
+[09-Jan-2026 14:59:45 Asia/Jakarta] PHP Notice:  session_start(): A session had already been started - ignoring in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 28
+[09-Jan-2026 08:01:22 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 124
+[09-Jan-2026 08:01:22 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 124
+[09-Jan-2026 08:01:53 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/setor.php on line 124
+[09-Jan-2026 08:01:53 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 125
+[09-Jan-2026 08:01:53 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 125
+[09-Jan-2026 08:01:57 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/setor.php on line 124
+[09-Jan-2026 08:01:57 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 125
+[09-Jan-2026 08:01:57 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 125
+[09-Jan-2026 08:04:34 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[09-Jan-2026 08:04:34 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[09-Jan-2026 08:04:34 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/setor.php:68) in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 4
+[09-Jan-2026 15:04:34 Asia/Jakarta] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 10
+[09-Jan-2026 15:04:35 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 15:04:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/setor.php(124): include()
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 08:04:38 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[09-Jan-2026 08:04:38 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[09-Jan-2026 08:04:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/setor.php:68) in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 4
+[09-Jan-2026 15:04:38 Asia/Jakarta] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 10
+[09-Jan-2026 15:04:38 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 15:04:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/setor.php(124): include()
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 08:05:04 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[09-Jan-2026 08:05:04 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[09-Jan-2026 08:05:04 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/setor.php:68) in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 4
+[09-Jan-2026 15:05:04 Asia/Jakarta] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 10
+[09-Jan-2026 15:05:05 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 15:05:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/setor.php(124): include()
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 08:05:07 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[09-Jan-2026 08:05:07 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[09-Jan-2026 08:05:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/setor.php:68) in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 4
+[09-Jan-2026 15:05:07 Asia/Jakarta] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 10
+[09-Jan-2026 15:05:07 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 15:05:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/setor.php(124): include()
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 08:05:09 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[09-Jan-2026 08:05:09 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[09-Jan-2026 08:05:09 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/setor.php:68) in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 4
+[09-Jan-2026 15:05:09 Asia/Jakarta] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 10
+[09-Jan-2026 15:05:09 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 15:05:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/setor.php(124): include()
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 08:05:52 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[09-Jan-2026 08:05:52 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[09-Jan-2026 08:05:52 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/setor.php:68) in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 4
+[09-Jan-2026 15:05:52 Asia/Jakarta] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 10
+[09-Jan-2026 15:05:52 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 15:05:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/setor.php(124): include()
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 08:05:55 UTC] PHP Notice:  Undefined index: cek_norek in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 4
+[09-Jan-2026 08:05:55 UTC] PHP Notice:  Undefined index: jenis in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 5
+[09-Jan-2026 08:05:55 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bprsmcic/public_html/mci_paperless/setor.php:68) in /home/bprsmcic/public_html/mci_paperless/api/coba_balance.php on line 4
+[09-Jan-2026 15:05:55 Asia/Jakarta] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/api/coba_sign.php on line 10
+[09-Jan-2026 15:05:55 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 15:05:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/setor.php(124): include()
+#1 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[09-Jan-2026 08:09:59 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/setor.php on line 124
+[09-Jan-2026 08:10:01 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/setor.php on line 124
+[09-Jan-2026 08:16:58 UTC] PHP Notice:  Undefined variable: data in /home/bprsmcic/public_html/mci_paperless/setor.php on line 125
+[09-Jan-2026 08:17:57 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/setor.php on line 125
+[09-Jan-2026 08:17:57 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 126
+[09-Jan-2026 08:17:57 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 126
+[09-Jan-2026 08:18:10 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/bprsmcic/public_html/mci_paperless/setor.php on line 125
+[09-Jan-2026 08:18:10 UTC] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setor.php on line 126
+[09-Jan-2026 08:18:10 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 126
+[09-Jan-2026 08:19:47 UTC] PHP Notice:  Undefined index: transfer_data in /home/bprsmcic/public_html/mci_paperless/setor.php on line 94
+[09-Jan-2026 08:19:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 95
+[09-Jan-2026 08:19:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 96
+[09-Jan-2026 08:19:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 97
+[09-Jan-2026 08:19:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 98
+[09-Jan-2026 08:19:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 99
+[09-Jan-2026 08:19:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 100
+[09-Jan-2026 08:19:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/bprsmcic/public_html/mci_paperless/setor.php on line 101
+[09-Jan-2026 08:20:50 UTC] PHP Notice:  Undefined variable: data in /home/bprsmcic/public_html/mci_paperless/setor.php on line 137
+[09-Jan-2026 15:27:54 Asia/Jakarta] PHP Notice:  Undefined variable: _SESSION in /home/bprsmcic/public_html/mci_paperless/setorkeun.php on line 61
+[09-Jan-2026 15:31:32 Asia/Jakarta] PHP Notice:  Undefined index: alamat_ in /home/bprsmcic/public_html/mci_paperless/online.php on line 161
+[09-Jan-2026 15:31:41 Asia/Jakarta] PHP Notice:  Undefined index: alamat_ in /home/bprsmcic/public_html/mci_paperless/online.php on line 161
+[12-Jan-2026 10:25:35 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[12-Jan-2026 10:25:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[12-Jan-2026 11:46:07 Asia/Jakarta] PHP Notice:  Undefined index: alamat_ in /home/bprsmcic/public_html/mci_paperless/online.php on line 161
+[12-Jan-2026 11:58:17 Asia/Jakarta] PHP Notice:  Undefined index: alamat_ in /home/bprsmcic/public_html/mci_paperless/online.php on line 161
+[12-Jan-2026 11:58:36 Asia/Jakarta] PHP Notice:  Undefined index: alamat_ in /home/bprsmcic/public_html/mci_paperless/online.php on line 161
+[12-Jan-2026 06:21:34 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[12-Jan-2026 06:21:34 UTC] PHP Notice:  Undefined variable: antri in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 56
+[12-Jan-2026 13:21:34 asia/jakarta] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php(1060): FPDF->Error('Some data has a...')
+#1 /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/bprsmcic/public_html/mci_paperless/r_nas.php(79): FPDF->Output()
+#3 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php on line 271
+[12-Jan-2026 06:21:40 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[12-Jan-2026 06:21:40 UTC] PHP Notice:  Undefined variable: antri in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 56
+[12-Jan-2026 13:21:40 asia/jakarta] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php(1060): FPDF->Error('Some data has a...')
+#1 /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/bprsmcic/public_html/mci_paperless/r_nas.php(79): FPDF->Output()
+#3 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php on line 271
+[12-Jan-2026 06:21:46 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[12-Jan-2026 06:21:46 UTC] PHP Notice:  Undefined variable: antri in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 56
+[12-Jan-2026 13:21:46 asia/jakarta] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php(1060): FPDF->Error('Some data has a...')
+#1 /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/bprsmcic/public_html/mci_paperless/r_nas.php(79): FPDF->Output()
+#3 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php on line 271
+[12-Jan-2026 06:21:46 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[12-Jan-2026 06:21:47 UTC] PHP Notice:  Undefined variable: antri in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 56
+[12-Jan-2026 13:21:47 asia/jakarta] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php(1060): FPDF->Error('Some data has a...')
+#1 /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/bprsmcic/public_html/mci_paperless/r_nas.php(79): FPDF->Output()
+#3 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php on line 271
+[12-Jan-2026 06:21:48 UTC] PHP Notice:  Undefined index: id in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 3
+[12-Jan-2026 06:21:48 UTC] PHP Notice:  Undefined variable: antri in /home/bprsmcic/public_html/mci_paperless/r_nas.php on line 56
+[12-Jan-2026 13:21:48 asia/jakarta] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php(1060): FPDF->Error('Some data has a...')
+#1 /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/bprsmcic/public_html/mci_paperless/r_nas.php(79): FPDF->Output()
+#3 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/assets/fpdf/fpdf.php on line 271
+[12-Jan-2026 15:39:36 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[12-Jan-2026 15:39:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[12-Jan-2026 15:40:06 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[12-Jan-2026 15:40:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[12-Jan-2026 15:44:52 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[12-Jan-2026 15:44:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[13-Jan-2026 13:44:06 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[13-Jan-2026 13:44:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[21-Jan-2026 08:54:51 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[21-Jan-2026 08:54:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[21-Jan-2026 08:55:20 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[21-Jan-2026 08:55:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[27-Jan-2026 10:45:59 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[27-Jan-2026 10:45:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[29-Jan-2026 10:07:45 Asia/Jakarta] PHP Notice:  Undefined variable: con_server in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65
+[29-Jan-2026 10:07:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bprsmcic/public_html/mci_paperless/cek_nama.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/bprsmcic/public_html/mci_paperless/cek_nama.php on line 65

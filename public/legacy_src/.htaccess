@@ -1,0 +1,5 @@
+# Blokir akses ke file .env dari publik
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
