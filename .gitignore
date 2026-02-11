@@ -24,5 +24,9 @@ Homestead.yaml
 Thumbs.db
 
 /legacy_src
+/riplay_src
 /public/test_connect.php
 /legacy_src/api/test_legacy_token.php
+
+# Seeders
+/database/seeders/TransactionSeeder.php

@@ -13,7 +13,8 @@ use App\Http\Controllers\AuthController;
 
 // Halaman Utama (Dashboard Menu)
 
-// Temprorary Migration Route
+// --- DEBUG & UTILITY ROUTES (DISABLED FOR PRODUCTION) ---
+/*
 Route::get('/migrate-db', function () {
     try {
         Artisan::call('migrate', ['--force' => true]);
@@ -24,13 +25,6 @@ Route::get('/migrate-db', function () {
     }
 });
 
-
-
-Route::get('/', function () {
-    return view('home');
-});
-
-// Emergency Schema Fix
 Route::get('/fix-schema', function () {
     try {
         $output = "Checking schema...\n";
@@ -73,6 +67,71 @@ Route::get('/fix-schema', function () {
                     return "Schema Fix Failed: " . $e->getMessage();
                 }
             });
+
+Route::get('/debug-queue/{antrian?}', function ($antrian = null) {
+    if ($antrian) {
+        $queue = \App\Models\Queue::where('antrian', $antrian)
+            ->whereDate('tgl_antri', \Carbon\Carbon::now())
+            ->orderBy('id_antrian', 'desc')
+            ->first();
+    }
+    else {
+        $queue = \App\Models\Queue::orderBy('id_antrian', 'desc')->first();
+    }
+
+    if (!$queue)
+        return 'No Queue Found for: ' . ($antrian ?? 'Latest');
+
+    $transaction = null;
+    $log = "Queue Code: " . $queue->kode . "\n";
+
+    if ($queue->kode) {
+        if (str_starts_with($queue->kode, 'ST-')) {
+            $transaction = \App\Models\Transaction::where('token', $queue->kode)->first();
+            $log .= "Type: ST (Setor Tunai)\n";
+        }
+        elseif (str_starts_with($queue->kode, 'TT-')) {
+            $transaction = \App\Models\Withdrawal::where('token', $queue->kode)->first();
+            $log .= "Type: TT (Tarik Tunai)\n";
+        }
+        elseif (str_starts_with($queue->kode, 'ON-')) {
+            $transaction = \App\Models\Transfer::where('token', $queue->kode)->first();
+            $log .= "Type: ON (Transfer Online)\n";
+        }
+    }
+
+    return [
+    'queue' => $queue,
+    'transaction' => $transaction,
+    'log' => $log
+    ];
+});
+
+Route::get('/debug-data/{id}', function ($id) {
+    try {
+        $queue = \App\Models\Queue::find($id);
+        if (!$queue)
+            return response()->json(['error' => 'Queue not found']);
+
+        // Test the Accessor
+        $transaction = $queue->transaction;
+
+        return response()->json([
+        'status' => 'ok',
+        'queue' => $queue,
+        'computed_transaction' => $transaction,
+        'raw_kode' => $queue->kode
+        ]);
+    }
+    catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
+    }
+});
+*/
+
+Route::get('/', function () {
+    return view('home');
+});
 
 // Authentication Routes
 Route::get('/login', [AuthController::class , 'showLoginForm'])->name('login');
@@ -131,63 +190,3 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 // Rute TV Display
 Route::get('/display', [DisplayController::class , 'index'])->name('display.index');
 Route::get('/api/queue-data', [DisplayController::class , 'getQueueData'])->name('api.queue.data');
-
-Route::get('/debug-queue/{antrian?}', function ($antrian = null) {
-    if ($antrian) {
-        $queue = \App\Models\Queue::where('antrian', $antrian)
-            ->whereDate('tgl_antri', \Carbon\Carbon::now())
-            ->orderBy('id_antrian', 'desc')
-            ->first();
-    }
-    else {
-        $queue = \App\Models\Queue::orderBy('id_antrian', 'desc')->first();
-    }
-
-    if (!$queue)
-        return 'No Queue Found for: ' . ($antrian ?? 'Latest');
-
-    $transaction = null;
-    $log = "Queue Code: " . $queue->kode . "\n";
-
-    if ($queue->kode) {
-        if (str_starts_with($queue->kode, 'ST-')) {
-            $transaction = \App\Models\Transaction::where('token', $queue->kode)->first();
-            $log .= "Type: ST (Setor Tunai)\n";
-        }
-        elseif (str_starts_with($queue->kode, 'TT-')) {
-            $transaction = \App\Models\Withdrawal::where('token', $queue->kode)->first();
-            $log .= "Type: TT (Tarik Tunai)\n";
-        }
-        elseif (str_starts_with($queue->kode, 'ON-')) {
-            $transaction = \App\Models\Transfer::where('token', $queue->kode)->first();
-            $log .= "Type: ON (Transfer Online)\n";
-        }
-    }
-
-    return [
-    'queue' => $queue,
-    'transaction' => $transaction,
-    'log' => $log
-    ];
-});
-// Debug Route for Data Inspection
-Route::get('/debug-data/{id}', function ($id) {
-    try {
-        $queue = \App\Models\Queue::find($id);
-        if (!$queue)
-            return response()->json(['error' => 'Queue not found']);
-
-        // Test the Accessor
-        $transaction = $queue->transaction;
-
-        return response()->json([
-        'status' => 'ok',
-        'queue' => $queue,
-        'computed_transaction' => $transaction,
-        'raw_kode' => $queue->kode
-        ]);
-    }
-    catch (\Exception $e) {
-        return response()->json(['error' => $e->getMessage()], 500);
-    }
-});
