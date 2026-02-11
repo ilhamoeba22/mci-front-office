@@ -113,66 +113,75 @@
     /* PRINT ONLY STYLES */
     /* PRINT SPECIFIC STYLES - @page must be top level */
     @page {
-        size: 80mm auto; /* Force 80mm width, auto height */
-        margin: 0mm; /* No margins from browser */
+        size: 80mm 100mm;
+        margin: 0 !important;
     }
-
+    
     @media print {
         .screen-only { display: none !important; }
         .print-only { display: block !important; }
-
+    
         html, body {
-            width: 80mm;
-            max-width: 80mm;
-            min-width: 80mm;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-            /* Ensure fonts are crisp for thermal */
-            font-family: 'Courier New', Courier, monospace;
+            width: 80mm !important;
+            height: 100mm !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background-color: white !important;
+            overflow: hidden !important;
+            font-family: 'Helvetica', 'Arial', sans-serif;
             font-weight: bold;
         }
-
+    
         .ticket-wrapper { 
-            padding: 0; 
-            width: 100%; 
-            display: block;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 80mm !important; 
+            height: 100mm !important;
+            display: block !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
         }
-
+    
         .ticket-card { 
-            width: 100%; 
-            /* 78mm allows 1mm breathing room on each side */
-            max-width: 78mm; 
-            margin: 0 auto;
-            padding: 2mm 0;
+            width: 72mm !important; /* Standard printable area for 80mm printers */
+            margin: 0 !important; /* Anchored to left */
+            padding: 0 !important; /* Anchored to top */
             text-align: center; 
-            box-shadow: none;
-            border: none;
+            box-shadow: none !important;
+            border: none !important;
+            box-sizing: border-box !important;
         }
         
-        .ticket-logo { height: 45px; margin-bottom: 2px; }
-        .company-name { font-size: 11px; }
-        .company-info { font-size: 8px; }
+        .ticket-logo { height: 35px; margin-bottom: 2px; margin-top: 2mm; }
+        .company-name { font-size: 10px; margin: 0; line-height: 1.1; }
+        .company-info { font-size: 7px; margin: 0; line-height: 1.1; }
         
-        .divider { margin: 2px 0; font-size: 9px; letter-spacing: 2px; border-bottom: 1px dashed black; height: 1px; color: transparent; overflow: hidden; }
-        /* Alternative divider using characters if image/border fails: */
-        /* .divider { font-weight: bold; margin: 3px 0; white-space: nowrap; overflow: hidden; color: #000; font-size: 8px; } */
+        .divider { 
+            margin: 2mm 0; 
+            font-size: 8px; 
+            font-weight: bold;
+            color: #000; 
+            overflow: hidden; 
+            white-space: nowrap;
+            text-align: center;
+        }
         
-        .queue-title { font-size: 10px; font-weight: 800; text-transform: uppercase; margin-top: 5px; }
-        .queue-number { font-size: 52px; font-weight: 900; margin: 0; line-height: 1.1; letter-spacing: -2px; }
+        .queue-title { font-size: 10px; font-weight: 800; text-transform: uppercase; margin-top: 1mm; }
+        .queue-number { font-size: 48px; font-weight: 900; margin: 1mm 0; line-height: 1; letter-spacing: -1px; }
         
         .service-type { 
-            padding: 3px 10px; 
-            font-size: 12px; 
-            border: 2px solid #000;
-            border-radius: 6px;
-            margin-bottom: 5px;
-            margin-top: 2px;
+            padding: 2mm 8mm; 
+            font-size: 13px; 
+            border: 1.5mm solid #000;
+            border-radius: 4px;
+            margin-bottom: 2mm;
+            margin-top: 1mm;
             display: inline-block;
         }
         
-        .queue-date { font-size: 9px; margin: 5px 0 0 0; }
-        .ticket-footer p { font-size: 9px; margin: 1px 0; }
+        .queue-date { font-size: 9px; margin: 2mm 0 0 0; line-height: 1.2; }
+        .ticket-footer p { font-size: 9px; margin: 1px 0; line-height: 1.2; }
         
         /* Force Black Text & High Contrast */
         * { color: black !important; text-shadow: none !important; box-shadow: none !important; filter: none !important; }

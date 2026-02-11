@@ -100,6 +100,11 @@
                         </label>
                     </div>
                 </div>
+
+                <!-- Insufficient Balance Warning -->
+                <div id="balance_warning" style="display: none; margin-top: 10px; background: #fee2e2; border: 1px solid #fecaca; color: #b91c1c; padding: 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">
+                    <i class="fa-solid fa-triangle-exclamation" style="margin-right: 5px;"></i> Saldo tidak mencukupi untuk melakukan penarikan!
+                </div>
             </div>
             
             <!-- Penarik Section -->
@@ -132,15 +137,17 @@
 
         <div style="margin-top: 20px; text-align: right; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 15px;">
             <a href="{{ url('/') }}" class="btn-back" style="margin: 0; font-size: 0.9rem;">&larr; Batal</a>
-            <button type="submit" class="btn-submit accent-withdrawal" style="width: auto; padding: 10px 40px; font-size: 0.95rem;">
+            <button type="submit" id="submitBtn" class="btn-submit accent-withdrawal" style="width: auto; padding: 10px 40px; font-size: 0.95rem;">
                 Proses Penarikan <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
             </button>
         </div>
     </form>
 </div>
 
-<!-- Reusing JS Helpers (Ideally moves to separate file, but kept inline for simplicity) -->
+<!-- Reusing JS Helpers -->
 <script>
+    const currentBalance = {{ (float) ($data['saldo'] ?? 0) }};
+
     function formatRupiah(input) {
         let value = input.value.replace(/[^0-9]/g, '');
         document.getElementById('nominal').value = value; 
@@ -155,6 +162,29 @@
             rupiah += separator + ribuan.join('.');
         }
         input.value = rupiah;
+        
+        validateBalance(value);
+    }
+
+    function validateBalance(nominal) {
+        const val = parseInt(nominal) || 0;
+        const submitBtn = document.getElementById('submitBtn');
+        const warning = document.getElementById('balance_warning');
+        const inputDisp = document.querySelector('input[name="nominal_display"]');
+
+        if (val > currentBalance) {
+            warning.style.display = 'block';
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.5';
+            submitBtn.style.cursor = 'not-allowed';
+            inputDisp.style.color = '#dc2626'; // Red
+        } else {
+            warning.style.display = 'none';
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.style.cursor = 'pointer';
+            inputDisp.style.color = '#ef4444'; // Original Red shade
+        }
     }
 
     function updateTerbilang(val) {
@@ -166,15 +196,29 @@
         document.getElementById('terbilang').value = terbilang(nominal) + ' Rupiah';
     }
 
-    // Client-side Validation
+    // Client-side Validation (Double check on submit)
     document.querySelector('form').addEventListener('submit', function(e) {
         let nominal = document.getElementById('nominal').value;
-        if(parseInt(nominal) < 10000) {
+        const val = parseInt(nominal) || 0;
+
+        if(val < 10000) {
             e.preventDefault();
             Swal.fire({
                 icon: 'error',
                 title: 'Nominal Kurang',
                 text: 'Mohon Maaf, Minimal Penarikan adalah Rp 10.000',
+                confirmButtonColor: '#ef4444',
+                confirmButtonText: 'Tutup'
+            });
+            return;
+        }
+
+        if(val > currentBalance) {
+            e.preventDefault();
+            Swal.fire({
+                icon: 'error',
+                title: 'Saldo Tidak Cukup',
+                text: 'Mohon Maaf, Saldo Anda tidak mencukupi untuk penarikan ini.',
                 confirmButtonColor: '#ef4444',
                 confirmButtonText: 'Tutup'
             });

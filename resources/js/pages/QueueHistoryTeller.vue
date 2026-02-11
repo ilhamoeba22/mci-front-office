@@ -178,52 +178,13 @@
             </div>
         </div>
 
-        <!-- Hidden Print Template (Reused Structure) -->
-        <div id="print-history-area" class="hidden print:block fixed top-0 left-0 w-full h-full bg-white z-[9999] p-0 text-black">
-             <div v-if="printData" class="w-[80mm] mx-auto p-4 font-mono text-xs leading-tight">
-                <div class="text-center mb-4 pb-2 border-b-2 border-black border-dashed">
-                    <img src="/img/logo_mci.png" class="h-10 mx-auto mb-1" alt="BPRS HIK MCI" onerror="this.style.display='none'">
-                    <p class="scale-90">Jl. Kaliurang KM 9, Yogyakarta</p>
-                    <p class="scale-90">Telp: (0274) 123456</p>
-                    <p class="mt-2 font-bold uppercase">COPY RECEIPT</p>
-                </div>
-                 <div class="mb-3 space-y-1">
-                    <div class="flex justify-between"><span>Tgl: {{ new Date(printData.created_at).toLocaleDateString('id-ID') }}</span></div>
-                    <div class="flex justify-between"><span>No. Ref:</span><span class="font-bold">{{ printData.transaction?.token || printData.kode }}</span></div>
-                    <div class="flex justify-between"><span>Teller:</span><span>{{ printData.antrian }}</span></div>
-                </div>
-                <div class="text-center py-2 mb-3 border-y-2 border-black border-dashed font-bold text-sm uppercase">
-                    {{ printData.tx_type }}
-                </div>
-                <!-- Details -->
-                 <div v-if="printData.transaction" class="space-y-3 mb-4">
-                     <div>
-                        <div class="uppercase text-[9px] font-bold mb-0.5">Rekening:</div>
-                        <div class="font-bold">{{ printData.transaction.no_rek }}</div>
-                        <div class="truncate">{{ printData.transaction.nama }}</div>
-                    </div>
-                    <div>
-                        <div class="uppercase text-[9px] font-bold mb-0.5">Nominal:</div>
-                        <div class="font-bold text-lg">Rp {{ Number(printData.transaction.nominal).toLocaleString('id-ID') }}</div>
-                         <div class="italic text-[9px]">({{ printData.transaction.terbilang }})</div>
-                    </div>
-                 </div>
-                 <div class="text-center mt-6 pt-2 border-t border-black text-[9px]">
-                    <p>** SALINAN TRANSAKSI **</p>
-                </div>
-             </div>
-        </div>
+        <!-- Hidden elements removed as we now use professional PDF reports -->
 
     </div>
 </template>
 
-<style>
-@media print {
-    body * { visibility: hidden; }
-    #print-history-area, #print-history-area * { visibility: visible; }
-    #print-history-area { position: absolute; left: 0; top: 0; width: 100%; margin: 0; padding: 0; background: white; }
-    @page { size: 80mm auto; margin: 0; }
-}
+<style scoped>
+/* Scoped styles for history page */
 </style>
 
 <script>
@@ -420,10 +381,13 @@ export default {
             });
         },
         printReceipt(queue) {
-            this.printData = queue;
-            setTimeout(() => {
-                window.print();
-            }, 500);
+            // Open professional A4 PDF report in new tab
+            const token = queue.transaction?.token || queue.kode;
+            if (token) {
+                window.open(`/admin/print/report/${token}`, '_blank');
+            } else {
+                Swal.fire('Error', 'Data transaksi tidak ditemukan.', 'error');
+            }
         }
     }
 }

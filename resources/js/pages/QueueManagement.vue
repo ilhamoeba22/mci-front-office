@@ -316,14 +316,13 @@
         <div id="print-wrapper" class="hidden print:block fixed top-0 left-0 w-full h-full bg-white z-[9999] p-0 text-black">
             
             <!-- 1. STANDARD THERMAL (80mm) -->
-            <div id="print-area-standard" v-if="!isSetor && !isTarik" class="w-[80mm] mx-auto p-4 font-mono text-xs leading-tight">
+            <div id="print-area-standard" v-if="!isSetor && !isTarik && !isTransfer" class="w-[80mm] mx-auto p-4 font-mono text-xs leading-tight">
                 <div class="text-center mb-4 pb-2 border-b-2 border-black border-dashed">
                     <img src="/img/logo_mci.png" class="h-10 mx-auto mb-1" alt="BPRS HIK MCI">
                     <p class="scale-90">Jl. Kaliurang KM 9, Yogyakarta</p>
                     <p class="scale-90">Telp: (0274) 123456</p>
                 </div>
 
-                <!-- Standard Content (Existing Logic) -->
                 <div v-if="transactionData && transactionData.transaction">
                     <div class="mb-3 space-y-1">
                         <div class="flex justify-between font-bold">
@@ -334,208 +333,6 @@
                             <span>{{ new Date().toLocaleDateString('id-ID') }}</span>
                             <span>{{ new Date().toLocaleTimeString('id-ID') }}</span>
                         </div>
-                    </div>
-                     <!-- (Simplified existing thermal content for brevity - logic remains similar) -->
-                     <!-- EXISTING LOGIC CAN BE COPIED OR MAINTAINED IF NEEDED EXACTLY -->
-                </div>
-            </div>
-
-            <!-- 2A. VALIDATION SLIP - SETOR TUNAI (210mm x 100mm Landscape) -->
-            <!-- 100% PRECISION: Accounts for FPDF default tMargin=10mm and cMargin=1mm -->
-            <div id="print-area-setor" v-if="isSetor" class="print-slip w-[210mm] h-[100mm] relative box-border hidden" style="font-family: Arial, sans-serif; color: #000;">
-                <div v-if="transactionData && transactionData.transaction">
-                    <!-- Tanggal: Top: 10(tm)+20(Ln)+1(Ln) = 31mm. Left: 2(lm)+25(cell)+1(cm)+8(adj) = 36mm -->
-                    <div style="position: absolute; top: 31mm; left: 36mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ formatDateLegacy(new Date()) }}
-                    </div>
-                    
-                    <!-- Nama Rekening: Top: 31+4+2(Ln) = 37mm. Left: 2(lm)+30(cell)+1(cm)+8(adj) = 41mm -->
-                    <div style="position: absolute; top: 37mm; left: 41mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.nama }}
-                    </div>
-                    
-                    <!-- No Rekening: Top: 37mm. Left: 2(lm)+30+60+45+1(cm)+8(adj) = 146mm -->
-                    <div style="position: absolute; top: 37mm; left: 146mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.no_rek }}
-                    </div>
-                    
-                    <!-- Nominal: Top: 37+4+2(Ln) = 43mm. Left: 2(lm)+50+1(cm)+5(adj) = 58mm -->
-                    <div style="position: absolute; top: 43mm; left: 58mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ formatNominalLegacy(transactionData.transaction.nominal, true) }}
-                    </div>
-                    
-                    <!-- Terbilang: Top: 43+4 = 47mm. Left: 2(lm)+30+1(cm)+5(adj) = 38mm -->
-                    <div style="position: absolute; top: 47mm; left: 38mm; width: 70mm; font-size: 8pt; font-weight: bold; line-height: 4mm; color: #000; font-family: Arial, sans-serif;">
-                        {{ transactionData.transaction.terbilang }}
-                    </div>
-                    
-                    <!-- Tujuan Transaksi: Top: (assume 1 line terbilang) 47+4+5(Ln) = 56mm. Left: 2(lm)+40+1(cm) = 43mm -->
-                    <div style="position: absolute; top: 56mm; left: 43mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.tujuan || '-' }}
-                    </div>
-                    
-                    <!-- Nama Penyetor: Top: 56+4+1(Ln) = 61mm. Left: 2(lm)+45+1(cm) = 48mm -->
-                    <div style="position: absolute; top: 61mm; left: 48mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.nama_penyetor }}
-                    </div>
-                    
-                    <!-- NIK Penyetor: Top: 61+4+3(Ln) = 68mm. Left: 2(lm)+45+1(cm) = 48mm -->
-                    <div style="position: absolute; top: 70mm; left: 48mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 3mm;">
-                        {{ transactionData.transaction.noid_penyetor || '-' }}
-                    </div>
-                    
-                    <!-- Alamat Penyetor: Top: 68+3 = 71mm. Left: 48mm -->
-                    <div style="position: absolute; top: 73mm; left: 48mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 3mm;">
-                        {{ transactionData.transaction.alamat_penyetor || '-' }}
-                    </div>
-                    
-                    <!-- No HP Penyetor: Top: 71+3 = 74mm. Left: 48mm -->
-                    <div style="position: absolute; top: 76mm; left: 48mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 3mm;">
-                        {{ transactionData.transaction.hp_penyetor }}
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2B. VALIDATION SLIP - TARIK TUNAI (210mm x 100mm per Page, 2 Pages) -->
-            <!-- 100% PRECISION REPLICATED FROM LEGACY FPDF (print_tarik.php) + POSITIONAL ADJUSTMENTS -->
-            <div id="print-area-tarik" v-else-if="isTarik" class="print-slip hidden" style="font-family: Arial, sans-serif; color: #000;">
-                <div v-if="transactionData && transactionData.transaction">
-                    <!-- PAGE 1: FRONT (Depan) - X: 210mm, Y: 100mm -->
-                    <div id="tarik-page-1" class="relative overflow-hidden" style="width: 210mm; height: 100mm; background: #fff;">
-                        <!-- Tanggal: Adjusted Left: 36mm (User requested). Top: 34mm -->
-                        <div style="position: absolute; top: 34mm; left: 36mm; font-size: 8pt; font-weight: bold; line-height: 4mm;">
-                            {{ formatDateLegacy(new Date()) }}
-                        </div>
-                        
-                        <!-- Nama Rekening: Legacy Raw X: 52mm (+9adj) = 61mm. Top: 41mm -->
-                        <div style="position: absolute; top: 41mm; left: 61mm; width: 60mm; font-size: 8pt; font-weight: bold; line-height: 4mm;">
-                            {{ transactionData.transaction.nama }}
-                        </div>
-                        
-                        <!-- No Rekening: Legacy Raw X: 147mm (+9adj) = 156mm. Top: 41mm -->
-                        <div style="position: absolute; top: 41mm; left: 156mm; width: 50mm; font-size: 8pt; font-weight: bold; line-height: 4mm;">
-                            {{ transactionData.transaction.no_rek }}
-                        </div>
-                        
-                        <!-- Nominal: Adjusted Top: 48mm. Left: 58mm -->
-                        <div style="position: absolute; top: 48mm; left: 58mm; font-size: 8pt; font-weight: bold; line-height: 4mm;">
-                            {{ formatNominalLegacy(transactionData.transaction.nominal, true) }}
-                        </div>
-                        
-                        <!-- Terbilang: Adjusted Top: 48mm. Left: 143mm. Width: 70mm -->
-                        <div style="position: absolute; top: 48mm; left: 143mm; width: 70mm; font-size: 8pt; font-weight: bold; line-height: 4mm;">
-                            {{ transactionData.transaction.terbilang }}
-                        </div>
-                        
-                        <!-- Tujuan Transaksi: Adjusted Top: 53mm. Left: 46mm -->
-                        <div style="position: absolute; top: 53mm; left: 46mm; width: 50mm; font-size: 8pt; font-weight: bold; line-height: 4mm;">
-                            {{ transactionData.transaction.tujuan || '-' }}
-                        </div>
-                    </div>
-                    
-                    <!-- PAGE 2: BACK (Belakang) - X: 210mm, Y: 100mm -->
-                    <div id="tarik-page-2" class="relative overflow-hidden" style="width: 210mm; height: 100mm; background: #fff;">
-                        <!-- Nama Penarik: Adjusted Top: 21mm (+3mm). Legacy Raw X: 142mm (+9adj) = 151mm -->
-                        <div style="position: absolute; top: 21mm; left: 151mm; width: 50mm; font-size: 8pt; font-weight: bold; line-height: 4mm;">
-                            {{ transactionData.transaction.nama_penarik }}
-                        </div>
-                        
-                        <!-- NIK Penarik: Adjusted Top: 32mm (+3mm). Left: 151mm -->
-                        <div style="position: absolute; top: 32mm; left: 151mm; width: 50mm; font-size: 8pt; font-weight: bold; line-height: 4mm;">
-                            {{ transactionData.transaction.noid_penarik || '-' }}
-                        </div>
-                        
-                        <!-- No HP Penarik: Adjusted Top: 43mm (+3mm). Left: 151mm -->
-                        <div style="position: absolute; top: 43mm; left: 151mm; width: 50mm; font-size: 8pt; font-weight: bold; line-height: 4mm;">
-                            {{ transactionData.transaction.hp_penarik }}
-                        </div>
-                        
-                        <!-- Alamat Penarik: Adjusted Top: 55mm (+3mm). Left: 151mm. Width: 70mm. Reduced font & height -->
-                        <div style="position: absolute; top: 55mm; left: 151mm; width: 70mm; font-size: 7pt; font-weight: bold; line-height: 3mm;">
-                            {{ transactionData.transaction.alamat_penarik || '-' }}
-                        </div>
-                    </div>
-                </div>
-                <!-- NO FALLBACK UI - WE WANT PURE TEXT ON PAPER -->
-            </div>
-
-            <!-- 3. TRANSFER SLIP (210mm x 150mm Landscape) -->
-            <!-- 100% PRECISION: Accounts for FPDF default tMargin=10mm and cMargin=1mm -->
-            <div id="print-area-transfer" class="print-slip w-[210mm] h-[150mm] relative box-border hidden" style="font-family: Arial, sans-serif; color: #000;">
-                <div v-if="transactionData && transactionData.transaction">
-                    <!-- Tanggal: Top: 10(tm)+13(Ln) = 23mm. Left: 2(lm)+35+1(cm) = 38mm -->
-                    <div style="position: absolute; top: 23mm; left: 38mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ formatDateLegacyTransfer(new Date()) }}
-                    </div>
-                    
-                    <!-- Nama Tujuan: Top: 23+4+9(Ln) = 36mm. Left: 2(lm)+53+1(cm) = 56mm -->
-                    <div style="position: absolute; top: 36mm; left: 56mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.nama_tujuan }}
-                    </div>
-                    
-                    <!-- Alamat Tujuan: Top: 36+4+1(Ln) = 41mm. Left: 56mm -->
-                    <div style="position: absolute; top: 41mm; left: 56mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.alamat_tujuan || '-' }}
-                    </div>
-                    
-                    <!-- Nominal (1): SAME LINE as Alamat. RIGHT: margin -->
-                    <div style="position: absolute; top: 41mm; right: 2mm; font-size: 8pt; font-weight: bold; text-align: right; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ formatNominalLegacy(transactionData.transaction.nominal, false) }}
-                    </div>
-                    
-                    <!-- No Rek Tujuan: Top: 41+4+2(Ln) = 47mm. Left: 56mm. Font: 10pt -->
-                    <div style="position: absolute; top: 47mm; left: 56mm; font-size: 10pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.no_rek_tujuan }}
-                    </div>
-                    
-                    <!-- Bank Tujuan: Top: 47+4+1(Ln) = 52mm. Left: 56mm -->
-                    <div style="position: absolute; top: 52mm; left: 56mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.bank_tujuan }}
-                    </div>
-                    
-                    <!-- Biaya Transfer: Top: 52+4+1(Ln) = 57mm. RIGHT: 2mm -->
-                    <div style="position: absolute; top: 57mm; right: 2mm; font-size: 8pt; font-weight: bold; text-align: right; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ formatNominalLegacy(transactionData.transaction.biaya_trf || 0, false) }}
-                    </div>
-                    
-                    <!-- Total: Top: 57+4+3(Ln) = 64mm. RIGHT: 2mm -->
-                    <div style="position: absolute; top: 64mm; right: 2mm; font-size: 8pt; font-weight: bold; text-align: right; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ formatNominalLegacy(transactionData.transaction.nominal, false) }}
-                    </div>
-                    
-                    <!-- Indonesia: Top: 64+4 = 68mm. Left: 56mm -->
-                    <div style="position: absolute; top: 68mm; left: 56mm; font-size: 8pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        Indonesia
-                    </div>
-
-                    <!-- Terbilang: Top: 68mm. Left: 2(lm)+53+60+20+1(cm) = 136mm -->
-                    <div style="position: absolute; top: 68mm; left: 136mm; width: 60mm; font-size: 8pt; font-weight: bold; line-height: 4mm; color: #000; font-family: Arial, sans-serif;">
-                        {{ transactionData.transaction.terbilang }}
-                    </div>
-                    
-                    <!-- Nama Pengirim: Top: 68+4+3(Ln) = 75mm. Left: 56mm. Font: 7pt -->
-                    <div style="position: absolute; top: 75mm; left: 56mm; font-size: 7pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.nama }}
-                    </div>
-                    
-                    <!-- Alamat Pengirim: Top: 75+4 = 79mm. Left: 56mm. Font: 6pt -->
-                    <div style="position: absolute; top: 79mm; left: 56mm; width: 50mm; font-size: 6pt; font-weight: bold; line-height: 1.2; color: #000; font-family: Arial, sans-serif;">
-                        {{ transactionData.transaction.alamat_penyetor || '-' }}
-                    </div>
-                    
-                    <!-- HP Pengirim: Top: 79+4+4(Ln) = 87mm. Left: 56mm. Font: 9pt -->
-                    <div style="position: absolute; top: 87mm; left: 56mm; font-size: 9pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.hp_penyetor || '-' }}
-                    </div>
-                    
-                    <!-- No Rek Pengirim: Top: 87+4+1(Ln) = 92mm. Left: 2(lm)+70+1(cm) = 73mm. Font: 9pt -->
-                    <div style="position: absolute; top: 92mm; left: 73mm; font-size: 9pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.no_rek }}
-                    </div>
-                    
-                    <!-- Berita: Top: 92+4+6(Ln) = 102mm. Left: 121mm. Font: 7pt -->
-                    <div style="position: absolute; top: 102mm; left: 121mm; font-size: 7pt; font-weight: bold; color: #000; font-family: Arial, sans-serif; line-height: 4mm;">
-                        {{ transactionData.transaction.tujuan || '-' }}
                     </div>
                 </div>
             </div>
@@ -785,16 +582,32 @@ export default {
                 document.head.appendChild(styleEl);
             }
 
-            // STANDARD THERMAL (80mm)
+            // STANDARD THERMAL (80mm x 100mm Absolute Top-Left Optimized)
             styleEl.innerHTML = `
                 @page {
-                    size: 80mm auto;
-                    margin: 0;
+                    size: 80mm 100mm;
+                    margin: 0 !important;
                 }
-                /* Hide Slips */
-                #print-area-transfer, #print-area-setor, #print-area-tarik { display: none !important; }
-                #print-area-standard { display: block !important; }
-                #print-wrapper { width: 80mm; }
+                #print-area-standard { 
+                    display: block !important; 
+                    width: 72mm !important; /* Printable area */
+                    margin: 0 !important; 
+                    padding: 0 !important;
+                    text-align: center !important;
+                    position: absolute !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                }
+                #print-wrapper { 
+                    width: 80mm !important; 
+                    height: 100mm !important; 
+                    display: block !important; 
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    position: absolute !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                }
             `;
 
             // 3. Print
@@ -806,23 +619,6 @@ export default {
                 
                 setTimeout(() => {
                     if (styleEl) styleEl.innerHTML = ''; // Reset CSS
-                    
-                    // Reset inline styles
-                    const transferEl = document.getElementById('print-area-transfer');
-                    if(transferEl) {
-                        transferEl.classList.add('hidden');
-                        transferEl.style.display = '';
-                    }
-                    const setorEl = document.getElementById('print-area-setor');
-                    if(setorEl) {
-                         setorEl.classList.add('hidden');
-                         setorEl.style.display = '';
-                    }
-                    const tarikEl = document.getElementById('print-area-tarik');
-                    if(tarikEl) {
-                         tarikEl.classList.add('hidden');
-                         tarikEl.style.display = '';
-                    }
                 }, 1000);
             }, 200);
         },
@@ -1044,49 +840,6 @@ export default {
         formatTime(dateString) {
             if(!dateString) return '-';
             return new Date(dateString).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-        },
-        
-        // LEGACY FORMAT HELPERS (matching FPDF PHP output)
-        
-        // Format date for Setor/Tarik slips: "dd/mm/YYYY"
-        // Matching: date_format($date,"d/m/Y")
-        formatDateLegacy(date) {
-            const d = new Date(date);
-            const day = String(d.getDate()).padStart(2, '0');
-            const month = String(d.getMonth() + 1).padStart(2, '0');
-            const year = d.getFullYear();
-            return `${day}/${month}/${year}`;
-        },
-        
-        // Format date for Transfer slip: "dd / mm / YYYY" (with spaces)
-        // Matching: date_format($date,"d / m / Y")
-        formatDateLegacyTransfer(date) {
-            const d = new Date(date);
-            const day = String(d.getDate()).padStart(2, '0');
-            const month = String(d.getMonth() + 1).padStart(2, '0');
-            const year = d.getFullYear();
-            return `${day} / ${month} / ${year}`;
-        },
-        
-        // Format nominal for legacy print
-        // withDecimal true:  1.500.000,00 (for Setor/Tarik) - matching number_format($p3,2,",",".")
-        // withDecimal false: 1.500.000    (for Transfer) - matching number_format($p3,0,",",".")
-        formatNominalLegacy(amount, withDecimal) {
-            if (!amount) return withDecimal ? '0,00' : '0';
-            
-            const num = parseFloat(amount);
-            
-            if (withDecimal) {
-                // Format with 2 decimal places: "1.500.000,00"
-                // Period for thousands separator, comma for decimal
-                const parts = num.toFixed(2).split('.');
-                const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-                return `${integerPart},${parts[1]}`;
-            } else {
-                // Format without decimal: "1.500.000"
-                // Period for thousands separator only
-                return Math.floor(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-            }
         }
     }
 }

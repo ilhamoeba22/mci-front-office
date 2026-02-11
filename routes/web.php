@@ -6,6 +6,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DisplayController;
 use App\Http\Controllers\PrintController;
+use App\Http\Controllers\TransactionPrintController;
 use App\Http\Controllers\AuthController;
 
 /* |-------------------------------------------------------------------------- | Web Routes (Rute Web) |-------------------------------------------------------------------------- | | Di sini Anda dapat mendaftarkan rute web untuk aplikasi Anda. | Rute-rute ini dimuat oleh RouteServiceProvider dan ditugaskan ke grup  | middleware "web". | */
@@ -114,10 +115,11 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::post('/settings/media', [AdminController::class , 'updateMedia'])->name('settings.media.update');
     Route::post('/settings/text', [AdminController::class , 'updateText'])->name('settings.text.update');
 
-    // High Precision Print Routes (Native Laravel)
-    Route::get('/print/transfer/{token}', [PrintController::class, 'printTransfer'])->name('print.transfer');
-    Route::get('/print/tarik/{token}', [PrintController::class, 'printTarik'])->name('print.tarik');
-    Route::get('/print/setor/{token}', [PrintController::class, 'printSetor'])->name('print.setor');
+    // High Precision Print Routes (SLIPS)
+    Route::get('/print/transfer/{token}', [TransactionPrintController::class, 'printTransfer'])->name('print.transfer');
+    Route::get('/print/tarik/{token}', [TransactionPrintController::class, 'printTarik'])->name('print.tarik');
+    Route::get('/print/setor/{token}', [TransactionPrintController::class, 'printSetor'])->name('print.setor');
+    Route::get('/print/report/{token}', [PrintController::class, 'printReport'])->name('print.report');
     Route::post('/queue/update-transfer/{token}', [AdminController::class, 'updateTransfer'])->name('queue.update-transfer');
     Route::post('/queue/update-withdrawal/{token}', [AdminController::class, 'updateWithdrawal'])->name('queue.update-withdrawal');
 

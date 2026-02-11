@@ -131,12 +131,12 @@
 
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label class="form-label" style="font-size: 0.85rem; margin-bottom: 4px;">No Identitas (KTP/SIM)</label>
-                    <input type="text" name="noid_penyetor" class="form-control form-control-sm" placeholder="NIK / SIM" value="{{ old('noid_penyetor') }}">
+                    <input type="text" name="noid_penyetor" class="form-control form-control-sm" required placeholder="NIK / SIM" value="{{ old('noid_penyetor') }}">
                 </div>
 
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label class="form-label" style="font-size: 0.85rem; margin-bottom: 4px;">Alamat Penyetor</label>
-                    <textarea name="alamat_penyetor" class="form-control form-control-sm" rows="2" style="resize: none;" placeholder="Alamat lengkap...">{{ old('alamat_penyetor') }}</textarea>
+                    <textarea name="alamat_penyetor" class="form-control form-control-sm" required rows="2" style="resize: none;" placeholder="Alamat lengkap...">{{ old('alamat_penyetor') }}</textarea>
                 </div>
             </div>
         </div>

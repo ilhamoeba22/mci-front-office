@@ -140,6 +140,8 @@ class TransactionController extends Controller
             'nominal' => 'required|numeric|min:10000',
             'nama_penyetor' => 'required',
             'hp_penyetor' => 'required',
+            'noid_penyetor' => 'required',
+            'alamat_penyetor' => 'required',
         ], [
             'nama.required' => 'Nama pemilik rekening wajib ada.',
             'no_rek.required' => 'Nomor rekening wajib ada.',
@@ -148,6 +150,8 @@ class TransactionController extends Controller
             'nominal.min' => 'Minimal setoran adalah Rp 10.000.',
             'nama_penyetor.required' => 'Nama penyetor wajib diisi.',
             'hp_penyetor.required' => 'Nomor HP penyetor wajib diisi.',
+            'noid_penyetor.required' => 'Nomor Identitas penyetor wajib diisi.',
+            'alamat_penyetor.required' => 'Alamat penyetor wajib diisi.',
         ]);
 
         try {
@@ -162,7 +166,6 @@ class TransactionController extends Controller
                     'nama' => $request->nama,
                     'no_rek' => $request->no_rek,
                     'tgl' => $request->input('tgl', $today),
-                    'tgl' => $request->input('tgl', $today),
                     'nominal' => $request->nominal,
                     'terbilang' => $request->terbilang ?? '-',
                     'jenis_rekening' => $request->jenis_rekening, // Save Category
@@ -170,8 +173,8 @@ class TransactionController extends Controller
                     'tujuan' => $request->tujuan ?? '-',
                     'nama_penyetor' => $request->nama_penyetor,
                     'hp_penyetor' => $request->hp_penyetor,
-                    'noid_penyetor' => $request->noid_penyetor ?? '-',
-                    'alamat_penyetor' => $request->alamat_penyetor ?? '-',
+                    'noid_penyetor' => $request->noid_penyetor,
+                    'alamat_penyetor' => $request->alamat_penyetor,
                 ]);
 
                 // 2. Generate Antrian Teller
@@ -197,6 +200,9 @@ class TransactionController extends Controller
             'no_rek' => 'required',
             'nominal' => 'required|numeric|min:10000',
             'nama_penarik' => 'required',
+            'hp_penarik' => 'required',
+            'noid_penarik' => 'required',
+            'alamat_penarik' => 'required',
         ], [
             'nama.required' => 'Nama pemilik rekening wajib ada.',
             'no_rek.required' => 'Nomor rekening wajib ada.',
@@ -204,9 +210,23 @@ class TransactionController extends Controller
             'nominal.numeric' => 'Nominal harus berupa angka.',
             'nominal.min' => 'Minimal penarikan adalah Rp 10.000.',
             'nama_penarik.required' => 'Nama penarik wajib diisi.',
+            'hp_penarik.required' => 'Nomor HP penarik wajib ada.',
+            'noid_penarik.required' => 'Nomor Identitas penarik wajib ada.',
+            'alamat_penarik.required' => 'Alamat penarik wajib ada.',
         ]);
 
         try {
+            // BACKEND BALANCE VALIDATION
+            $response = $this->coreBank->getBalance($request->no_rek);
+            if (!isset($response['accountNo'])) {
+                return back()->withErrors(['msg' => 'Gagal memverifikasi saldo. Silakan coba lagi.'])->withInput();
+            }
+
+            $availableBalance = $response['accountInfo'][0]['availableBalance']['value'] ?? 0;
+            if ($request->nominal > $availableBalance) {
+                return back()->withErrors(['nominal_display' => 'Saldo tidak mencukupi untuk melakukan penarikan ini.'])->withInput();
+            }
+
             // Generate Token ONCE
             $today = Carbon::now()->format('Y-m-d');
             $token = "TT-" . Carbon::now()->format('ymdHis') . rand(100, 999);
@@ -256,6 +276,9 @@ class TransactionController extends Controller
             'bank_tujuan' => 'required',
             'no_rek_tujuan' => 'required',
             'nama_tujuan' => 'required',
+            'nama_penyetor' => 'required',
+            'hp_penyetor' => 'required',
+            'alamat_penyetor' => 'required',
         ], [
             'nama.required' => 'Nama pengirim wajib ada.',
             'no_rek.required' => 'Nomor rekening pengirim wajib ada.',
@@ -265,9 +288,28 @@ class TransactionController extends Controller
             'bank_tujuan.required' => 'Bank tujuan wajib dipilih.',
             'no_rek_tujuan.required' => 'Nomor rekening tujuan wajib diisi.',
             'nama_tujuan.required' => 'Nama penerima wajib diisi.',
+            'nama_penyetor.required' => 'Nama pengirim wajib diisi.',
+            'hp_penyetor.required' => 'Nomor HP pengirim wajib diisi.',
+            'alamat_penyetor.required' => 'Alamat pengirim wajib diisi.',
         ]);
 
         try {
+            // Explode Bank Tujuan (Nama/Biaya) to get fee for balance check
+            $bankParts = explode('/', $request->bank_tujuan);
+            $bankFee = $bankParts[1] ?? 0;
+            $totalDebet = $request->nominal + $bankFee;
+
+            // BACKEND BALANCE VALIDATION
+            $response = $this->coreBank->getBalance($request->no_rek);
+            if (!isset($response['accountNo'])) {
+                return back()->withErrors(['msg' => 'Gagal memverifikasi saldo. Silakan coba lagi.'])->withInput();
+            }
+
+            $availableBalance = $response['accountInfo'][0]['availableBalance']['value'] ?? 0;
+            if ($totalDebet > $availableBalance) {
+                return back()->withErrors(['nominal_display' => 'Saldo tidak mencukupi (Nominal + Biaya Admin: Rp ' . number_format($totalDebet, 0, ',', '.') . ').'])->withInput();
+            }
+
             // Generate Token ONCE
             $today = Carbon::now()->format('Y-m-d');
             $token = "ON-" . Carbon::now()->format('ymdHis') . rand(100, 999);

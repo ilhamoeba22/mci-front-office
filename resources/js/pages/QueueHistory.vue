@@ -213,312 +213,6 @@
                 </div>
             </div>
 
-            <!-- 2. VALIDATION SLIP (1/3 A4 Landscape) -->
-            <div id="print-area-slip" class="w-[210mm] h-[99mm] px-3 py-4 font-sans text-xs relative box-border border-b border-black hidden">
-                
-                <div v-if="printData && printData.transaction">
-                <!-- Slip Header -->
-                <div class="flex justify-between items-end mb-2 pb-2 border-b-2 border-black">
-                    <div class="flex items-center gap-3">
-                        <img src="/img/logo_mci.png" class="h-12" alt="Logo MCI">
-                        <img src="/img/logo_ib.png" class="h-10" alt="Logo iB" onerror="this.style.display='none'">
-                    </div>
-                    <div class="text-right">
-                        <h1 class="font-extrabold text-xl uppercase tracking-widest px-3 py-1 border-2 inline-block rounded-sm"
-                            :class="isSetor ? 'text-blue-600 border-blue-600' : 'text-red-600 border-red-600'">
-                            {{ isSetor ? 'SETOR TUNAI' : 'TARIK TUNAI' }}
-                        </h1>
-                        <p class="text-[10px] mt-1 font-mono text-slate-500">{{ printData.transaction.token }}</p>
-                    </div>
-                </div>
-
-                <!-- Slip Body -->
-                <div class="space-y-1.5 leading-snug">
-                    
-                    <!-- Date & Checkboxes -->
-                    <div class="flex justify-between items-center border-b border-dashed border-slate-300 pb-1 mb-1">
-                        <div class="flex gap-1 items-center">
-                            <span class="font-bold w-16">Tanggal</span>
-                            <span>: {{ new Date(printData.created_at).toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }) }}</span>
-                        </div>
-                        <div class="flex gap-3 text-[10px]">
-                            <!-- Setor Checkboxes -->
-                            <template v-if="isSetor">
-                                <span class="flex items-center gap-1"><div class="w-3 h-3 border border-black flex items-center justify-center text-[8px]"><i class="fa-solid fa-check"></i></div> Tabungan</span>
-                                <span class="flex items-center gap-1"><div class="w-3 h-3 border border-black"></div> Deposito</span>
-                                <span class="flex items-center gap-1"><div class="w-3 h-3 border border-black"></div> Pembiayaan</span>
-                                <span class="flex items-center gap-1"><div class="w-3 h-3 border border-black"></div> Lainnya</span>
-                            </template>
-                            <!-- Tarik Checkboxes -->
-                            <template v-else>
-                                <span class="flex items-center gap-1"><div class="w-3 h-3 border border-black flex items-center justify-center text-[8px]"><i class="fa-solid fa-check"></i></div> Tabungan</span>
-                                <span class="flex items-center gap-1"><div class="w-3 h-3 border border-black"></div> Kredit</span>
-                                <span class="flex items-center gap-1"><div class="w-3 h-3 border border-black"></div> Lainnya</span>
-                            </template>
-                        </div>
-                    </div>
-
-                    <!-- Account Info -->
-                    <div class="bg-indigo-50/50 p-1.5 border border-indigo-100/50 rounded flex gap-4">
-                        <div class="flex-1">
-                            <span class="font-bold block text-[10px] uppercase text-slate-500">Nama Rekening</span>
-                            <span class="font-bold text-sm truncate block">{{ printData.transaction.nama }}</span>
-                        </div>
-                        <div class="flex-1 border-l border-indigo-200 pl-4">
-                            <span class="font-bold block text-[10px] uppercase text-slate-500">Nomor Rekening</span>
-                            <span class="font-mono font-bold text-sm tracking-wider">{{ printData.transaction.no_rek }}</span>
-                        </div>
-                    </div>
-
-                    <!-- Amount -->
-                    <div class="flex items-center gap-2 mt-1">
-                        <span class="font-bold w-28 text-right">Jumlah {{ isSetor ? 'Setoran' : 'Penarikan' }} :</span>
-                        <div class="flex-grow bg-slate-100 px-2 py-1 border border-slate-300 font-mono font-bold text-base flex justify-start gap-2 items-center">
-                            <span>Rp.</span>
-                            <span>{{ Number(printData.transaction.nominal).toLocaleString('id-ID') }}</span>
-                        </div>
-                    </div>
-                    <div class="flex gap-2">
-                        <span class="font-bold w-28 text-right text-[10px]">Terbilang :</span>
-                        <div class="flex-grow italic text-[10px] bg-slate-50 px-2 border-b border-slate-200 capitalize">
-                            {{ printData.transaction.terbilang }}
-                        </div>
-                    </div>
-
-                    <!-- Transaction Details -->
-                    <div class="grid grid-cols-2 gap-x-8 gap-y-1 mt-1">
-                        <!-- Left Col -->
-                        <div class="space-y-1">
-                            <div class="flex gap-2">
-                                <span class="font-bold w-24">Tujuan Transaksi</span>
-                                <span>: {{ printData.transaction.berita || printData.transaction.tujuan || '-' }}</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <span class="font-bold w-24">No. Identitas</span>
-                                <span>: {{ activeActorIdentity || '-' }}</span>
-                            </div>
-                        </div>
-                        <!-- Right Col -->
-                        <div class="space-y-1">
-                             <div class="flex gap-2">
-                                <span class="font-bold w-20">Alamat</span>
-                                <span class="text-[10px] leading-tight">: {{ activeActorAddress }}</span>
-                            </div>
-                             <div class="flex gap-2">
-                                <span class="font-bold w-20">No. HP</span>
-                                <span>: {{ activeActorPhone }}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Footer Signatures -->
-                <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end">
-                    
-                    <!-- Disclaimer & Address -->
-                    <div class="w-[45%] pr-4 flex flex-col justify-end h-full">
-                        <div class="text-[7px] text-justify leading-tight opacity-70 italic mb-2">
-                            *) {{ isSetor ? 'Setoran' : 'Penarikan' }} akan dibukukan secara efektif setelah dana {{ isSetor ? 'diterima' : 'diserahkan' }} dengan baik, valid setelah dibubuhi cap dan tanda tangan petugas bank.
-                        </div>
-                        <div class="text-[8px] font-bold text-slate-600 border-t border-slate-300 pt-1">
-                            PT. BPRS HIK MCI<br>
-                            Jl. Kaliurang KM 9, Yogyakarta. Telp: (0274) 123456
-                        </div>
-                    </div>
-
-                    <!-- Signatures (Dynamic Grid) -->
-                    <div class="w-[55%] pl-2">
-                        <!-- SETOR: 2 Cols -->
-                        <div v-if="isSetor" class="grid grid-cols-2 gap-4 text-center">
-                            <div>
-                                <p class="mb-10 text-[9px] font-bold uppercase">Teller</p>
-                                <p class="text-[9px] border-t border-black pt-0.5 w-full block">( .......................... )</p>
-                            </div>
-                            <div>
-                                <p class="mb-10 text-[9px] font-bold uppercase">Penyetor</p>
-                                <p class="text-[9px] border-t border-black pt-0.5 w-full block">( .......................... )</p>
-                            </div>
-                        </div>
-
-                        <!-- TARIK: 4 Cols -->
-                        <div v-else class="grid grid-cols-4 gap-2 text-center">
-                            <div>
-                                <p class="mb-10 text-[8px] font-bold uppercase">Teller</p>
-                                <p class="mb-10 text-[8px] border-t border-black pt-0.5 w-full block">(.......)</p>
-                            </div>
-                            <div>
-                                <p class="mb-10 text-[8px] font-bold uppercase">Checker</p>
-                                <p class="mb-10 text-[8px] border-t border-black pt-0.5 w-full block">(.......)</p>
-                            </div>
-                            <div>
-                                <p class="mb-10 text-[8px] font-bold uppercase">Approver</p>
-                                <p class="mb-10 text-[8px] border-t border-black pt-0.5 w-full block">(.......)</p>
-                            </div>
-                            <div>
-                                <p class="mb-10 text-[8px] font-bold uppercase">Nasabah</p>
-                                <p class="mb-10 text-[8px] border-t border-black pt-0.5 w-full block">(.......)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                </div>
-            </div>
-
-            <!-- 3. TRANSFER SLIP (1/2 A4 Landscape - Green) -->
-            <div id="print-area-transfer" class="w-[210mm] h-[148mm] px-5 py-5 font-sans text-xs relative box-border border-b border-black hidden">
-                
-                <div v-if="printData && printData.transaction">
-                <!-- Header -->
-                <div class="flex justify-between items-end mb-4 pb-2 border-b-2 border-green-700">
-                    <div class="flex items-center gap-3">
-                        <img src="/img/logo_mci.png" class="h-14" alt="Logo MCI">
-                        <img src="/img/logo_ib.png" class="h-10" alt="Logo iB" onerror="this.style.display='none'">
-                    </div>
-                    <div class="text-right">
-                        <h1 class="font-bold text-xl text-green-700 uppercase tracking-widest px-4 py-1 border-2 border-green-700 inline-block rounded-sm mb-1">
-                            APLIKASI TRANSFER
-                        </h1>
-                        <p class="text-[10px] font-mono text-slate-500 tracking-wider">REF: {{ printData.transaction.token }}</p>
-                    </div>
-                </div>
-
-                <!-- Body Grid -->
-                <div class="grid grid-cols-2 gap-x-8 gap-y-4 mb-4">
-                    
-                    <!-- Left: Pengirim -->
-                    <div class="bg-slate-50 p-3 rounded border border-slate-200">
-                        <h3 class="font-bold text-green-700 border-b border-green-700 mb-2 uppercase text-[11px] pb-1">
-                            <i class="fa-solid fa-user mr-1"></i> Data Pengirim
-                        </h3>
-                        <table class="w-full text-[11px] leading-snug">
-                            <tr>
-                                <td class="w-28 font-semibold align-top text-slate-500 py-0.5">Nama Lengkap</td>
-                                <td class="w-2 align-top py-0.5">:</td>
-                                <td class="uppercase font-bold py-0.5">{{ printData.transaction.nama }}</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold align-top text-slate-500 py-0.5">Alamat</td>
-                                <td class="align-top py-0.5">:</td>
-                                <td class="uppercase h-10 overflow-hidden leading-tight text-slate-800 py-0.5">{{ printData.transaction.alamat_penyetor || '-' }}</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold align-top text-slate-500 py-0.5">No. Telepon</td>
-                                <td class="align-top py-0.5">:</td>
-                                <td class="text-slate-800 py-0.5">{{ printData.transaction.hp_penyetor || '-' }}</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold align-top text-slate-500 py-0.5">Sumber Dana</td>
-                                <td class="align-top py-0.5">:</td>
-                                <td class="italic font-bold text-slate-700 py-0.5">{{ printData.transaction.sumber_dana || 'Tunai' }}</td>
-                            </tr>
-                             <tr>
-                                <td class="font-semibold align-top text-slate-500 py-0.5">Metode Transfer</td>
-                                <td class="align-top py-0.5">:</td>
-                                <td class="font-bold text-slate-900 py-0.5">{{ printData.transaction.metode_transfer || '-' }}</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <!-- Right: Penerima -->
-                    <div class="bg-slate-50 p-3 rounded border border-slate-200">
-                        <h3 class="font-bold text-green-700 border-b border-green-700 mb-2 uppercase text-[11px] pb-1">
-                            <i class="fa-solid fa-bullseye mr-1"></i> Data Penerima
-                        </h3>
-                        <table class="w-full text-[11px] leading-snug">
-                            <tr>
-                                <td class="w-24 font-semibold align-top text-slate-500 py-0.5">Nama Penerima</td>
-                                <td class="w-2 align-top py-0.5">:</td>
-                                <td class="uppercase font-bold text-sm text-slate-900 py-0.5">{{ printData.transaction.nama_tujuan }}</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold align-top text-slate-500 py-0.5">No. Rekening</td>
-                                <td class="align-top py-0.5">:</td>
-                                <td class="font-mono text-sm font-bold tracking-wider text-slate-900 py-0.5">{{ printData.transaction.no_rek_tujuan }}</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold align-top text-slate-500 py-0.5">Bank Tujuan</td>
-                                <td class="align-top py-0.5">:</td>
-                                <td class="uppercase font-bold text-slate-800 py-0.5">{{ printData.transaction.bank_tujuan }}</td>
-                            </tr>
-                            <tr>
-                                <td class="font-semibold align-top text-slate-500 py-0.5">Negara</td>
-                                <td class="align-top py-0.5">:</td>
-                                <td class="uppercase text-slate-800 py-0.5">{{ printData.transaction.negara_tujuan || 'INDONESIA' }}</td>
-                            </tr>
-                             <tr>
-                                <td class="font-semibold align-top text-slate-500 py-0.5">Keterangan</td>
-                                <td class="align-top py-0.5">:</td>
-                                <td class="italic text-slate-700 py-0.5">{{ printData.transaction.tujuan || printData.transaction.berita_tujuan || '-' }}</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Transaction Details (Professional Financial Block) -->
-                <div class="mb-5 border-y-2 border-black py-3 bg-slate-50/50">
-                    <div class="flex items-start justify-between gap-6">
-                        <!-- Nominal & Currency -->
-                        <div class="w-1/3">
-                            <p class="text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-1">Jumlah Setoran / Amount</p>
-                            <div class="flex items-center border-2 border-slate-800 bg-white p-1 pl-2 rounded-sm shadow-sm">
-                                <span class="font-bold text-sm text-slate-700 mr-2 border-r border-slate-300 pr-2">{{ printData.transaction.mata_uang || 'IDR' }}</span>
-                                <span class="font-mono font-bold text-xl text-slate-900 tracking-tight">
-                                    {{ Number(printData.transaction.nominal).toLocaleString('id-ID') }}
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Terbilang -->
-                        <div class="flex-1">
-                             <p class="text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-1">Terbilang / In Words</p>
-                             <div class="w-full border-b border-black border-dashed pb-1 min-h-[34px] flex items-end">
-                                <span class="italic font-bold text-[12px] uppercase leading-tight text-slate-800 break-words w-full">
-                                    {{ printData.transaction.terbilang.replace(/ rupiah$/i, '') }} RUPIAH
-                                </span>
-                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Footer Signatures -->
-                <div class="absolute bottom-6 left-5 right-5 flex justify-between items-end h-[35mm]">
-                    
-                    <!-- Left: Bank Process Box -->
-                    <div class="w-[45%] h-full border-2 border-slate-400 rounded-lg p-2 flex flex-col justify-between bg-white relative">
-                         <div class="absolute top-0 left-0 right-0 bg-slate-100 border-b border-slate-300 py-0.5 text-center">
-                             <p class="text-[9px] font-bold uppercase text-slate-600">Diisi Oleh Bank (Process)</p>
-                         </div>
-                        <div class="grid grid-cols-2 gap-4 text-center text-[9px] h-full items-end pb-1 mt-4">
-                            <div class="flex flex-col items-center">
-                                <div class="h-10 w-full mb-1"></div>
-                                <span class="block border-t border-slate-400 w-full pt-0.5 font-bold text-slate-700">Teller / Petugas</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <div class="h-10 w-full mb-1"></div>
-                                <span class="block border-t border-slate-400 w-full pt-0.5 font-bold text-slate-700">Validasi / Pejabat</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Applicant Signature -->
-                     <div class="w-[45%] flex flex-col justify-end text-center pl-4">
-                        <p class="text-[8px] text-justify leading-tight opacity-80 italic mb-4 font-serif text-slate-600">
-                            "Saya menyetujui syarat-syarat yang tercantum pada halaman belakang formulir ini dan permohonan ini sah setelah validasi."
-                        </p>
-                        <div class="w-full">
-                            <p class="mb-10 text-[10px] font-bold uppercase tracking-wide">Tanda Tangan Pemohon / Pengirim</p>
-                            <p class="text-[11px] border-t-2 border-black pt-1 block font-bold uppercase">
-                                ( {{ printData.transaction.nama }} )
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                </div>
-            </div>
-
         </div>
 
     </div>
@@ -1009,61 +703,65 @@ export default {
         },
 
         printReceipt(queue) {
-            this.printData = queue;
+            // For Teller Transactions (Setor, Tarik, Transfer), use the professional PDF report
+            if (['Setor Tunai', 'Tarik Tunai', 'Transfer'].includes(queue.tx_type)) {
+                const token = queue.transaction?.token || queue.kode;
+                if (token) {
+                    window.open(`/admin/print/report/${token}`, '_blank');
+                    return;
+                }
+            }
 
-            // Wait for Vue to render the printData
+            // Fallback for others (CS, etc.) or if token missing
+            this.printData = queue;
+            
             setTimeout(() => {
                 const style = document.createElement('style');
                 style.id = 'dynamic-print-style';
-
-                // Determine which slip to show based on type
-                if (this.isTransfer) {
-                     style.innerHTML = `
-                         @page { size: 210mm 148mm; margin: 0; }
-                         @media print { 
-                             #print-area-transfer { display: block !important; } 
-                             #print-area-slip, #print-area-standard { display: none !important; }
-                             /* Hide other elements handled by global @media print */
-                         }
-                     `;
-                     // Force show
-                     const el = document.getElementById('print-area-transfer');
-                     if(el) el.classList.remove('hidden');
-                } else if (this.isSetor || this.isTarik) {
-                     style.innerHTML = `
-                         @page { size: 210mm 99mm; margin: 0; }
-                         @media print { 
-                             #print-area-slip { display: block !important; } 
-                             #print-area-transfer, #print-area-standard { display: none !important; }
-                         }
-                     `;
-                      const el = document.getElementById('print-area-slip');
-                      if(el) el.classList.remove('hidden');
-                } else {
-                     // Standard Thermal
-                      style.innerHTML = `
-                         @page { size: 80mm auto; margin: 0; }
-                         @media print { 
-                             #print-area-standard { display: block !important; } 
-                             #print-area-transfer, #print-area-slip { display: none !important; }
-                         }
-                     `;
-                      const el = document.getElementById('print-area-standard');
-                      if(el) el.classList.remove('hidden');
-                }
+                
+                // CS usually uses Thermal Standard (80mm x 100mm Absolute Top-Left Optimized)
+                style.innerHTML = `
+                    @page { size: 80mm 100mm; margin: 0 !important; }
+                    @media print { 
+                        #print-area-standard { 
+                            display: block !important; 
+                            width: 72mm !important;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            text-align: center !important;
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0 !important;
+                        } 
+                        #print-wrapper { 
+                            width: 80mm !important; 
+                            height: 100mm !important; 
+                            display: block !important; 
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0 !important;
+                        }
+                    }
+                `;
+                const el = document.getElementById('print-area-standard');
+                if(el) el.classList.remove('hidden');
 
                 document.head.appendChild(style);
-
                 window.print();
-
-                // Cleanup
                 setTimeout(() => {
-                     if(style) document.head.removeChild(style);
-                     // Hide all
-                     document.querySelectorAll('#print-wrapper > div').forEach(el => el.classList.add('hidden'));
+                    if(style) document.head.removeChild(style);
+                    document.querySelectorAll('#print-wrapper > div').forEach(el => el.classList.add('hidden'));
                 }, 1000);
-
             }, 200);
+        },
+        debounce(fn, delay) {
+            let timeout;
+            return function(...args) {
+                if (timeout) clearTimeout(timeout);
+                timeout = setTimeout(() => fn(...args), delay);
+            };
         }
     }
 }

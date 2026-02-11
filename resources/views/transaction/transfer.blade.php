@@ -320,14 +320,8 @@
             isValid = false;
         }
 
-        // Button State (BYPASSED FOR TESTING as per user request)
+        // Button State
         if(submitBtn) {
-            // Always enable button for testing
-            submitBtn.disabled = false;
-            submitBtn.style.opacity = '1';
-            submitBtn.style.cursor = 'pointer';
-            
-            /* Original Validation Logic
             if (isValid) {
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
@@ -337,7 +331,6 @@
                 submitBtn.style.opacity = '0.5';
                 submitBtn.style.cursor = 'not-allowed';
             }
-            */
         }
     }
 
