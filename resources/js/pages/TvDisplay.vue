@@ -10,9 +10,9 @@
         <div class="flex flex-col h-screen w-full relative z-10">
             
             <!-- HEADER -->
-            <div class="h-28 flex items-center justify-between px-10 border-b border-slate-200 dark:border-white/10 bg-white/40 dark:bg-slate-900/60 backdrop-blur-md shadow-sm dark:shadow-lg transition-colors duration-500">
+            <div class="h-20 flex items-center justify-between px-10 border-b border-slate-200 dark:border-white/10 bg-white/40 dark:bg-slate-900/60 backdrop-blur-md shadow-sm dark:shadow-lg transition-colors duration-500">
                 <div class="flex items-center">
-                    <img src="/img/logo_mci.png" alt="Logo" class="h-20 w-auto object-contain drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                    <img src="/img/logo_mci.png" alt="Logo" class="h-14 w-auto object-contain drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                 </div>
                 <!-- Clock -->
                 <div class="text-right">
@@ -119,7 +119,7 @@
             </div>
 
             <!-- FOOTER: Running Text -->
-            <div class="h-16 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-white/10 flex items-center shadow-[0_-5px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_-5px_30px_rgba(0,0,0,0.6)] relative overflow-hidden z-30 transition-colors duration-500">
+            <div class="h-12 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-white/10 flex items-center shadow-[0_-5px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_-5px_30px_rgba(0,0,0,0.6)] relative overflow-hidden z-30 transition-colors duration-500">
                 <!-- Fade masks -->
                 <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent z-10 transition-colors duration-500"></div>
                 <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent z-10 transition-colors duration-500"></div>
