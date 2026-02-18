@@ -73,10 +73,35 @@ class SurveyController extends Controller
     public function checkStatus(Request $request)
     {
         $staffId = $request->staff_id;
-        $isActive = Cache::get("survey_active_{$staffId}", false);
+        $role = $request->role;
+        $counter = $request->counter;
+
+        // Jika tablet menggunakan role & counter, cari staff_id yang sesuai
+        if (!$staffId && $role && $counter) {
+            $user = \App\Models\User::where('role', strtolower($role))
+                        ->where('counter_no', $counter)
+                        ->first();
+            $staffId = $user ? $user->id : null;
+        }
+
+        $isActive = $staffId ? Cache::get("survey_active_{$staffId}", false) : false;
+
+        $staff = null;
+        if ($staffId) {
+            $user = \App\Models\User::find($staffId);
+            if ($user) {
+                $staff = [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'counter_no' => $user->counter_no,
+                    'role' => strtoupper($user->role)
+                ];
+            }
+        }
 
         return response()->json([
-            'is_active' => $isActive
+            'is_active' => $isActive,
+            'staff' => $staff
         ]);
     }
 }

@@ -169,7 +169,7 @@ export default {
     methods: {
         async fetchUsers() {
             try {
-                const response = await axios.get('/admin/users');
+                const response = await axios.get('/admin/users-data');
                 this.users = response.data;
             } catch (error) {
                 console.error("Error fetching users:", error);
@@ -196,10 +196,10 @@ export default {
             this.loading = true;
             try {
                 if (this.editingUser) {
-                    await axios.put(`/admin/users/${this.editingUser.id}`, this.form);
+                    await axios.put(`/admin/users-data/${this.editingUser.id}`, this.form);
                     Swal.fire({ toast: true, position: 'top-end', icon: 'success', title: 'Data diperbarui', showConfirmButton: false, timer: 2000 });
                 } else {
-                    await axios.post('/admin/users', this.form);
+                    await axios.post('/admin/users-data', this.form);
                     Swal.fire({ toast: true, position: 'top-end', icon: 'success', title: 'Staff ditambahkan', showConfirmButton: false, timer: 2000 });
                 }
                 this.showModal = false;
@@ -226,7 +226,7 @@ export default {
 
             if (result.isConfirmed) {
                 try {
-                    await axios.delete(`/admin/users/${user.id}`);
+                    await axios.delete(`/admin/users-data/${user.id}`);
                     this.fetchUsers();
                     Swal.fire({ toast: true, position: 'top-end', icon: 'success', title: 'Data dihapus', showConfirmButton: false, timer: 2000 });
                 } catch (error) {

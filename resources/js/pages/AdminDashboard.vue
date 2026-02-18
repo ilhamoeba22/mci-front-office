@@ -141,6 +141,101 @@
                 </div>
             </div>
         </div>
+
+        <!-- Customer Satisfaction (IKM) Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- IKM Score Card -->
+            <div class="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-2xl p-6 shadow-xl text-white relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 opacity-10">
+                    <i class="fa-solid fa-star text-9xl"></i>
+                </div>
+                <h3 class="text-lg font-bold opacity-80 mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-face-smile"></i> Indeks Kepuasan
+                </h3>
+                <div class="flex items-center gap-4">
+                    <div class="text-6xl font-black">{{ surveyStats.average_rating }}</div>
+                    <div>
+                        <div class="flex text-yellow-400 gap-1 mb-1">
+                            <i v-for="i in 4" :key="i" :class="['fa-solid fa-star', i <= Math.round(surveyStats.average_rating) ? '' : 'opacity-30']"></i>
+                        </div>
+                        <p class="text-xs font-bold opacity-70 uppercase tracking-widest">Skala 4.0</p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-white/10 flex justify-between items-center">
+                    <span class="text-sm opacity-80">Total Responden</span>
+                    <span class="text-xl font-bold">{{ surveyStats.total_surveys }}</span>
+                </div>
+            </div>
+
+            <!-- Rating Distribution -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm flex flex-col">
+                <h3 class="text-sm font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-6">Sebaran Penilaian</h3>
+                <div class="space-y-4 flex-grow">
+                    <!-- Iterasi Rating (Sangat Puas to Tidak Puas) -->
+                    <div v-for="(count, r) in surveyStats.distribution" :key="r" class="group">
+                        <div class="flex justify-between items-center text-xs mb-1.5">
+                            <span class="font-bold text-gray-700 dark:text-slate-300 flex items-center gap-2">
+                                <span v-if="r == 4" class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                <span v-if="r == 3" class="w-2 h-2 rounded-full bg-blue-500"></span>
+                                <span v-if="r == 2" class="w-2 h-2 rounded-full bg-orange-500"></span>
+                                <span v-if="r == 1" class="w-2 h-2 rounded-full bg-rose-500"></span>
+                                {{ r == 4 ? 'Sangat Puas' : (r == 3 ? 'Puas' : (r == 2 ? 'Cukup' : 'Tidak Puas')) }}
+                            </span>
+                            <span class="text-gray-400 tabular-nums">{{ count }} Nasabah</span>
+                        </div>
+                        <div class="w-full bg-gray-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div 
+                                class="h-full transition-all duration-1000"
+                                :class="{
+                                    'bg-emerald-500': r == 4,
+                                    'bg-blue-500': r == 3,
+                                    'bg-orange-500': r == 2,
+                                    'bg-rose-500': r == 1
+                                }"
+                                :style="{ width: surveyStats.total_surveys > 0 ? (count / surveyStats.total_surveys * 100) + '%' : '0%' }"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Feedback -->
+            <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-sm font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Suara Nasabah Terbaru</h3>
+                    <i class="fa-solid fa-comments text-blue-500 opacity-30"></i>
+                </div>
+                
+                <div class="space-y-4 max-h-[250px] overflow-y-auto pr-2 custom-scrollbar">
+                    <div v-for="fb in surveyStats.recent_feedback" :key="fb.id" class="p-4 bg-gray-50 dark:bg-slate-900/50 rounded-xl border border-gray-100 dark:border-slate-800 transition-all hover:border-blue-500/30 group">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-2">
+                                <span 
+                                    class="text-xs font-bold px-2 py-0.5 rounded-full"
+                                    :class="{
+                                        'bg-emerald-100 text-emerald-600': fb.rating >= 4,
+                                        'bg-blue-100 text-blue-600': fb.rating == 3,
+                                        'bg-orange-100 text-orange-600': fb.rating == 2,
+                                        'bg-rose-100 text-rose-600': fb.rating == 1
+                                    }"
+                                >
+                                    {{ fb.rating }} Star
+                                </span>
+                                <span class="text-[10px] text-gray-400 uppercase font-bold tracking-wider">{{ fb.staff_name }}</span>
+                            </div>
+                            <span class="text-[10px] text-gray-400 italic">{{ fb.time }}</span>
+                        </div>
+                        <p class="text-sm text-gray-700 dark:text-slate-300 leading-relaxed">
+                            {{ fb.comment || '(Tanpa komentar)' }}
+                        </p>
+                    </div>
+
+                    <div v-if="surveyStats.recent_feedback.length === 0" class="h-full flex items-center justify-center py-12 text-gray-400 text-sm italic">
+                        Belum ada feedback nasabah.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -160,6 +255,12 @@ export default {
             summary: {
                 total_tx: 0,
                 total_nominal: 0
+            },
+            surveyStats: {
+                total_surveys: 0,
+                average_rating: 0,
+                distribution: { 1: 0, 2: 0, 3: 0, 4: 0 },
+                recent_feedback: []
             },
             currentTime: '',
             yAxisMin: null, // Manual Y-axis minimum
@@ -306,12 +407,16 @@ export default {
             this.loading = true;
             this.error = null;
             try {
-                const response = await axios.get('/admin/chart-data', {
+                // Fetch Market Data
+                const chartRes = await axios.get('/admin/chart-data', {
                     params: { filter: this.filter }
                 });
 
-                const data = response.data.candles;
-                this.summary = response.data.summary;
+                const data = chartRes.data.candles;
+                this.summary = chartRes.data.summary;
+                
+                // Fetch Survey Data
+                await this.fetchSurveyStats();
                 
                 // Update Main Chart with total nominal
                 if (data && data.length > 0) {
@@ -344,6 +449,14 @@ export default {
                 this.volumeSeries = [];
             } finally {
                 this.loading = false;
+            }
+        },
+        async fetchSurveyStats() {
+            try {
+                const res = await axios.get('/admin/survey-stats');
+                this.surveyStats = res.data;
+            } catch (err) {
+                console.error("Survey Stats Fetch Error:", err);
             }
         },
         setFilter(val) {
@@ -430,3 +543,22 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+</style>

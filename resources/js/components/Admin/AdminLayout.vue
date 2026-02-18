@@ -55,6 +55,12 @@
 
                         <li class="pt-4 pb-2 px-3 text-xs uppercase text-gray-500 dark:text-slate-500 font-bold">Sistem</li>
                         <li>
+                            <a :href="'/survey?staff=' + user?.id" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors text-orange-600 dark:text-orange-400" v-if="user?.id">
+                                <i class="fa-solid fa-tablet-screen-button w-6 text-center"></i>
+                                <span class="ml-3 font-medium">Buka Layar Survey</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="/display" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors text-cyan-600 dark:text-cyan-400">
                                 <i class="fa-solid fa-external-link-alt w-6 text-center"></i>
                                 <span class="ml-3 font-medium">Buka TV Display</span>

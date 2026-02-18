@@ -4,7 +4,7 @@
     "name": "_plugin-vue_export-helper"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DNMQLD_J.css",
+    "file": "assets/app-Dnypobpm.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -13,7 +13,7 @@
     ]
   },
   "resources/js/admin.js": {
-    "file": "assets/admin-DLJrNABe.js",
+    "file": "assets/admin-HQJy_3NS.js",
     "name": "admin",
     "src": "resources/js/admin.js",
     "isEntry": true,
@@ -22,8 +22,8 @@
       "__plugin-vue_export-helper-DmS0tGyG.js"
     ],
     "css": [
-      "assets/admin-C4vLtP0y.css",
-      "assets/app-DNMQLD_J.css"
+      "assets/admin-5vCQIUTO.css",
+      "assets/app-Dnypobpm.css"
     ]
   },
   "resources/js/app.js": {
@@ -33,7 +33,7 @@
     "isEntry": true
   },
   "resources/js/tv.js": {
-    "file": "assets/tv-DZl4PkR6.js",
+    "file": "assets/tv-f2v18nOD.js",
     "name": "tv",
     "src": "resources/js/tv.js",
     "isEntry": true,
@@ -43,7 +43,7 @@
     ],
     "css": [
       "assets/tv-Dk3dMudt.css",
-      "assets/app-DNMQLD_J.css"
+      "assets/app-Dnypobpm.css"
     ]
   }
 }

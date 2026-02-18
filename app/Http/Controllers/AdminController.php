@@ -713,6 +713,47 @@ class AdminController extends Controller
     }
 
     /**
+     * Get Customer Satisfaction (IKM) Stats (API)
+     */
+    public function getSurveyStats(Request $request)
+    {
+        $today = Carbon::now()->format('Y-m-d');
+        
+        $totalSurveys = \App\Models\Survey::count();
+        $averageRating = \App\Models\Survey::avg('rating') ?: 0;
+        
+        // Sebaran Rating (1-4)
+        $distribution = [
+            1 => \App\Models\Survey::where('rating', 1)->count(),
+            2 => \App\Models\Survey::where('rating', 2)->count(),
+            3 => \App\Models\Survey::where('rating', 3)->count(),
+            4 => \App\Models\Survey::where('rating', 4)->count(),
+        ];
+
+        // Recent feedback with staff name
+        $recentFeedback = \App\Models\Survey::with('user')
+            ->orderBy('created_at', 'desc')
+            ->limit(10)
+            ->get()
+            ->map(function($s) {
+                return [
+                    'id' => $s->id,
+                    'rating' => $s->rating,
+                    'comment' => $s->comment,
+                    'staff_name' => $s->user ? $s->user->name : 'Unknown',
+                    'time' => $s->created_at->diffForHumans()
+                ];
+            });
+
+        return response()->json([
+            'total_surveys' => $totalSurveys,
+            'average_rating' => round($averageRating, 1),
+            'distribution' => $distribution,
+            'recent_feedback' => $recentFeedback
+        ]);
+    }
+
+    /**
      * Helper: Konversi Angka ke Terbilang Bahasa Indonesia
      */
     private function terbilangIndo($angka)

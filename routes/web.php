@@ -167,10 +167,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Manajemen Staff (Hanya Admin)
     Route::middleware(['role:admin'])->group(function () {
-        Route::get('/users', [UserController::class, 'index'])->name('users.index');
-        Route::post('/users', [UserController::class, 'store'])->name('users.store');
-        Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
-        Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+        Route::get('/users-data', [UserController::class, 'index'])->name('users.index');
+        Route::post('/users-data', [UserController::class, 'store'])->name('users.store');
+        Route::put('/users-data/{id}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/users-data/{id}', [UserController::class, 'destroy'])->name('users.destroy');
         
         // Settings (Hanya Admin)
         Route::post('/settings/media', [AdminController::class , 'updateMedia'])->name('settings.media.update');
@@ -197,6 +197,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/print/report/{token}', [PrintController::class, 'printReport'])->name('print.report');
     Route::post('/queue/update-transfer/{token}', [AdminController::class, 'updateTransfer'])->name('queue.update-transfer');
     Route::post('/queue/update-withdrawal/{token}', [AdminController::class, 'updateWithdrawal'])->name('queue.update-withdrawal');
+
+    Route::get('/survey-stats', [AdminController::class, 'getSurveyStats'])->name('survey-stats');
 
     // SPA Catch-all
     Route::get('/{any}', [AdminController::class , 'index'])->where('any', '.*')->name('spa.fallback');
