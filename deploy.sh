@@ -1,24 +1,21 @@
 #!/bin/bash
 
 # Deployment Script for MCI Front Office
-# Version: 1.1 (Fixed Line Endings)
-# Usage: sh deploy.sh
+# Force LF (Linux) Line Endings
 
 echo "--- Memulai Update Produksi ---"
 
 # 1. Pull latest code from GitHub
-echo "[1/4] Menarik kode terbaru dari GitHub..."
+echo "[1/3] Menarik kode terbaru dari GitHub..."
 git pull origin main
 
-# 2. Optimalisasi Laravel
-echo "[2/4] Membersihkan dan membuat cache baru..."
+# 2. Optimalisasi Laravel (Tanpa spasi di akhir baris)
+echo "[2/3] Membersihkan dan membuat cache baru..."
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
+php artisan migrate --force
 
-# 3. Informasikan Manual Build jika perlu
-echo "[3/4] Catatan: Jika ada perubahan CSS/JS, pastikan Anda sudah mengupload folder 'public/build' dari lokal."
-
-# 4. Berhasil
-echo "[4/4] Selesai! Website sudah terupdate."
+# 3. Selesai
+echo "[3/3] Selesai! Website sudah terupdate."
 echo "--- Update Berhasil ---"
