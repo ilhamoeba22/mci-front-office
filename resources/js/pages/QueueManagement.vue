@@ -45,6 +45,10 @@
                                 </span>
                             </button>
 
+                            <button @click="triggerSurvey" class="bg-indigo-100 hover:bg-indigo-200 dark:bg-indigo-900/40 dark:hover:bg-indigo-900/60 text-indigo-600 dark:text-indigo-200 border border-indigo-200 dark:border-indigo-800 p-2 rounded-xl font-bold transition-all text-[10px] flex items-center justify-center gap-1 mt-1">
+                                <i class="fa-solid fa-mobile-screen-button"></i> Tampilkan Survey
+                            </button>
+
                             <button @click="skipQueue(currentQueue.id_antrian)" class="bg-rose-100 hover:bg-rose-200 dark:bg-rose-900/40 dark:hover:bg-rose-900/60 text-rose-600 dark:text-rose-200 border border-rose-200 dark:border-rose-800 p-2 rounded-xl font-bold transition-all text-[10px] flex items-center justify-center gap-1 mt-1">
                                 <i class="fa-solid fa-forward"></i> Lewati
                             </button>
@@ -769,6 +773,28 @@ export default {
                     });
                 }
             }
+        },
+        async triggerSurvey() {
+            if (!this.currentQueue) return;
+            try {
+                // Let's use the helper method to get the ID from the meta tag
+                await axios.post('/api/survey/trigger', { staff_id: this.getAuthId() });
+
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Survey diaktifkan di tablet',
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            } catch (error) {
+                console.error("Error triggering survey:", error);
+            }
+        },
+        getAuthId() {
+            // Usually stored in a meta tag or window object in Laravel SPAs
+            return document.querySelector('meta[name="user-id"]')?.content || 1;
         },
         async skipQueue(id) {
              const result = await Swal.fire({

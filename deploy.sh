@@ -7,6 +7,7 @@ echo "--- Memulai Update Produksi ---"
 
 # 1. Pull latest code from GitHub
 echo "[1/3] Menarik kode terbaru dari GitHub..."
+git reset --hard origin/main
 git pull origin main
 
 # 2. Optimalisasi Laravel

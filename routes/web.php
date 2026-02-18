@@ -8,6 +8,7 @@ use App\Http\Controllers\DisplayController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\TransactionPrintController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SurveyController;
 
 /* |-------------------------------------------------------------------------- | Web Routes (Rute Web) |-------------------------------------------------------------------------- | | Di sini Anda dapat mendaftarkan rute web untuk aplikasi Anda. | Rute-rute ini dimuat oleh RouteServiceProvider dan ditugaskan ke grup  | middleware "web". | */
 
@@ -241,3 +242,10 @@ Route::get('/tes-token', function() {
     }
 });
 */
+
+// Rute Survey Kepuasan Nasabah (IKM)
+Route::get('/survey', [SurveyController::class, 'index'])->name('survey.index');
+Route::post('/survey/store', [SurveyController::class, 'store'])->name('survey.store');
+Route::post('/api/survey/trigger', [SurveyController::class, 'trigger'])->name('api.survey.trigger');
+Route::get('/api/survey/status', [SurveyController::class, 'checkStatus'])->name('api.survey.status');
+

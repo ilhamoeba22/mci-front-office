@@ -118,6 +118,12 @@ class AdminController extends Controller
         $queue->st_antrian = '3'; // Status SELESAI
         $queue->save();
 
+        // Otomatis Trigger Survey di tablet nasabah
+        $staffId = auth()->id();
+        if ($staffId) {
+            \Illuminate\Support\Facades\Cache::put("survey_active_{$staffId}", true, 60);
+        }
+
         return response()->json(['message' => 'Antrian selesai', 'data' => $queue]);
     }
 
