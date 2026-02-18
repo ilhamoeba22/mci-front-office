@@ -20,12 +20,9 @@
             <div style="text-align: right; background: rgba(139, 92, 246, 0.1); padding: 8px 15px; border-radius: 8px; border: 1px solid rgba(139, 92, 246, 0.2); white-space: nowrap;">
                 <span style="font-size: 0.7rem; color: #8b5cf6; font-weight: 600; display: block;">SALDO SAAT INI</span>
                  <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-                     <span id="balance_display" data-value="Rp {{ number_format($data['saldo'], 0, ',', '.') }}" style="font-size: 1rem; font-weight: 700; color: var(--primary-navy); letter-spacing: 1px;">
-                        ••••••••
+                     <span id="balance_display" style="font-size: 1rem; font-weight: 700; color: var(--primary-navy); letter-spacing: 2px;">
+                        @for($i = 0; $i < strlen((int)$data['saldo']); $i++)•@endfor
                     </span>
-                    <button type="button" onclick="toggleBalance()" style="background: none; border: none; cursor: pointer; color: #8b5cf6; padding: 0;">
-                        <i class="fa-solid fa-eye" id="eye_icon"></i>
-                    </button>
                 </div>
             </div>
         </div>
@@ -488,21 +485,7 @@
     // Call on load
     document.addEventListener('DOMContentLoaded', fetchCountries);
 
-    function toggleBalance() {
-        const display = document.getElementById('balance_display');
-        const icon = document.getElementById('eye_icon');
-        const realValue = display.getAttribute('data-value');
-        
-        if (display.textContent.trim() === '••••••••') {
-            display.textContent = realValue;
-            icon.classList.remove('fa-eye');
-            icon.classList.add('fa-eye-slash');
-        } else {
-            display.textContent = '••••••••';
-            icon.classList.remove('fa-eye-slash');
-            icon.classList.add('fa-eye');
-        }
-    }
+
 </script>
 
 <style>
