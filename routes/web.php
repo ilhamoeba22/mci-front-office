@@ -190,3 +190,24 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 // Rute TV Display
 Route::get('/display', [DisplayController::class , 'index'])->name('display.index');
 Route::get('/api/queue-data', [DisplayController::class , 'getQueueData'])->name('api.queue.data');
+
+// Route Diagnosa API Vendor
+Route::get('/cek-api-vendor', function() {
+    try {
+        $response = \Illuminate\Support\Facades\Http::withHeaders(['User-Agent' => 'Mozilla/5.0'])
+            ->timeout(10)
+            ->get('https://bprs-mci.mitrasoft.com/mci-api/api/v1/token');
+            
+        return [
+            'status_code' => $response->status(),
+            'is_success' => $response->successful(),
+            'message' => $response->successful() ? 'Koneksi Tembus ke Vendor!' : 'Koneksi Ditolak/Error oleh Vendor',
+            'raw_body' => $response->body()
+        ];
+    } catch (\Exception $e) {
+        return [
+            'status' => 'Gagal Koneksi (Timeout/Firewall)',
+            'error' => $e->getMessage()
+        ];
+    }
+});
