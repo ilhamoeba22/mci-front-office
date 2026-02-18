@@ -145,33 +145,6 @@ S9Pkm+qgWGP/S1ycCiJBNg==
 
     public function getBalance($accountNo)
     {
-        // --- DUMMY DATA FOR TESTING (Offline/Weekend Mode) ---
-        if ($accountNo === '1180100251') {
-            return [
-                'responseCode' => '00',
-                'responseMessage' => 'Success',
-                'accountNo' => '1180100251',
-                'name' => 'DUMMY USER',
-                'accountInfo' => [
-                    [
-                        'balanceType' => 'Balance',
-                        'availableBalance' => ['value' => 5000000.00, 'currency' => 'IDR'],
-                        'ledgerBalance' => ['value' => 5000000.00, 'currency' => 'IDR'],
-                        'minimalAmount' => ['value' => 50000.00, 'currency' => 'IDR'],
-                    ]
-                ],
-                'detailAccount' => [
-                    'address' => 'Jl. Uji Coba No. 123',
-                    'subdistrict' => 'Kecamatan Test',
-                    'district' => 'Kabupaten Test',
-                    'city' => 'Kota Test',
-                    'phoneNo' => '08123456789',
-                    'governmentIdNo' => '3500000000000001'
-                ]
-            ];
-        }
-        // -----------------------------------------------------
-
         // 1. Dapatkan Token
         $tokenData = $this->getToken();
         if (!$tokenData || empty($tokenData['accessToken'])) {
