@@ -9,6 +9,8 @@ use App\Http\Controllers\PrintController;
 use App\Http\Controllers\TransactionPrintController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /* |-------------------------------------------------------------------------- | Web Routes (Rute Web) |-------------------------------------------------------------------------- | | Di sini Anda dapat mendaftarkan rute web untuk aplikasi Anda. | Rute-rute ini dimuat oleh RouteServiceProvider dan ditugaskan ke grup  | middleware "web". | */
 
@@ -155,10 +157,28 @@ Route::post('/transaction/transfer/store', [TransactionController::class , 'stor
 
 // Rute Admin (Back Office) - Protected
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    // Profil user yang sedang login
+    Route::get('/profile', function () {
+        return response()->json(Auth::user());
+    })->name('profile');
+
     // Dashboard Utama
     Route::get('/', [AdminController::class , 'index'])->name('dashboard');
 
-    // Manajemen Antrian (Call/Done)
+    // Manajemen Staff (Hanya Admin)
+    Route::middleware(['role:admin'])->group(function () {
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        Route::post('/users', [UserController::class, 'store'])->name('users.store');
+        Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+        
+        // Settings (Hanya Admin)
+        Route::post('/settings/media', [AdminController::class , 'updateMedia'])->name('settings.media.update');
+        Route::post('/settings/text', [AdminController::class , 'updateText'])->name('settings.text.update');
+        Route::get('/settings-data', [AdminController::class , 'settings'])->name('settings.data');
+    });
+
+    // Manajemen Antrian (Teller & CS sesuai role nanti di Logic Dashboard)
     Route::get('/queue', [AdminController::class , 'queueList'])->name('queue.list');
     Route::get('/queue-v2', [AdminController::class , 'queueListV2'])->name('queue.list.v2');
     Route::post('/queue/call/{id}', [AdminController::class , 'callQueue'])->name('queue.call');
@@ -168,12 +188,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/queue-history', [AdminController::class , 'queueHistory']);
     Route::get('/queue-history/export', [AdminController::class , 'exportHistory']);
 
-
-    // Settings (Media)
-    Route::get('/settings-data', [AdminController::class , 'settings'])->name('settings.data');
-    Route::get('/chart-data', [AdminController::class , 'getChartData'])->name('dashboard.chart'); // NEW
-    Route::post('/settings/media', [AdminController::class , 'updateMedia'])->name('settings.media.update');
-    Route::post('/settings/text', [AdminController::class , 'updateText'])->name('settings.text.update');
+    Route::get('/chart-data', [AdminController::class , 'getChartData'])->name('dashboard.chart');
 
     // High Precision Print Routes (SLIPS)
     Route::get('/print/transfer/{token}', [TransactionPrintController::class, 'printTransfer'])->name('print.transfer');
@@ -183,8 +198,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::post('/queue/update-transfer/{token}', [AdminController::class, 'updateTransfer'])->name('queue.update-transfer');
     Route::post('/queue/update-withdrawal/{token}', [AdminController::class, 'updateWithdrawal'])->name('queue.update-withdrawal');
 
-    // SPA Catch-all (MUST BE LAST in this group)
-    // Allows Vue Router to handle sub-paths like /admin/queue/CS on refresh
+    // SPA Catch-all
     Route::get('/{any}', [AdminController::class , 'index'])->where('any', '.*')->name('spa.fallback');
 });
 
