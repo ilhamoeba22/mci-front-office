@@ -1,0 +1,49 @@
+{
+  "__plugin-vue_export-helper-BXQdw78S.js": {
+    "file": "assets/_plugin-vue_export-helper-BXQdw78S.js",
+    "name": "_plugin-vue_export-helper"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-BpipxER4.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/admin.js": {
+    "file": "assets/admin-Dwgk3Lux.js",
+    "name": "admin",
+    "src": "resources/js/admin.js",
+    "isEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper-BXQdw78S.js"
+    ],
+    "css": [
+      "assets/admin-CZXIclfG.css",
+      "assets/app-BpipxER4.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DoR3n1Dx.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/tv.js": {
+    "file": "assets/tv-DeRpXseN.js",
+    "name": "tv",
+    "src": "resources/js/tv.js",
+    "isEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper-BXQdw78S.js"
+    ],
+    "css": [
+      "assets/tv-QwCRH4W4.css",
+      "assets/app-BpipxER4.css"
+    ]
+  }
+}
