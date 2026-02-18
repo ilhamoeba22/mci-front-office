@@ -10,16 +10,16 @@
         <div class="flex flex-col h-screen w-full relative z-10">
             
             <!-- HEADER -->
-            <div class="h-16 flex items-center justify-between px-10 border-b border-slate-200 dark:border-white/10 bg-white/40 dark:bg-slate-900/60 backdrop-blur-md shadow-sm dark:shadow-lg transition-colors duration-500">
+            <div class="h-12 flex items-center justify-between px-8 border-b border-slate-200 dark:border-white/10 bg-white/40 dark:bg-slate-900/60 backdrop-blur-md shadow-sm dark:shadow-lg transition-colors duration-500">
                 <div class="flex items-center">
-                    <img src="/img/logo_mci.png" alt="Logo" class="h-10 w-auto object-contain drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                    <img src="/img/logo_mci.png" alt="Logo" class="h-7 w-auto object-contain drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                 </div>
                 <!-- Clock -->
                 <div class="text-right">
-                    <div class="text-2xl font-mono font-bold text-slate-700 dark:text-slate-200 tracking-[0.1em] drop-shadow-sm dark:drop-shadow-md transition-colors">
+                    <div class="text-lg font-mono font-bold text-slate-700 dark:text-slate-200 tracking-[0.1em] drop-shadow-sm dark:drop-shadow-md transition-colors leading-tight">
                         {{ currentTime }}
                     </div>
-                    <div class="text-sm text-slate-500 dark:text-slate-400 uppercase font-semibold tracking-[0.15em] transition-colors">
+                    <div class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-semibold tracking-[0.15em] transition-colors leading-none">
                         {{ currentDate }}
                     </div>
                 </div>
