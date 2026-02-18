@@ -4,7 +4,7 @@
     "name": "_plugin-vue_export-helper"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BpipxER4.css",
+    "file": "assets/app-BLA9fYxf.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -13,7 +13,7 @@
     ]
   },
   "resources/js/admin.js": {
-    "file": "assets/admin-Dwgk3Lux.js",
+    "file": "assets/admin-Dr7zESdK.js",
     "name": "admin",
     "src": "resources/js/admin.js",
     "isEntry": true,
@@ -23,7 +23,7 @@
     ],
     "css": [
       "assets/admin-CZXIclfG.css",
-      "assets/app-BpipxER4.css"
+      "assets/app-BLA9fYxf.css"
     ]
   },
   "resources/js/app.js": {
@@ -33,7 +33,7 @@
     "isEntry": true
   },
   "resources/js/tv.js": {
-    "file": "assets/tv-DeRpXseN.js",
+    "file": "assets/tv-Bf0A1VlM.js",
     "name": "tv",
     "src": "resources/js/tv.js",
     "isEntry": true,
@@ -43,7 +43,7 @@
     ],
     "css": [
       "assets/tv-QwCRH4W4.css",
-      "assets/app-BpipxER4.css"
+      "assets/app-BLA9fYxf.css"
     ]
   }
 }
