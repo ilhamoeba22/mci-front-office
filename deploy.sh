@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Deployment Script for MCI Front Office
+# Version: 1.1 (Fixed Line Endings)
 # Usage: sh deploy.sh
 
 echo "--- Memulai Update Produksi ---"
