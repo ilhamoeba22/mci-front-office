@@ -191,6 +191,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 Route::get('/display', [DisplayController::class , 'index'])->name('display.index');
 Route::get('/api/queue-data', [DisplayController::class , 'getQueueData'])->name('api.queue.data');
 
+/*
 // Route Diagnosa API Vendor
 Route::get('/cek-api-vendor', function() {
     try {
@@ -239,3 +240,4 @@ Route::get('/tes-token', function() {
         ];
     }
 });
+*/
