@@ -211,3 +211,31 @@ Route::get('/cek-api-vendor', function() {
         ];
     }
 });
+
+// Route Tes Token Asli (Menggunakan Service)
+Route::get('/tes-token', function() {
+    try {
+        $service = new \App\Services\CoreBankingService();
+        $tokenData = $service->getToken();
+        
+        if ($tokenData && isset($tokenData['accessToken'])) {
+            return [
+                'status' => 'SUKSES!',
+                'message' => 'Aplikasi Berhasil Login & Mendapatkan Token',
+                'accessToken_preview' => substr($tokenData['accessToken'], 0, 20) . '...',
+                'timestamp_used' => $tokenData['timestamp']
+            ];
+        } else {
+            return [
+                'status' => 'KONEKSI TERBUKA TAPI LOGIN GAGAL',
+                'message' => 'Cek kembali Client ID, Secret, atau Private Key di .env',
+                'raw_response' => 'Lihat storage/logs/laravel.log untuk detailnya'
+            ];
+        }
+    } catch (\Exception $e) {
+        return [
+            'status' => 'ERROR SISTEM',
+            'error' => $e->getMessage()
+        ];
+    }
+});
