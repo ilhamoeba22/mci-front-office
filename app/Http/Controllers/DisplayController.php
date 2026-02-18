@@ -33,13 +33,13 @@ class DisplayController extends Controller
             // Check for Playlist
             if (preg_match('/list=([^&]+)/', $rawYoutubeUrl, $matches)) {
                 $playlistId = $matches[1];
-                $embedUrl = "https://www.youtube.com/embed?listType=playlist&list={$playlistId}&autoplay=1&mute=0&loop=1&controls=0&showinfo=0";
+                $embedUrl = "https://www.youtube-nocookie.com/embed?listType=playlist&list={$playlistId}&autoplay=1&mute=1&loop=1&controls=0&showinfo=0";
             }
             else {
                 // Single Video
                 preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})%i', $rawYoutubeUrl, $match);
                 $youtubeId = $match[1] ?? '';
-                $embedUrl = $youtubeId ? "https://www.youtube.com/embed/{$youtubeId}?autoplay=1&mute=0&loop=1&playlist={$youtubeId}&controls=0&showinfo=0" : '';
+                $embedUrl = $youtubeId ? "https://www.youtube-nocookie.com/embed/{$youtubeId}?autoplay=1&mute=1&loop=1&playlist={$youtubeId}&controls=0&showinfo=0" : '';
             }
         }
 

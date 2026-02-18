@@ -57,8 +57,8 @@
     <!-- Pass Data to Vue -->
     <script>
         window.tvConfig = {
-            initialVideoFile: "{{ $videoFile }}",
-            initialRunningText: "{{ $runningText }}",
+            initialVideoFile: @json($videoFile),
+            initialRunningText: @json($runningText),
             initialMediaSource: "{{ $mediaSource }}",
             initialEmbedUrl: "{!! $embedUrl !!}"
         };
