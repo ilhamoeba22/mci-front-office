@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             ['email' => 'admin@mci.com'],
             [
                 'name' => 'Administrator',
+                'username' => 'admin',
+                'role' => 'admin',
                 'password' => \Illuminate\Support\Facades\Hash::make('password'),
             ]
         );
