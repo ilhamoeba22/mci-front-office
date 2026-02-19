@@ -3,7 +3,9 @@
         <!-- Header -->
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
             <div>
-                <h2 class="text-3xl font-bold text-gray-800 dark:text-white transition-colors">Market Dashboard</h2>
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white transition-colors flex items-center gap-2">
+                    Market Dashboard <span class="text-[10px] font-normal opacity-30">v5.0.2</span>
+                </h2>
                 <p class="text-gray-500 dark:text-slate-400 text-sm mt-1 transition-colors">Real-time transaction monitoring and analysis.</p>
             </div>
             
