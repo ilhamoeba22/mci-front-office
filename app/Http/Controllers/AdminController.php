@@ -728,10 +728,11 @@ class AdminController extends Controller
             2 => \App\Models\Survey::where('rating', 2)->count(),
             3 => \App\Models\Survey::where('rating', 3)->count(),
             4 => \App\Models\Survey::where('rating', 4)->count(),
+            5 => \App\Models\Survey::where('rating', 5)->count(),
         ];
 
-        // Recent feedback with staff name
-        $recentFeedback = \App\Models\Survey::with('user')
+        // Recent feedback - No comments
+        $recentVotes = \App\Models\Survey::with(['user', 'queue'])
             ->orderBy('created_at', 'desc')
             ->limit(10)
             ->get()
@@ -739,13 +740,14 @@ class AdminController extends Controller
                 return [
                     'id' => $s->id,
                     'rating' => $s->rating,
-                    'comment' => $s->comment,
                     'staff_name' => $s->user ? $s->user->name : 'Unknown',
+                    'queue_no' => $s->queue ? $s->queue->antrian : '-',
+                    'date' => $s->queue ? $s->queue->tgl_antri : $s->created_at->format('Y-m-d'),
                     'time' => $s->created_at->diffForHumans()
                 ];
             });
 
-        // Staff Ranking (Top Performance)
+        // Staff Ranking
         $staffRanking = \App\Models\User::whereIn('role', ['teller', 'cs'])
             ->withCount('surveys')
             ->get()
@@ -753,7 +755,7 @@ class AdminController extends Controller
                 $avg = \App\Models\Survey::where('user_id', $user->id)->avg('rating');
                 return [
                     'name' => $user->name,
-                    'role' => $user->role,
+                    'role' => strtoupper($user->role),
                     'avg_rating' => $avg ? round($avg, 1) : 0,
                     'total_surveys' => $user->surveys_count
                 ];
@@ -766,7 +768,7 @@ class AdminController extends Controller
             'total_surveys' => $totalSurveys,
             'average_rating' => round($averageRating, 1),
             'distribution' => $distribution,
-            'recent_feedback' => $recentFeedback,
+            'recent_feedback' => $recentVotes,
             'staff_ranking' => $staffRanking
         ]);
     }

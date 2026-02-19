@@ -23,4 +23,12 @@ class Survey extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Relasi ke Antrian (tbl_antrian)
+     */
+    public function queue()
+    {
+        return $this->belongsTo(Queue::class, 'reference_no', 'kode');
+    }
 }

@@ -4,7 +4,7 @@
     "name": "_plugin-vue_export-helper"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CLnNG8zm.css",
+    "file": "assets/app-BURPNlON.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -13,7 +13,7 @@
     ]
   },
   "resources/js/admin.js": {
-    "file": "assets/admin-p4oya_2g.js",
+    "file": "assets/admin-Bhbc1V6y.js",
     "name": "admin",
     "src": "resources/js/admin.js",
     "isEntry": true,
@@ -22,8 +22,8 @@
       "__plugin-vue_export-helper-B7THsp-Y.js"
     ],
     "css": [
-      "assets/admin-CXjPszEu.css",
-      "assets/app-CLnNG8zm.css"
+      "assets/admin-Cd056zPX.css",
+      "assets/app-BURPNlON.css"
     ]
   },
   "resources/js/app.js": {
@@ -33,7 +33,7 @@
     "isEntry": true
   },
   "resources/js/tv.js": {
-    "file": "assets/tv-Cz3l_mtd.js",
+    "file": "assets/tv-g7bHp2jM.js",
     "name": "tv",
     "src": "resources/js/tv.js",
     "isEntry": true,
@@ -43,7 +43,7 @@
     ],
     "css": [
       "assets/tv-Dk3dMudt.css",
-      "assets/app-CLnNG8zm.css"
+      "assets/app-BURPNlON.css"
     ]
   }
 }

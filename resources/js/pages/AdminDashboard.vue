@@ -142,129 +142,140 @@
             </div>
         </div>
 
-        <!-- Customer Satisfaction (IKM) Section -->
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-            <!-- IKM Score Card -->
-            <div class="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-2xl p-6 shadow-xl text-white relative overflow-hidden">
-                <div class="absolute -right-4 -top-4 opacity-10">
-                    <i class="fa-solid fa-star text-9xl"></i>
-                </div>
-                <h3 class="text-lg font-bold opacity-80 mb-6 flex items-center gap-2">
-                    <i class="fa-solid fa-face-smile"></i> Indeks Kepuasan
-                </h3>
-                <div class="flex items-center gap-4">
-                    <div class="text-6xl font-black">{{ surveyStats.average_rating }}</div>
-                    <div>
-                        <div class="flex text-yellow-400 gap-1 mb-1">
-                            <i v-for="i in 4" :key="i" :class="['fa-solid fa-star', i <= Math.round(surveyStats.average_rating) ? '' : 'opacity-30']"></i>
-                        </div>
-                        <p class="text-xs font-bold opacity-70 uppercase tracking-widest">Skala 4.0</p>
+        <!-- Customer Satisfaction (IKM) Section (V5 ultra-compact) -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
+            <!-- Col 1: Master Score (25%) -->
+            <div class="lg:col-span-1">
+                <div class="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-3xl p-6 shadow-xl text-white relative overflow-hidden h-[500px] flex flex-col justify-center">
+                    <div class="absolute -right-6 -top-6 opacity-10 rotate-12">
+                        <i class="fa-solid fa-star text-[10rem]"></i>
                     </div>
-                </div>
-                <div class="mt-8 pt-6 border-t border-white/10 flex justify-between items-center">
-                    <span class="text-sm opacity-80">Total Responden</span>
-                    <span class="text-xl font-bold">{{ surveyStats.total_surveys }}</span>
+                    <div class="relative z-10">
+                        <h3 class="text-[10px] font-black opacity-70 mb-6 flex items-center gap-2 tracking-[0.2em] uppercase">
+                            <i class="fa-solid fa-face-smile-beam"></i> Indeks Kepuasan
+                        </h3>
+                        <div class="flex items-baseline gap-2">
+                            <div class="text-6xl font-black tracking-tighter">{{ surveyStats.average_rating || '0.0' }}</div>
+                            <div class="text-lg font-bold opacity-40">/ 5.0</div>
+                        </div>
+                        <div class="flex text-yellow-500 gap-1 mt-3 mb-6">
+                            <i v-for="i in 5" :key="i" :class="['fa-solid fa-star text-[12px]', i <= Math.round(surveyStats.average_rating) ? '' : 'opacity-20']"></i>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex flex-col gap-0.5">
+                            <span class="text-[9px] font-bold opacity-50 uppercase tracking-widest">Total Responden</span>
+                            <span class="text-xl font-black">{{ surveyStats.total_surveys }}</span>
+                        </div>
+                    </div>
+                    <div class="mt-auto opacity-20 text-[8px] font-black tracking-widest uppercase border-t border-white/5 pt-3">Real-time Monitoring</div>
                 </div>
             </div>
 
-            <!-- Rating Distribution -->
-            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm flex flex-col">
-                <h3 class="text-sm font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-6">Sebaran Penilaian</h3>
-                <div class="space-y-4 flex-grow">
-                    <!-- Iterasi Rating (Sangat Puas to Tidak Puas) -->
-                    <div v-for="(count, r) in surveyStats.distribution" :key="r" class="group">
-                        <div class="flex justify-between items-center text-xs mb-1.5">
-                            <span class="font-bold text-gray-700 dark:text-slate-300 flex items-center gap-2">
-                                <span v-if="r == 4" class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                                <span v-if="r == 3" class="w-2 h-2 rounded-full bg-blue-500"></span>
-                                <span v-if="r == 2" class="w-2 h-2 rounded-full bg-orange-500"></span>
-                                <span v-if="r == 1" class="w-2 h-2 rounded-full bg-rose-500"></span>
-                                {{ r == 4 ? 'Sangat Puas' : (r == 3 ? 'Puas' : (r == 2 ? 'Cukup' : 'Tidak Puas')) }}
-                            </span>
-                            <span class="text-gray-400 tabular-nums">{{ count }} Nasabah</span>
+            <!-- Col 2: Stacked Metrics (25%) -->
+            <div class="lg:col-span-1 flex flex-col gap-6 h-[500px]">
+                <!-- Sebaran Penilaian -->
+                <div class="bg-white dark:bg-slate-800 rounded-3xl p-5 border border-gray-100 dark:border-slate-700 shadow-sm flex-1 flex flex-col justify-center">
+                    <h3 class="text-[9px] font-black text-gray-400 dark:text-slate-500 uppercase tracking-[0.15em] mb-4">Sebaran Penilaian</h3>
+                    <div class="space-y-3">
+                        <div v-for="r in [5,4,3,2,1]" :key="r">
+                            <div class="flex justify-between items-center text-[9px] mb-1.5 font-black">
+                                <span class="text-gray-600 dark:text-slate-400 flex items-center gap-2">
+                                    <span :class="['w-1.5 h-1.5 rounded-full', r==5?'bg-emerald-500':(r==4?'bg-teal-500':(r==3?'bg-blue-500':(r==2?'bg-orange-500':'bg-rose-500')))]"></span>
+                                    {{ r == 5 ? 'Sangat Puas' : (r == 4 ? 'Puas' : (r == 3 ? 'Cukup' : (r == 2 ? 'Tidak Puas' : 'Sgt Tdk Puas'))) }}
+                                </span>
+                                <span class="text-gray-400 font-black tabular-nums">{{ surveyStats.distribution[r] || 0 }}</span>
+                            </div>
+                            <div class="w-full bg-gray-100 dark:bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                                <div class="h-full transition-all duration-1000"
+                                    :class="r==5?'bg-emerald-500':(r==4?'bg-teal-500':(r==3?'bg-blue-500':(r==2?'bg-orange-500':'bg-rose-500')))"
+                                    :style="{ width: surveyStats.total_surveys > 0 ? ((surveyStats.distribution[r] || 0) / surveyStats.total_surveys * 100) + '%' : '0%' }"
+                                ></div>
+                            </div>
                         </div>
-                        <div class="w-full bg-gray-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                            <div 
-                                class="h-full transition-all duration-1000"
-                                :class="{
-                                    'bg-emerald-500': r == 4,
-                                    'bg-blue-500': r == 3,
-                                    'bg-orange-500': r == 2,
-                                    'bg-rose-500': r == 1
-                                }"
-                                :style="{ width: surveyStats.total_surveys > 0 ? (count / surveyStats.total_surveys * 100) + '%' : '0%' }"
-                            ></div>
+                    </div>
+                </div>
+
+                <!-- Peringkat Staff (Compact) -->
+                <div class="bg-white dark:bg-slate-800 rounded-3xl p-5 border border-gray-100 dark:border-slate-700 shadow-sm flex-1 overflow-hidden">
+                    <h3 class="text-[9px] font-black text-gray-400 dark:text-slate-500 uppercase tracking-[0.15em] mb-4">Peringkat Staff</h3>
+                    <div class="space-y-3 overflow-y-auto max-h-[140px] pr-2 custom-scrollbar">
+                        <div v-for="(staff, index) in surveyStats.staff_ranking" :key="index" class="flex items-center justify-between group">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-5 h-5 rounded-md flex items-center justify-center text-[9px] font-black"
+                                    :class="index==0?'bg-yellow-500 text-white':(index==1?'bg-slate-300 text-slate-700':(index==2?'bg-orange-400 text-white':'bg-slate-100 dark:bg-slate-900 text-slate-400'))">
+                                    {{ index + 1 }}
+                                </div>
+                                <div class="max-w-[70px] truncate">
+                                    <div class="text-[9px] font-black text-gray-800 dark:text-white truncate uppercase">{{ staff.name }}</div>
+                                    <div class="text-[7px] uppercase text-gray-400 font-bold tracking-tighter">{{ staff.role }}</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-[10px] font-black text-blue-600 dark:text-blue-400 leading-tight">{{ staff.avg_rating }}</div>
+                                <div class="text-[6px] text-gray-400 font-bold uppercase">{{ staff.total_surveys }} Srv</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Recent Feedback -->
-            <div class="lg:col-span-1 bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm flex flex-col">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-sm font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Peringkat Performa</h3>
-                    <i class="fa-solid fa-trophy text-yellow-500 opacity-30"></i>
-                </div>
-                <div class="space-y-4 flex-grow">
-                    <div v-for="(staff, index) in surveyStats.staff_ranking" :key="index" class="flex items-center justify-between group">
+            <!-- Col 3-4: Activity Log (50%) -->
+            <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-3xl border border-gray-100 dark:border-slate-700 shadow-sm flex flex-col h-[500px] overflow-hidden">
+                <div class="p-6 pb-3">
+                    <div class="flex justify-between items-center">
                         <div class="flex items-center gap-3">
-                            <div 
-                                class="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-black border-2"
-                                :class="{
-                                    'bg-yellow-500/10 text-yellow-600 border-yellow-500/20': index == 0,
-                                    'bg-slate-400/10 text-slate-500 border-slate-400/20': index == 1,
-                                    'bg-orange-400/10 text-orange-600 border-orange-400/20': index == 2,
-                                    'bg-gray-100 dark:bg-slate-900 dark:text-gray-400 border-transparent': index > 2
-                                }"
-                            >
-                                {{ index + 1 }}
+                            <div class="w-10 h-10 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-600 border border-blue-100 dark:border-blue-800/50">
+                                <i class="fa-solid fa-bolt-lightning text-sm"></i>
                             </div>
                             <div>
-                                <div class="text-xs font-bold text-gray-800 dark:text-white">{{ staff.name }}</div>
-                                <div class="text-[9px] uppercase text-gray-400 font-bold tracking-widest">{{ staff.role }}</div>
+                                <h3 class="text-md font-black text-gray-800 dark:text-white tracking-tight">Log Aktivitas</h3>
+                                <p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mt-0.5">Update Real-time Terakhir</p>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <div class="text-xs font-black text-blue-600 dark:text-blue-400">{{ staff.avg_rating }}</div>
-                            <div class="text-[9px] text-gray-400 italic">{{ staff.total_surveys }} survey</div>
+                        <div class="flex items-center gap-1.5 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-100 dark:border-green-800/50">
+                            <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                            <span class="text-[8px] font-black text-green-600 uppercase tracking-widest text-[9px]">LIVE</span>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Recent Feedback -->
-            <div class="lg:col-span-1 bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-sm font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Suara Nasabah Terbaru</h3>
-                    <i class="fa-solid fa-comments text-blue-500 opacity-30"></i>
                 </div>
                 
-                <div class="space-y-4 max-h-[250px] overflow-y-auto pr-2 custom-scrollbar">
-                    <div v-for="fb in surveyStats.recent_feedback" :key="fb.id" class="p-4 bg-gray-50 dark:bg-slate-900/50 rounded-xl border border-gray-100 dark:border-slate-800 transition-all hover:border-blue-500/30 group">
-                        <div class="flex justify-between items-start mb-2">
-                            <div class="flex items-center gap-2">
-                                <span 
-                                    class="text-xs font-bold px-2 py-0.5 rounded-full"
+                <div class="flex-1 overflow-y-auto px-6 pb-6 custom-scrollbar">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div v-for="fb in surveyStats.recent_feedback" :key="fb.id" 
+                            class="p-3.5 bg-gray-50/50 dark:bg-slate-900/40 rounded-2xl border border-gray-100 dark:border-slate-800/50 hover:border-blue-500/40 transition-all duration-300 group">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-xl flex items-center justify-center font-black text-xl shadow-sm z-10"
                                     :class="{
-                                        'bg-emerald-100 text-emerald-600': fb.rating >= 4,
-                                        'bg-blue-100 text-blue-600': fb.rating == 3,
-                                        'bg-orange-100 text-orange-600': fb.rating == 2,
-                                        'bg-rose-100 text-rose-600': fb.rating == 1
-                                    }"
-                                >
-                                    {{ fb.rating }} Star
-                                </span>
-                                <span class="text-[10px] text-gray-400 uppercase font-bold tracking-wider">{{ fb.staff_name }}</span>
+                                        'bg-emerald-500 text-white': fb.rating == 5,
+                                        'bg-teal-500 text-white': fb.rating == 4,
+                                        'bg-blue-500 text-white': fb.rating == 3,
+                                        'bg-orange-500 text-white': fb.rating == 2,
+                                        'bg-rose-500 text-white': fb.rating == 1
+                                    }">
+                                    {{ fb.rating }}
+                                </div>
+                                <div class="flex-grow min-w-0">
+                                    <div class="flex items-center justify-between gap-2 mb-0.5">
+                                        <span class="text-[9px] font-black text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/50 px-1.5 py-0.5 rounded-lg">
+                                            #{{ fb.queue_no }}
+                                        </span>
+                                        <div class="flex text-yellow-500 text-[7px] gap-0.5">
+                                            <i v-for="i in 5" :key="i" :class="['fa-solid fa-star', i <= fb.rating ? '' : 'opacity-20']"></i>
+                                        </div>
+                                    </div>
+                                    <div class="text-[11px] font-black text-gray-800 dark:text-slate-100 truncate uppercase tracking-tight">{{ fb.staff_name }}</div>
+                                </div>
                             </div>
-                            <span class="text-[10px] text-gray-400 italic">{{ fb.time }}</span>
+                            
+                            <div class="flex justify-between items-center text-[8px] text-gray-400 font-black border-t border-gray-100 dark:border-slate-800/50 pt-2.5 uppercase tracking-wider">
+                                <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar-alt opacity-40"></i> {{ fb.date }}</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock opacity-40"></i> {{ fb.time }}</span>
+                            </div>
                         </div>
-                        <p class="text-sm text-gray-700 dark:text-slate-300 leading-relaxed">
-                            {{ fb.comment || '(Tanpa komentar)' }}
-                        </p>
-                    </div>
 
-                    <div v-if="surveyStats.recent_feedback.length === 0" class="h-full flex items-center justify-center py-12 text-gray-400 text-sm italic">
-                        Belum ada feedback nasabah.
+                        <div v-if="surveyStats.recent_feedback.length === 0" class="col-span-full h-96 flex flex-col items-center justify-center text-gray-400">
+                            <i class="fa-solid fa-wind text-4xl mb-4 opacity-10"></i>
+                            <p class="text-sm font-bold uppercase tracking-widest opacity-30">Belum ada aktivitas</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -292,7 +303,7 @@ export default {
             surveyStats: {
                 total_surveys: 0,
                 average_rating: 0,
-                distribution: { 1: 0, 2: 0, 3: 0, 4: 0 },
+                distribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
                 recent_feedback: [],
                 staff_ranking: []
             },

@@ -29,3 +29,4 @@ Thumbs.db
 
 # Seeders
 /database/seeders/TransactionSeeder.php
+/database/seeders/TellerSurveySeeder.php

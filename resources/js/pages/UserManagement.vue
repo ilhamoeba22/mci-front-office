@@ -48,7 +48,7 @@
                             <td class="px-6 py-4">
                                 <div class="flex items-center gap-2">
                                     <div class="flex text-yellow-500 text-[10px]">
-                                        <i v-for="i in 4" :key="i" :class="['fa-solid fa-star', i <= Math.round(user.average_rating) ? '' : 'opacity-20']"></i>
+                                        <i v-for="i in 5" :key="i" :class="['fa-solid fa-star', i <= Math.round(user.average_rating) ? '' : 'opacity-20']"></i>
                                     </div>
                                     <span class="text-xs font-black text-gray-800 dark:text-white">{{ user.average_rating }}</span>
                                     <span class="text-[10px] text-gray-400">({{ user.surveys_count }} survey)</span>

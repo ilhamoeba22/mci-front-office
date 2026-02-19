@@ -24,11 +24,19 @@ class SurveyController extends Controller
     {
         try {
             $request->validate([
-                'rating' => 'required|integer|between:1,4',
-                'user_id' => 'nullable|exists:users,id',
-                'reference_no' => 'nullable|string',
-                'comment' => 'nullable|string'
+                'rating' => 'required|integer|between:1,5',
+                'user_id' => 'required|exists:users,id',
+                'reference_no' => 'required|string',
             ]);
+
+            // Check if this reference (queue token) has already submitted a survey
+            $exists = Survey::where('reference_no', $request->reference_no)->exists();
+            if ($exists) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Survey untuk antrian ini sudah diisi.'
+                ], 422);
+            }
 
             // Tentukan user_id (Staff yang dinilai)
             $targetUserId = $request->user_id ?: $request->staff_id;
@@ -46,10 +54,10 @@ class SurveyController extends Controller
             }
 
             Survey::create([
-                'user_id' => $targetUserId ?? 1, // Fallback ke ID 1 jika benar-benar kosong
+                'user_id' => $targetUserId,
                 'rating' => $request->rating,
                 'reference_no' => $request->reference_no,
-                'comment' => $request->comment
+                'comment' => null // Dimatikan sesuai permintaan
             ]);
 
             return response()->json([
@@ -86,32 +94,57 @@ class SurveyController extends Controller
         $role = $request->role;
         $counter = $request->counter;
 
-        // Jika tablet menggunakan role & counter, cari staff_id yang sesuai
-        if (!$staffId && $role && $counter) {
+        $user = null;
+        if ($staffId) {
+            $user = \App\Models\User::find($staffId);
+        } elseif ($role && $counter) {
             $user = \App\Models\User::where('role', strtolower($role))
                         ->where('counter_no', $counter)
                         ->first();
-            $staffId = $user ? $user->id : null;
         }
 
-        $isActive = $staffId ? Cache::get("survey_active_{$staffId}", false) : false;
+        if (!$user) {
+            return response()->json(['is_active' => false]);
+        }
 
-        $staff = null;
-        if ($staffId) {
-            $user = \App\Models\User::find($staffId);
-            if ($user) {
-                $staff = [
-                    'id' => $user->id,
-                    'name' => $user->name,
-                    'counter_no' => $user->counter_no,
-                    'role' => strtoupper($user->role)
-                ];
+        $staffId = $user->id;
+
+        // 1. Cek antrian yang sedang aktif dipanggil hari ini
+        $activeQueue = \App\Models\Queue::where('type', strtoupper($user->role))
+            ->whereDate('tgl_antri', \Carbon\Carbon::today())
+            ->where('st_antrian', '2') // Status: Dipanggil
+            ->orderBy('id_antrian', 'desc')
+            ->first();
+
+        $isActive = false;
+        $referenceNo = null;
+
+        if ($activeQueue) {
+            // Cek apakah sudah pernah mengisi survey untuk nomor antrian ini
+            $alreadyVoted = Survey::where('reference_no', $activeQueue->kode)->exists();
+            if (!$alreadyVoted) {
+                $isActive = true;
+                $referenceNo = $activeQueue->kode;
+            }
+        }
+
+        // 2. Fallback ke Manual Trigger (Jika tombol "Tampilkan Survey" diklik)
+        if (!$isActive) {
+            $isActive = \Illuminate\Support\Facades\Cache::get("survey_active_{$staffId}", false);
+            if ($isActive && $activeQueue) {
+                $referenceNo = $activeQueue->kode;
             }
         }
 
         return response()->json([
             'is_active' => $isActive,
-            'staff' => $staff
+            'staff' => [
+                'id' => $user->id,
+                'name' => $user->name,
+                'role' => strtoupper($user->role),
+                'counter_no' => $user->counter_no
+            ],
+            'reference_no' => $referenceNo
         ]);
     }
 }
