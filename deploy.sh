@@ -11,12 +11,22 @@ git reset --hard origin/main
 git pull origin main
 
 # 2. Optimalisasi Laravel
-echo "[2/3] Membersihkan dan membuat cache baru..."
+echo "[2/4] Membersihkan dan membuat cache baru..."
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 php artisan migrate --force
 
-# 3. Selesai
-echo "[3/3] Selesai! Website sudah terupdate."
+# 3. Frontend Build (Direct on Hosting)
+echo "[3/4] Melakukan build frontend (NPM)..."
+if command -v npm &> /dev/null
+then
+    echo "NPM ditemukan, memulai build..."
+    npm install && npm run build
+else
+    echo "Warning: NPM tidak ditemukan di server. Lewati build frontend."
+fi
+
+# 4. Selesai
+echo "[4/4] Selesai! Website sudah terupdate."
 echo "--- Update Berhasil ---"
