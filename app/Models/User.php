@@ -73,4 +73,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the surveys for the staff member.
+     */
+    public function surveys()
+    {
+        return $this->hasMany(\App\Models\Survey::class);
+    }
 }

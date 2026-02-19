@@ -30,13 +30,23 @@ class SurveyController extends Controller
                 'comment' => 'nullable|string'
             ]);
 
-            // Reset status aktif setelah diisi
-            if ($request->staff_id) {
-                Cache::forget("survey_active_{$request->staff_id}");
+            // Tentukan user_id (Staff yang dinilai)
+            $targetUserId = $request->user_id ?: $request->staff_id;
+
+            // Debug log untuk memastikan data masuk
+            Log::info("Survey Submission recorded:", [
+                'user_id' => $targetUserId,
+                'rating' => $request->rating,
+                'ref' => $request->reference_no
+            ]);
+
+            // Reset status aktif setelah diisi agar layar tablet kembali standby
+            if ($targetUserId) {
+                Cache::forget("survey_active_{$targetUserId}");
             }
 
             Survey::create([
-                'user_id' => $request->user_id ?? 1,
+                'user_id' => $targetUserId ?? 1, // Fallback ke ID 1 jika benar-benar kosong
                 'rating' => $request->rating,
                 'reference_no' => $request->reference_no,
                 'comment' => $request->comment
