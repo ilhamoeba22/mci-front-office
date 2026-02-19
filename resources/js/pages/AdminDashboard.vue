@@ -200,7 +200,40 @@
             </div>
 
             <!-- Recent Feedback -->
-            <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm">
+            <div class="lg:col-span-1 bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm flex flex-col">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-sm font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Peringkat Performa</h3>
+                    <i class="fa-solid fa-trophy text-yellow-500 opacity-30"></i>
+                </div>
+                <div class="space-y-4 flex-grow">
+                    <div v-for="(staff, index) in surveyStats.staff_ranking" :key="index" class="flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <div 
+                                class="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-black border-2"
+                                :class="{
+                                    'bg-yellow-500/10 text-yellow-600 border-yellow-500/20': index == 0,
+                                    'bg-slate-400/10 text-slate-500 border-slate-400/20': index == 1,
+                                    'bg-orange-400/10 text-orange-600 border-orange-400/20': index == 2,
+                                    'bg-gray-100 dark:bg-slate-900 dark:text-gray-400 border-transparent': index > 2
+                                }"
+                            >
+                                {{ index + 1 }}
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-gray-800 dark:text-white">{{ staff.name }}</div>
+                                <div class="text-[9px] uppercase text-gray-400 font-bold tracking-widest">{{ staff.role }}</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs font-black text-blue-600 dark:text-blue-400">{{ staff.avg_rating }}</div>
+                            <div class="text-[9px] text-gray-400 italic">{{ staff.total_surveys }} survey</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Feedback -->
+            <div class="lg:col-span-1 bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm">
                 <div class="flex justify-between items-center mb-6">
                     <h3 class="text-sm font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Suara Nasabah Terbaru</h3>
                     <i class="fa-solid fa-comments text-blue-500 opacity-30"></i>
@@ -260,7 +293,8 @@ export default {
                 total_surveys: 0,
                 average_rating: 0,
                 distribution: { 1: 0, 2: 0, 3: 0, 4: 0 },
-                recent_feedback: []
+                recent_feedback: [],
+                staff_ranking: []
             },
             currentTime: '',
             yAxisMin: null, // Manual Y-axis minimum

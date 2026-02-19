@@ -14,7 +14,16 @@ class UserController extends Controller
      */
     public function index()
     {
-        return response()->json(User::orderBy('id', 'desc')->get());
+        $users = User::withCount('surveys')
+            ->orderBy('id', 'desc')
+            ->get()
+            ->map(function($user) {
+                $avg = \App\Models\Survey::where('user_id', $user->id)->avg('rating');
+                $user->average_rating = $avg ? round($avg, 1) : 0;
+                return $user;
+            });
+
+        return response()->json($users);
     }
 
     /**

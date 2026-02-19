@@ -18,6 +18,7 @@
                             <th class="px-6 py-4 text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Nama & Username</th>
                             <th class="px-6 py-4 text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Role</th>
                             <th class="px-6 py-4 text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Counter No</th>
+                            <th class="px-6 py-4 text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Rating (IKM)</th>
                             <th class="px-6 py-4 text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Status</th>
                             <th class="px-6 py-4 text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider text-right">Aksi</th>
                         </tr>
@@ -43,6 +44,15 @@
                             </td>
                             <td class="px-6 py-4 text-gray-600 dark:text-slate-300 font-mono font-bold">
                                 {{ user.counter_no ? 'LOKET ' + user.counter_no : '-' }}
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <div class="flex text-yellow-500 text-[10px]">
+                                        <i v-for="i in 4" :key="i" :class="['fa-solid fa-star', i <= Math.round(user.average_rating) ? '' : 'opacity-20']"></i>
+                                    </div>
+                                    <span class="text-xs font-black text-gray-800 dark:text-white">{{ user.average_rating }}</span>
+                                    <span class="text-[10px] text-gray-400">({{ user.surveys_count }} survey)</span>
+                                </div>
                             </td>
                             <td class="px-6 py-4">
                                 <span v-if="user.is_active" class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-xs font-bold">

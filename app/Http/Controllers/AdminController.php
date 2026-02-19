@@ -745,11 +745,29 @@ class AdminController extends Controller
                 ];
             });
 
+        // Staff Ranking (Top Performance)
+        $staffRanking = \App\Models\User::whereIn('role', ['teller', 'cs'])
+            ->withCount('surveys')
+            ->get()
+            ->map(function($user) {
+                $avg = \App\Models\Survey::where('user_id', $user->id)->avg('rating');
+                return [
+                    'name' => $user->name,
+                    'role' => $user->role,
+                    'avg_rating' => $avg ? round($avg, 1) : 0,
+                    'total_surveys' => $user->surveys_count
+                ];
+            })
+            ->sortByDesc('avg_rating')
+            ->values()
+            ->take(5);
+
         return response()->json([
             'total_surveys' => $totalSurveys,
             'average_rating' => round($averageRating, 1),
             'distribution' => $distribution,
-            'recent_feedback' => $recentFeedback
+            'recent_feedback' => $recentFeedback,
+            'staff_ranking' => $staffRanking
         ]);
     }
 
